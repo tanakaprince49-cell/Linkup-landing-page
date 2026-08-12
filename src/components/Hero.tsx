@@ -18,16 +18,16 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white leading-[1.08]"
           >
-            Meet the people who <br />
+            Find Your Perfect Startup <br />
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-white via-[#FBE618] to-[#00C2FF] bg-clip-text text-transparent">
-                move your idea
+                Co-Founder
               </span>
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#FBE618]/40" viewBox="0 0 100 12" preserveAspectRatio="none">
                 <path d="M0,0 Q50,12 100,0" fill="none" stroke="currentColor" strokeWidth="4" />
               </svg>
             </span>{' '}
-            forward.
+            & Build the Future.
           </motion.h1>
 
           {/* Sub-copy */}
@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed"
           >
-            AI-powered founder matching. Zero noise. Only builders. Connect with verified technical architects, growth leaders, and product visionaries ready to execute.
+            The elite AI-powered co-founder matchmaking network. Skip the noise and instantly connect with verified technical architects, growth leaders, and product visionaries ready to launch your next startup.
           </motion.p>
 
           {/* Action CTA */}

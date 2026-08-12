@@ -44,13 +44,13 @@ export const FeatureGrid: React.FC = () => {
             <Zap className="w-3.5 h-3.5" /> Full Platform Architecture
           </div>
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
-            10 Core Features Built for{' '}
+            Everything You Need To Find The{' '}
             <span className="bg-gradient-to-r from-[#FBE618] via-[#00C2FF] to-white bg-clip-text text-transparent">
-              High-Velocity Founders.
+              Perfect Startup Partner.
             </span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg">
-            Everything you need to discover, verify, connect with, and partner with ideal co-founders.
+            A complete suite of tools to discover, verify, connect, and launch with top-tier co-founders.
           </p>
         </div>
 
