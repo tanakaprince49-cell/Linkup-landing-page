@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { SocialProofMarquee } from './components/SocialProofMarquee';
 import { FeatureGrid } from './components/FeatureGrid';
 import { Footer } from './components/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -46,6 +47,7 @@ export default function App() {
         <Footer />
       </div>
 
+      <Analytics />
     </div>
   );
 }
