@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SocialProofMarquee } from './components/SocialProofMarquee';
+import { HowItWorks } from './components/HowItWorks';
 import { AppShowcase } from './components/AppShowcase';
 import { FeatureGrid } from './components/FeatureGrid';
 import { Reviews } from './components/Reviews';
+import { FAQ } from './components/FAQ';
+import { BottomCTA } from './components/BottomCTA';
 import { Footer } from './components/Footer';
 import { CookieConsent } from './components/CookieConsent';
 import { CursorGlow } from './components/CursorGlow';
 import { FloatingContact } from './components/FloatingContact';
+import { FadeInSection } from './components/FadeInSection';
 import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
@@ -41,23 +45,50 @@ export default function App() {
         {/* Main Content Sections */}
         <main className="pt-16">
           {/* Section 1: Hero */}
-          <Hero />
+          <FadeInSection delay={0.1}>
+            <Hero />
+          </FadeInSection>
 
           {/* Section 2: Ecosystem & Accelerators */}
-          <SocialProofMarquee />
+          <FadeInSection delay={0.2}>
+            <SocialProofMarquee />
+          </FadeInSection>
 
-          {/* Section 3: App Showcase */}
-          <AppShowcase />
+          {/* Section 3: How It Works */}
+          <FadeInSection delay={0.1}>
+            <HowItWorks />
+          </FadeInSection>
 
-          {/* Section 4: App Features (10 Features) */}
-          <FeatureGrid />
+          {/* Section 4: App Showcase */}
+          <FadeInSection delay={0.1}>
+            <AppShowcase />
+          </FadeInSection>
 
-          {/* Section 5: Google Play Reviews */}
-          <Reviews />
+          {/* Section 5: App Features (10 Features) */}
+          <FadeInSection delay={0.1}>
+            <FeatureGrid />
+          </FadeInSection>
+
+          {/* Section 6: Google Play Reviews */}
+          <FadeInSection delay={0.1}>
+            <Reviews />
+          </FadeInSection>
+
+          {/* Section 7: FAQ */}
+          <FadeInSection delay={0.1}>
+            <FAQ />
+          </FadeInSection>
+
+          {/* Section 8: Final CTA */}
+          <FadeInSection delay={0.1}>
+            <BottomCTA />
+          </FadeInSection>
         </main>
 
         {/* Footer */}
-        <Footer />
+        <FadeInSection delay={0.1}>
+          <Footer />
+        </FadeInSection>
       </div>
 
       <FloatingContact />
