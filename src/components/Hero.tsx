@@ -107,6 +107,19 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex justify-center pt-6"
+          >
+            <a href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral" target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform">
+              <img src="https://tools.launchllama.co/featured-badge.png?v=2"
+                alt="As seen on Launch Llama Newsletter"
+                width="160" height="40" className="opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
+          </motion.div>
+
         </div>
       </div>
     </section>

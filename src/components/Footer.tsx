@@ -32,6 +32,14 @@ export const Footer: React.FC = () => {
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
               The elite co-founder acquisition network. AI-powered matching connecting technical architects, growth leaders, and product visionaries to build high-impact ventures.
             </p>
+
+            <div className="pt-4">
+              <a href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral" target="_blank" rel="noopener noreferrer" className="inline-block hover:opacity-80 transition-opacity">
+                <img src="https://tools.launchllama.co/featured-badge.png?v=2"
+                  alt="As seen on Launch Llama Newsletter"
+                  width="180" height="45" className="grayscale hover:grayscale-0 transition-all duration-300" />
+              </a>
+            </div>
           </div>
 
           {/* Nav Col 3 */}
