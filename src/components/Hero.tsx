@@ -111,12 +111,15 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex justify-center pt-6"
+            className="flex flex-wrap justify-center items-center gap-4 pt-6"
           >
             <a href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral" target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform">
               <img src="https://tools.launchllama.co/featured-badge.png?v=2"
                 alt="As seen on Launch Llama Newsletter"
                 width="160" height="40" className="opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
+            <a href="https://smollaunch.com" target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform">
+              <img src="https://smollaunch.com/badges/featured.svg" alt="LINKUP — Featured on Smol Launch" loading="lazy" width="160" height="40" className="opacity-80 hover:opacity-100 transition-opacity" />
             </a>
           </motion.div>
 
