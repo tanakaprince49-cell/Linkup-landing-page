@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { tiun } from '@tiun/sdk';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SocialProofMarquee } from './components/SocialProofMarquee';
@@ -17,6 +18,13 @@ import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+
+  useEffect(() => {
+    tiun.init({ snippetId: 'your-snippet-id', language: 'en' });
+    return () => {
+      tiun.destroy();
+    };
+  }, []);
 
   const handleToggleTheme = () => {
     setIsDarkMode(!isDarkMode);
