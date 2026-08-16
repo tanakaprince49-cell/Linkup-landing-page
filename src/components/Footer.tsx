@@ -45,6 +45,13 @@ export const Footer: React.FC = () => {
                   loading="lazy" 
                   width="180" height="45" className="grayscale hover:grayscale-0 transition-all duration-300" />
               </a>
+              <a href="https://www.scrolllaunch.com/products/linkup?ref=badge" target="_blank" rel="noopener noreferrer" className="inline-block hover:opacity-80 transition-opacity">
+                <img src="https://www.scrolllaunch.com/api/badge/linkup" 
+                  alt="Featured on ScrollLaunch" 
+                  width="198" height="43" 
+                  loading="lazy" 
+                  className="grayscale hover:grayscale-0 transition-all duration-300" />
+              </a>
             </div>
           </div>
 

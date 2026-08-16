@@ -121,6 +121,9 @@ export const Hero: React.FC = () => {
             <a href="https://smollaunch.com" target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform">
               <img src="https://smollaunch.com/badges/featured.svg" alt="LINKUP — Featured on Smol Launch" loading="lazy" width="160" height="40" className="opacity-80 hover:opacity-100 transition-opacity" />
             </a>
+            <a href="https://www.scrolllaunch.com/products/linkup?ref=badge" target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform">
+              <img src="https://www.scrolllaunch.com/api/badge/linkup" alt="Featured on ScrollLaunch" width="176" height="38" loading="lazy" className="opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
           </motion.div>
 
         </div>
