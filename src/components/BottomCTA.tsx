@@ -36,7 +36,7 @@ export const BottomCTA: React.FC = () => {
                   />
                 </a>
                 <a 
-                  href="https://linkup-muqu.vercel.app/"
+                  href="https://www.linkupbuild.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-[#FBE618] hover:bg-[#fff056] text-black font-semibold px-8 py-4 sm:py-5 rounded-2xl shadow-[0_0_30px_rgba(251,230,24,0.3)] transition-all hover:-translate-y-1 w-full sm:w-auto"

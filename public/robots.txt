@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://linkup-muqu.vercel.app/sitemap.xml
+Sitemap: https://www.linkupbuild.com/sitemap.xml

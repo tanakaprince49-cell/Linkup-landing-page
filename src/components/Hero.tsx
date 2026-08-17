@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
               </a>
               <div className="flex flex-col items-center gap-2">
                 <a 
-                  href="https://linkup-muqu.vercel.app/"
+                  href="https://www.linkupbuild.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white font-semibold px-8 py-4 sm:py-5 rounded-2xl shadow-xl transition-all hover:-translate-y-1 w-full justify-center"
