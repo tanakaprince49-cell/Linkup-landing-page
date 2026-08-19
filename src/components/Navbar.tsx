@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
           title="LINKUP - Co-Founder Network"
         >
           <img 
-            src="https://i.ibb.co/Hf2yQXqL/Gemini-Generated-Image-9afxh89afxh89afx.webp" 
+            src="https://i.ibb.co/HTfs8tdT/logo-idea-r2-A.webp" 
             alt="LinkUp Logo" 
             className="w-10 h-10 rounded-xl object-cover shadow-lg shadow-[#FBE618]/20 group-hover:shadow-[#FBE618]/40 group-hover:scale-105 transition-all duration-300" 
           />
