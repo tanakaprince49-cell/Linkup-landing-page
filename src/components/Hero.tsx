@@ -70,9 +70,9 @@ export const Hero: React.FC = () => {
                   <Globe className="w-5 h-5 text-[#FBE618]" />
                   View Web Version
                 </a>
-                <span className="text-[11px] text-[#FBE618] font-medium flex items-center gap-1">
-                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-                  Note: Web version may be slow and buggy
+                <span className="text-[11px] text-[#00C2FF] font-medium flex items-center gap-1">
+                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                  Super stable — Recommended for iOS users
                 </span>
               </div>
             </div>
