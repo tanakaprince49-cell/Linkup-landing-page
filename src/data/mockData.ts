@@ -312,12 +312,12 @@ export const FAQS: FaqItem[] = [
 ];
 
 export const ACCELERATORS = [
-  { name: 'Y Combinator', label: 'YC Alumni' },
-  { name: 'Techstars', label: 'Techstars Network' },
-  { name: 'Stanford Founders', label: 'Stanford CS' },
-  { name: 'MIT Sandbox', label: 'MIT AI Lab' },
-  { name: 'OpenAI Alumni', label: 'OpenAI Builders' },
-  { name: 'Google for Startups', label: 'Google Alumni' },
-  { name: 'Sequoia Arc', label: 'Arc Founders' },
-  { name: 'Antler', label: 'Antler Global' },
+  { name: 'Y Combinator', label: 'YC Alumni', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Y_Combinator_logo.svg' },
+  { name: 'Techstars', label: 'Techstars Network', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Techstars_logo.png' },
+  { name: 'Stanford', label: 'Stanford CS', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Stanford_Cardinal_logo.svg' },
+  { name: 'MIT', label: 'MIT AI Lab', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/MIT_logo_2003-2023.svg' },
+  { name: 'OpenAI', label: 'OpenAI Builders', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/66/OpenAI_logo_2025_%28symbol%29.svg' },
+  { name: 'Google', label: 'Google Alumni', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg' },
+  { name: 'Sequoia', label: 'Arc Founders', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/04/Sequoia_Capital_logo.svg' },
+  { name: 'Meta', label: 'Meta Alumni', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg' },
 ];
