@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { tiun } from '@tiun/sdk';
+import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SocialProofMarquee } from './components/SocialProofMarquee';
 import { HowItWorks } from './components/HowItWorks';
 import { AppShowcase } from './components/AppShowcase';
 import { FeatureGrid } from './components/FeatureGrid';
+import { CampaignsFeature } from './components/CampaignsFeature';
 import { Reviews } from './components/Reviews';
 import { FAQ } from './components/FAQ';
 import { BottomCTA } from './components/BottomCTA';
@@ -15,6 +17,53 @@ import { CursorGlow } from './components/CursorGlow';
 import { FloatingContact } from './components/FloatingContact';
 import { FadeInSection } from './components/FadeInSection';
 import { Analytics } from '@vercel/analytics/react';
+
+const HomePage = () => (
+  <>
+    <FadeInSection delay={0.1}>
+      <Hero />
+    </FadeInSection>
+    <FadeInSection delay={0.2}>
+      <SocialProofMarquee />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <AppShowcase />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <Reviews />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <BottomCTA />
+    </FadeInSection>
+  </>
+);
+
+const FeaturesPage = () => (
+  <>
+    <FadeInSection delay={0.1}>
+      <HowItWorks />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <FeatureGrid />
+    </FadeInSection>
+  </>
+);
+
+const CampaignsPage = () => (
+  <>
+    <FadeInSection delay={0.1}>
+      <CampaignsFeature />
+    </FadeInSection>
+  </>
+);
+
+const FAQPage = () => (
+  <>
+    <FadeInSection delay={0.1}>
+      <FAQ />
+    </FadeInSection>
+  </>
+);
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -31,7 +80,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 relative ${isDarkMode ? 'bg-[#05070D] text-slate-100' : 'bg-[#05070D] text-white'}`}>
+    <div className={`min-h-screen transition-colors duration-300 relative ${isDarkMode ? 'bg-[#05070D] text-slate-100' : 'bg-[#05070D] text-white'}`}>      
       
       {/* 3D Liquid Background */}
       <div className="liquid-bg-container">
@@ -39,11 +88,10 @@ export default function App() {
         <div className="liquid-blob"></div>
         <div className="liquid-blob"></div>
       </div>
-
       <CursorGlow />
 
       {/* Main 3D Animated Wrapper */}
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col min-h-screen">
         {/* Sticky Header / Navbar */}
         <Navbar
           isDarkMode={isDarkMode}
@@ -51,46 +99,13 @@ export default function App() {
         />
 
         {/* Main Content Sections */}
-        <main className="pt-16">
-          {/* Section 1: Hero */}
-          <FadeInSection delay={0.1}>
-            <Hero />
-          </FadeInSection>
-
-          {/* Section 2: Ecosystem & Accelerators */}
-          <FadeInSection delay={0.2}>
-            <SocialProofMarquee />
-          </FadeInSection>
-
-          {/* Section 3: How It Works */}
-          <FadeInSection delay={0.1}>
-            <HowItWorks />
-          </FadeInSection>
-
-          {/* Section 4: App Showcase */}
-          <FadeInSection delay={0.1}>
-            <AppShowcase />
-          </FadeInSection>
-
-          {/* Section 5: App Features (10 Features) */}
-          <FadeInSection delay={0.1}>
-            <FeatureGrid />
-          </FadeInSection>
-
-          {/* Section 6: Google Play Reviews */}
-          <FadeInSection delay={0.1}>
-            <Reviews />
-          </FadeInSection>
-
-          {/* Section 7: FAQ */}
-          <FadeInSection delay={0.1}>
-            <FAQ />
-          </FadeInSection>
-
-          {/* Section 8: Final CTA */}
-          <FadeInSection delay={0.1}>
-            <BottomCTA />
-          </FadeInSection>
+        <main className="pt-24 flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/features" element={<FeaturesPage />} />
+            <Route path="/campaigns" element={<CampaignsPage />} />
+            <Route path="/faq" element={<FAQPage />} />
+          </Routes>
         </main>
 
         {/* Footer */}
@@ -105,5 +120,3 @@ export default function App() {
     </div>
   );
 }
-
-

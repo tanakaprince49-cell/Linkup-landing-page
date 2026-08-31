@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageCircle, ExternalLink, ChevronDown } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavbarProps {
@@ -10,6 +11,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isFounderMenuOpen, setIsFounderMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,12 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo Link */}
-        <a 
-          href="#" 
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
+        <Link to="/"
           className="flex items-center gap-2.5 group cursor-pointer focus:outline-none"
           title="LINKUP - Co-Founder Network"
         >
@@ -52,10 +49,29 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
               Co-Founder Network
             </span>
           </div>
-        </a>
+        </Link>
+
+        <div className="flex items-center gap-1 md:gap-6">
+        {/* Desktop Nav Links */}
+        <nav className="hidden md:flex items-center gap-6">
+          {[
+            { name: 'Home', path: '/' },
+            { name: 'Features', path: '/features' },
+            { name: 'Campaigns', path: '/campaigns' },
+            { name: 'FAQ', path: '/faq' },
+          ].map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className="text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
 
         {/* Talk to Founder Dropdown */}
-        <div className="relative">
+        <div className="relative translate-x-1 md:translate-x-0">
           <button
             onClick={() => setIsFounderMenuOpen(!isFounderMenuOpen)}
             className="flex items-center gap-2 bg-[#FBE618]/10 hover:bg-[#FBE618]/20 border border-[#FBE618]/30 text-[#FBE618] px-4 py-2 rounded-xl text-sm font-semibold transition-all"
@@ -120,7 +136,46 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
             )}
           </AnimatePresence>
         </div>
+
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="md:hidden p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors ml-1"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+        </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-[#0F131F]/95 backdrop-blur-xl border-b border-white/10 overflow-hidden shadow-2xl"
+          >
+            <div className="px-6 py-6 flex flex-col gap-6">
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'Features', path: '/features' },
+                { name: 'Campaigns', path: '/campaigns' },
+                { name: 'FAQ', path: '/faq' },
+              ].map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-semibold text-slate-300 hover:text-white transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
