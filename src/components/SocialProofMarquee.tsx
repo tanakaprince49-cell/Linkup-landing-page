@@ -32,6 +32,11 @@ export const SocialProofMarquee: React.FC = () => {
                     className="w-full h-full object-contain rounded-sm" 
                   />
                 </div>
+              ) : item.name === '500 Global' ? (
+                <div className="w-8 h-8 rounded-full bg-[#091122] border border-[#00C2FF]/40 flex flex-col items-center justify-center shrink-0 group-hover:border-[#00C2FF]/70 transition-colors">
+                  <span className="text-white text-[10px] font-black tracking-tighter leading-none">500</span>
+                  <span className="text-[#00C2FF] text-[5px] font-mono tracking-widest font-bold uppercase leading-none">GLOBAL</span>
+                </div>
               ) : (
                 <Award className="w-4 h-4 text-[#FBE618] group-hover:scale-110 transition-transform" />
               )}
