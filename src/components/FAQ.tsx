@@ -4,6 +4,14 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqCategories = [
   {
+    category: "Linkup Agent (Linky)",
+    questions: [
+      { q: "What is Linkup Agent (Linky)?", a: "Linkup Agent (Linky) is our AI matchmaking agent that replaces traditional swiping with conversational search. Simply ask in plain English for who you need (e.g., technical cofounders, senior mobile developers, or angel investors), and Linky scans verified builder profiles, GitHub commits, and REP scores to surface ideal candidates with clear citations." },
+      { q: "How do Double Opt-In intros work?", a: "When Linky recommends candidates, you can trigger a double opt-in intro request. Private direct messaging is only unlocked once both builders review each other's credentials and mutually agree to connect—eliminating cold DMs and spam." },
+      { q: "Can I use Linky on Telegram and WhatsApp?", a: "Linky is already live inside the LINKUP mobile app and web version. Dedicated multi-channel bots for Telegram and WhatsApp are rolling out shortly so you can find co-founders directly from your messaging apps." }
+    ]
+  },
+  {
     category: "General",
     questions: [
       { q: "What is LINKUP?", a: "LINKUP is a founder networking app that connects builders, founders, and early adopters. You can swipe to discover people, share ideas on Idea Deck, analyze startup ideas with AI, get warm introductions, and collaborate in real-time." },

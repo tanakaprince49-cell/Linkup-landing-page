@@ -1,6 +1,6 @@
 {
   "name": "LINKUP - Co-Founder Network",
-  "description": "The Elite Co-Founder Acquisition Network. AI-powered founder matching for elite builders.",
+  "description": "Don't Swipe. Just Ask. Meet Linkup Agent (Linky)—natural language AI founder matchmaking with verified builder profiles and double opt-in intros.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

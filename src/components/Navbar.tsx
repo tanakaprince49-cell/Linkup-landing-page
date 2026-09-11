@@ -56,17 +56,23 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
         <nav className="hidden md:flex items-center gap-6">
           {[
             { name: 'Home', path: '/' },
+            { name: 'Linkup Agent', path: '/#linkup-agent', isNew: true },
             { name: 'Features', path: '/features' },
             { name: 'Campaigns', path: '/campaigns' },
             { name: 'FAQ', path: '/faq' },
           ].map((link) => (
-            <Link
+            <a
               key={link.name}
-              to={link.path}
-              className="text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+              href={link.path}
+              className="text-sm font-semibold text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
             >
               {link.name}
-            </Link>
+              {link.isNew && (
+                <span className="px-1.5 py-0.2 rounded-full bg-[#FBE618]/20 text-[#FBE618] text-[10px] font-mono font-bold tracking-wider border border-[#FBE618]/40">
+                  NEW
+                </span>
+              )}
+            </a>
           ))}
         </nav>
 
@@ -159,18 +165,24 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
             <div className="px-6 py-6 flex flex-col gap-6">
               {[
                 { name: 'Home', path: '/' },
+                { name: 'Linkup Agent', path: '/#linkup-agent', isNew: true },
                 { name: 'Features', path: '/features' },
                 { name: 'Campaigns', path: '/campaigns' },
                 { name: 'FAQ', path: '/faq' },
               ].map((link) => (
-                <Link
+                <a
                   key={link.name}
-                  to={link.path}
+                  href={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-semibold text-slate-300 hover:text-white transition-colors"
+                  className="text-lg font-semibold text-slate-300 hover:text-white transition-colors flex items-center justify-between"
                 >
-                  {link.name}
-                </Link>
+                  <span>{link.name}</span>
+                  {link.isNew && (
+                    <span className="px-2 py-0.5 rounded-full bg-[#FBE618]/20 text-[#FBE618] text-xs font-mono font-bold tracking-wider border border-[#FBE618]/40">
+                      NEW
+                    </span>
+                  )}
+                </a>
               ))}
             </div>
           </motion.div>

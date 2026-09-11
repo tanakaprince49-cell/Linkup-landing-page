@@ -12,6 +12,22 @@ export const Hero: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
         <div className="space-y-8 max-w-4xl mx-auto">
           
+          {/* New Announcement Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center"
+          >
+            <a
+              href="#linkup-agent"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-[#FBE618]/40 bg-[#FBE618]/10 hover:bg-[#FBE618]/20 transition-all hover:scale-105 shadow-[0_0_20px_rgba(251,230,24,0.2)] text-white text-xs sm:text-sm font-semibold group"
+            >
+              <span>Meet Linkup Agent — Natural Language Founder Matchmaking</span>
+              <span className="text-[#FBE618] font-mono group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </motion.div>
+
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -31,14 +47,19 @@ export const Hero: React.FC = () => {
           </motion.h1>
 
           {/* Sub-copy */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed"
+            className="max-w-2xl mx-auto space-y-3"
           >
-            LINKUP is the elite AI-powered co-founder matchmaking network. Skip the noise and instantly connect with verified technical architects, growth leaders, and product visionaries ready to launch your next startup.
-          </motion.p>
+            <p className="text-lg sm:text-xl text-white font-medium leading-relaxed">
+              Stop swiping. Tell Linkup Agent who you need, get instant compatible matches, and connect via double opt-in intros.
+            </p>
+            <p className="text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
+              LINKUP is the elite AI-powered co-founder network. Connect with verified technical architects, growth leaders, and product visionaries ready to launch your next startup.
+            </p>
+          </motion.div>
 
           {/* Action CTA */}
           <motion.div

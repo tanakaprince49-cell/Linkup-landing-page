@@ -16,6 +16,7 @@ import { CookieConsent } from './components/CookieConsent';
 import { CursorGlow } from './components/CursorGlow';
 import { FloatingContact } from './components/FloatingContact';
 import { FadeInSection } from './components/FadeInSection';
+import { LinkupAgentFeature } from './components/LinkupAgentFeature';
 import { Analytics } from '@vercel/analytics/react';
 
 const HomePage = () => (
@@ -25,6 +26,9 @@ const HomePage = () => (
     </FadeInSection>
     <FadeInSection delay={0.2}>
       <SocialProofMarquee />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <LinkupAgentFeature />
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <AppShowcase />
@@ -42,6 +46,9 @@ const FeaturesPage = () => (
   <>
     <FadeInSection delay={0.1}>
       <HowItWorks />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <LinkupAgentFeature />
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <FeatureGrid />
