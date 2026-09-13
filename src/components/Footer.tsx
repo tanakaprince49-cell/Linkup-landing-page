@@ -1,30 +1,14 @@
-import React, { useEffect } from 'react';
-import { ShieldCheck, Heart, Github, Twitter, Linkedin, MessageSquare } from 'lucide-react';
+import React from 'react';
 
 export const Footer: React.FC = () => {
-  useEffect(() => {
-    // Load LinkedIn script after component mounts
-    const script = document.createElement('script');
-    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
-    script.async = true;
-    script.defer = true;
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-
-    return () => {
-      // Optional cleanup
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <footer className="bg-transparent border-t border-white/10 text-slate-400 py-16 text-xs relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
           {/* Brand Col */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="md:col-span-3 space-y-4">
             <a 
               href="#" 
               onClick={(e) => {
@@ -70,31 +54,13 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Nav Col 3 */}
-          <div className="space-y-3">
+          {/* Nav Col - Legal */}
+          <div className="space-y-3 md:text-right">
             <h4 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Legal</h4>
             <ul className="space-y-2">
               <li><a href="https://docs.google.com/document/d/1FUTyaNfaBXzYGUiqbfhrKX73H6S6S809kpI00chyWRM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-[#FBE618] transition-colors">Privacy Policy</a></li>
               <li><a href="https://docs.google.com/document/d/1SPu2VZchQfmWQT0gr2QuvmHbiuLpBZX-aFpmVd-ph2E/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-[#FBE618] transition-colors">Terms of Service</a></li>
             </ul>
-          </div>
-
-          {/* Founder Badge Col */}
-          <div className="md:col-span-2 space-y-3 flex flex-col md:items-end">
-            <h4 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Meet the Founder</h4>
-            <div 
-              className="badge-base LI-profile-badge" 
-              data-locale="en_US" 
-              data-size="medium" 
-              data-theme="light" 
-              data-type="VERTICAL" 
-              data-vanity="tanaka-gaadzikwa-a7bb1335b" 
-              data-version="v1"
-            >
-              <a className="badge-base__link LI-simple-link" href="https://zw.linkedin.com/in/tanaka-gaadzikwa-a7bb1335b?trk=profile-badge">
-                Tanaka Gaadzikwa
-              </a>
-            </div>
           </div>
 
         </div>
