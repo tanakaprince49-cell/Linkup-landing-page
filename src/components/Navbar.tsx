@@ -12,6 +12,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
   const [scrolled, setScrolled] = useState(false);
   const [isFounderMenuOpen, setIsFounderMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,20 +61,48 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
             { name: 'Features', path: '/features' },
             { name: 'Campaigns', path: '/campaigns' },
             { name: 'FAQ', path: '/faq' },
-          ].map((link) => (
-            <a
-              key={link.name}
-              href={link.path}
-              className="text-sm font-semibold text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
-            >
-              {link.name}
-              {link.isNew && (
-                <span className="px-1.5 py-0.2 rounded-full bg-[#FBE618]/20 text-[#FBE618] text-[10px] font-mono font-bold tracking-wider border border-[#FBE618]/40">
-                  NEW
-                </span>
-              )}
-            </a>
-          ))}
+          ].map((link) => {
+            const isAgent = link.path.startsWith('/#');
+            const isActive = location.pathname === link.path;
+
+            if (isAgent) {
+              return (
+                <Link
+                  key={link.name}
+                  to="/#linkup-agent"
+                  onClick={(e) => {
+                    if (location.pathname === '/') {
+                      e.preventDefault();
+                      const el = document.getElementById('linkup-agent');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className={`text-sm font-semibold transition-colors flex items-center gap-1.5 ${
+                    location.pathname === '/' && location.hash === '#linkup-agent'
+                      ? 'text-[#FBE618]'
+                      : 'text-slate-300 hover:text-white'
+                  }`}
+                >
+                  {link.name}
+                  <span className="px-1.5 py-0.2 rounded-full bg-[#FBE618]/20 text-[#FBE618] text-[10px] font-mono font-bold tracking-wider border border-[#FBE618]/40">
+                    NEW
+                  </span>
+                </Link>
+              );
+            }
+
+            return (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`text-sm font-semibold transition-colors flex items-center gap-1.5 ${
+                  isActive ? 'text-[#FBE618]' : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Talk to Founder Dropdown */}
@@ -169,21 +198,49 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
                 { name: 'Features', path: '/features' },
                 { name: 'Campaigns', path: '/campaigns' },
                 { name: 'FAQ', path: '/faq' },
-              ].map((link) => (
-                <a
-                  key={link.name}
-                  href={link.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-semibold text-slate-300 hover:text-white transition-colors flex items-center justify-between"
-                >
-                  <span>{link.name}</span>
-                  {link.isNew && (
-                    <span className="px-2 py-0.5 rounded-full bg-[#FBE618]/20 text-[#FBE618] text-xs font-mono font-bold tracking-wider border border-[#FBE618]/40">
-                      NEW
-                    </span>
-                  )}
-                </a>
-              ))}
+              ].map((link) => {
+                const isAgent = link.path.startsWith('/#');
+                const isActive = location.pathname === link.path;
+
+                if (isAgent) {
+                  return (
+                    <Link
+                      key={link.name}
+                      to="/#linkup-agent"
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        if (location.pathname === '/') {
+                          const el = document.getElementById('linkup-agent');
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className={`text-lg font-semibold transition-colors flex items-center justify-between ${
+                        location.pathname === '/' && location.hash === '#linkup-agent'
+                          ? 'text-[#FBE618]'
+                          : 'text-slate-300 hover:text-white'
+                      }`}
+                    >
+                      <span>{link.name}</span>
+                      <span className="px-2 py-0.5 rounded-full bg-[#FBE618]/20 text-[#FBE618] text-xs font-mono font-bold tracking-wider border border-[#FBE618]/40">
+                        NEW
+                      </span>
+                    </Link>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-lg font-semibold transition-colors flex items-center justify-between ${
+                      isActive ? 'text-[#FBE618]' : 'text-slate-300 hover:text-white'
+                    }`}
+                  >
+                    <span>{link.name}</span>
+                  </Link>
+                );
+              })}
             </div>
           </motion.div>
         )}

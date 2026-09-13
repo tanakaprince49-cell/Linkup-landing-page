@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { tiun } from '@tiun/sdk';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SocialProofMarquee } from './components/SocialProofMarquee';
@@ -72,6 +72,26 @@ const FAQPage = () => (
   </>
 );
 
+const ScrollToHashOrTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        return;
+      }
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname, hash]);
+
+  return null;
+};
+
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
@@ -106,12 +126,14 @@ export default function App() {
         />
 
         {/* Main Content Sections */}
+        <ScrollToHashOrTop />
         <main className="pt-24 flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/features" element={<FeaturesPage />} />
             <Route path="/campaigns" element={<CampaignsPage />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
 
