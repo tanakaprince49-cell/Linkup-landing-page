@@ -1,6 +1,6 @@
 {
   "name": "LINKUP - Co-Founder Network",
-  "description": "Don't Swipe. Just Ask. Meet Linkup Agent (Linky)—natural language AI founder matchmaking with verified builder profiles and double opt-in intros.",
+  "description": "LINKUP is the AI co-founder matchmaking platform founded by 15-year-old tech entrepreneur Tanaka Gaadzikwa. Meet Linkup Agent (Linky) to find startup co-founders.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

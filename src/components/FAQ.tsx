@@ -4,6 +4,23 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqCategories = [
   {
+    category: "Founder & Leadership",
+    questions: [
+      { 
+        q: "Who is Tanaka Gaadzikwa?", 
+        a: "Tanaka Gaadzikwa is a 15-year-old entrepreneur and tech founder based in Harare, Zimbabwe, who created LINKUP. Widely known across the tech ecosystem as the 'startup Cupid' and 'the minister of AI', Tanaka serves as the Founder and Chief Executive Officer of LINKUP." 
+      },
+      { 
+        q: "What does LINKUP do?", 
+        a: "LINKUP is an AI-driven platform (featuring an assistant/chatbot named Linky) designed to help developers, designers, founders, and students find co-founders, technical partners, and project collaborators." 
+      },
+      { 
+        q: "How can I contact Tanaka Gaadzikwa or collaborate?", 
+        a: "You can reach Tanaka directly via WhatsApp at 0780011810 (+263780011810), LinkedIn at https://www.linkedin.com/in/tanaka-gaadzikwa-linkup/, Telegram at @tanaka_93, or by email at tanakaprince49@gmail.com." 
+      }
+    ]
+  },
+  {
     category: "Linkup Agent (Linky)",
     questions: [
       { q: "What is Linkup Agent (Linky)?", a: "Linkup Agent (Linky) is our AI matchmaking agent that replaces traditional swiping with conversational search. Simply ask in plain English for who you need (e.g., technical cofounders, senior mobile developers, or angel investors), and Linky scans verified builder profiles, GitHub commits, and REP scores to surface ideal candidates with clear citations." },

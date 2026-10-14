@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export const FloatingContact: React.FC = () => {
   return (
     <motion.a
-      href="mailto:linkupp49@gmail.com"
+      href="mailto:tanakaprince49@gmail.com"
       initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ delay: 0.8, duration: 0.5, type: 'spring', stiffness: 200, damping: 20 }}
