@@ -143,6 +143,24 @@ export const Footer: React.FC = () => {
                   <span className="text-[10px] text-slate-400 font-mono truncate">tanakaprince49</span>
                 </div>
               </a>
+
+              {/* Personal Website */}
+              <a 
+                href="https://www.tanakagaadzikwa.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#FBE618]/40 text-slate-200 hover:text-white transition-all group sm:col-span-2"
+              >
+                <svg className="w-4 h-4 text-[#FBE618] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+                <div className="flex flex-col min-w-0">
+                  <span className="font-semibold text-white text-[11px] truncate">Founder Website</span>
+                  <span className="text-[10px] text-[#FBE618] font-mono truncate">tanakagaadzikwa.com</span>
+                </div>
+              </a>
             </div>
 
             <div className="pt-1">
