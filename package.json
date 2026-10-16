@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "npm run test:routing && vite build",
+    "build": "npm run test:routing && npm run test:builders && vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "test:routing": "node --test tests/routing.test.mjs"
+    "test:routing": "node --test tests/routing.test.mjs",
+    "test:builders": "node --import tsx --test tests/public-builders.test.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

@@ -20,7 +20,7 @@ const faqCategories = [
       },
       {
         q: "How do builders, engineers, and founders get discovered on LINKUP?",
-        a: "Every verified builder on LINKUP has their technical skills, proof-of-work REP score, past venture experience, and co-founder requirements indexed. Founders can discover each other through our Verified Builders Directory, natural language Linky AI queries, or the mobile and web app."
+        a: "Members who enable Public Discovery can appear in our public builder directory with the name, bio, skills, location, and collaboration interests from their LINKUP profile. Hidden, stealth, and deleted profiles are excluded. You can also discover collaborators through Linky and the mobile and web app."
       }
     ]
   },

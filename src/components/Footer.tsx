@@ -184,7 +184,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-3 space-y-4 md:text-right">
             <h4 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Navigation & Legal</h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="/#builders" className="hover:text-[#FBE618] transition-colors">Verified Builders Directory</a></li>
+              <li><a href="/#builders" className="hover:text-[#FBE618] transition-colors">Public Builders Directory</a></li>
               <li><a href="/#founder" className="hover:text-[#FBE618] transition-colors">About Tanaka Gaadzikwa</a></li>
               <li><a href="/features" className="hover:text-[#FBE618] transition-colors">Platform Features</a></li>
               <li><a href="/campaigns" className="hover:text-[#FBE618] transition-colors">Founder Campaigns</a></li>

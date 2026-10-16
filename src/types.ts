@@ -1,18 +1,3 @@
-export interface BuilderProfile {
-  id: string;
-  name: string;
-  role: string;
-  avatar: string;
-  matchScore: number;
-  location: string;
-  experience: string;
-  tags: string[];
-  bio: string;
-  lookingFor: string;
-  verified: boolean;
-  repScore: number;
-}
-
 export interface FeatureItem {
   id: string;
   iconName: string;
