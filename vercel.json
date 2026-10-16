@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/app",
+      "destination": "https://linkup-muqu.vercel.app/"
+    },
+    {
+      "source": "/app/:path*",
+      "destination": "https://linkup-muqu.vercel.app/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
