@@ -1,3 +1,4 @@
+/app/     https://linkup-muqu.vercel.app/index.html  200
 /app/*    https://linkup-muqu.vercel.app/:splat  200
-/app      https://linkup-muqu.vercel.app/        200
+/app      https://linkup-muqu.vercel.app/index.html  200
 /*        /index.html                            200

@@ -1,5 +1,8 @@
 # APP_BASE_PATH_HANDOFF.md: Web App /app Subpath Integration
 
+> **16 October 2026 update:** the app-side base-path work and profile SEO are now deployed. The blocker observations below are historical, not a current status report. See `ROUTING_RELEASE.md` for the trailing-slash fix, verification commands and current routing contract. Both `/app` and `/app/` must target the upstream **`/index.html`**, not `/`, to avoid upstream root normalization escaping the proxy into the marketing fallback.
+
+
 > **Status:** **PREPARED (BLOCKED BY APP-SIDE CONTRACT)**  
 > **Target Production Domain:** `https://www.linkupbuild.com`  
 > **Landing Page Repo:** `https://github.com/tanakaprince49-cell/Linkup-landing-page`  

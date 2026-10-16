@@ -33,6 +33,10 @@ export const Footer: React.FC = () => {
               The elite AI-powered co-founder matchmaking network created by <strong className="text-white font-medium">Tanaka Gaadzikwa</strong>. Featuring Linky, our AI assistant connecting developers, designers, founders, and students with co-founders and project partners worldwide.
             </p>
 
+            <a href="/app/builders" className="inline-flex items-center gap-1 text-[#FBE618] hover:text-white transition-colors">
+              Meet LINKUP builders <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+            </a>
+
             <div className="pt-2 flex flex-wrap gap-4">
               <a href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral" target="_blank" rel="noopener noreferrer" className="inline-block hover:opacity-80 transition-opacity">
                 <img src="https://tools.launchllama.co/featured-badge.png?v=2"
