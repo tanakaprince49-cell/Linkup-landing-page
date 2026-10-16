@@ -18,6 +18,7 @@ import { FloatingContact } from './components/FloatingContact';
 import { FadeInSection } from './components/FadeInSection';
 import { LinkupAgentFeature } from './components/LinkupAgentFeature';
 import { AboutFounder } from './components/AboutFounder';
+import { BuilderDirectory } from './components/BuilderDirectory';
 import { Analytics } from '@vercel/analytics/react';
 
 const HomePage = () => (
@@ -32,10 +33,27 @@ const HomePage = () => (
       <LinkupAgentFeature />
     </FadeInSection>
     <FadeInSection delay={0.1}>
+      <BuilderDirectory />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
       <AppShowcase />
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <AboutFounder />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <Reviews />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <BottomCTA />
+    </FadeInSection>
+  </>
+);
+
+const DirectoryPage = () => (
+  <>
+    <FadeInSection delay={0.1}>
+      <BuilderDirectory />
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <Reviews />
@@ -149,6 +167,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/features" element={<FeaturesPage />} />
+            <Route path="/builders" element={<DirectoryPage />} />
+            <Route path="/directory" element={<DirectoryPage />} />
             <Route path="/founder" element={<FounderPage />} />
             <Route path="/about" element={<FounderPage />} />
             <Route path="/campaigns" element={<CampaignsPage />} />

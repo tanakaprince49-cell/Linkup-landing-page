@@ -17,6 +17,10 @@ const faqCategories = [
       { 
         q: "How can I contact Tanaka Gaadzikwa or collaborate?", 
         a: "You can reach Tanaka directly via WhatsApp at 0780011810 (+263780011810), LinkedIn at https://www.linkedin.com/in/tanaka-gaadzikwa-linkup/, Telegram at @tanaka_93, or by email at tanakaprince49@gmail.com." 
+      },
+      {
+        q: "How do builders, engineers, and founders get discovered on LINKUP?",
+        a: "Every verified builder on LINKUP has their technical skills, proof-of-work REP score, past venture experience, and co-founder requirements indexed. Founders can discover each other through our Verified Builders Directory, natural language Linky AI queries, or the mobile and web app."
       }
     ]
   },

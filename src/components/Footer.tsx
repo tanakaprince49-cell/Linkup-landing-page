@@ -64,6 +64,18 @@ export const Footer: React.FC = () => {
               </span>
             </h4>
             
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://i.ibb.co/pvvN63sV/20260526-181511.webp" 
+                alt="Tanaka Gaadzikwa - Founder and CEO of LINKUP" 
+                className="w-12 h-12 rounded-2xl object-cover border border-[#FBE618]/40 shadow-lg shadow-[#FBE618]/10 shrink-0" 
+              />
+              <div className="min-w-0">
+                <p className="font-bold text-white text-sm font-display truncate">Tanaka Gaadzikwa</p>
+                <p className="text-[#FBE618] text-[11px] font-mono">Founder & CEO • Harare, Zimbabwe</p>
+              </div>
+            </div>
+            
             <p className="text-slate-300 text-xs leading-relaxed">
               <strong className="text-white font-bold">Tanaka Gaadzikwa</strong> is a 15-year-old entrepreneur and tech founder based in <strong className="text-slate-200">Harare, Zimbabwe</strong>, known as the <em>"startup Cupid"</em> and <em>"the minister of AI"</em>. He built LINKUP to empower builders globally.
             </p>
@@ -150,6 +162,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-3 space-y-4 md:text-right">
             <h4 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Navigation & Legal</h4>
             <ul className="space-y-2 text-xs">
+              <li><a href="/#builders" className="hover:text-[#FBE618] transition-colors">Verified Builders Directory</a></li>
               <li><a href="/#founder" className="hover:text-[#FBE618] transition-colors">About Tanaka Gaadzikwa</a></li>
               <li><a href="/features" className="hover:text-[#FBE618] transition-colors">Platform Features</a></li>
               <li><a href="/campaigns" className="hover:text-[#FBE618] transition-colors">Founder Campaigns</a></li>

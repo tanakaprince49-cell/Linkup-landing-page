@@ -337,7 +337,7 @@ export const LinkupAgentFeature: React.FC = () => {
 
             {/* Button 2: Try Linkup Agent on Web */}
             <a
-              href="https://linkup-muqu.vercel.app/landing"
+              href="/app/landing"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white font-bold text-base shadow-xl transition-all hover:-translate-y-1 group"
@@ -450,7 +450,7 @@ export const LinkupAgentFeature: React.FC = () => {
                 Get LINKUP Mobile App
               </a>
               <a
-                href="https://linkup-muqu.vercel.app/landing"
+                href="/app/landing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm transition-all shadow-lg flex items-center justify-center gap-2"

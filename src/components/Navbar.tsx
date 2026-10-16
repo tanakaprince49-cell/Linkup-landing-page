@@ -134,9 +134,16 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
                   transition={{ duration: 0.2 }}
                   className="absolute right-0 mt-3 w-64 rounded-2xl bg-[#0a0d14]/95 backdrop-blur-2xl border border-white/15 shadow-2xl overflow-hidden z-50 p-2 flex flex-col gap-1"
                 >
-                  <div className="px-3 py-2 border-b border-white/10 mb-1">
-                    <p className="text-xs font-bold text-white font-display">Tanaka Gaadzikwa</p>
-                    <p className="text-[11px] text-[#FBE618] font-mono">Founder & CEO • Harare, Zimbabwe</p>
+                  <div className="px-3 py-2 border-b border-white/10 mb-1 flex items-center gap-2.5">
+                    <img 
+                      src="https://i.ibb.co/pvvN63sV/20260526-181511.webp" 
+                      alt="Tanaka Gaadzikwa" 
+                      className="w-9 h-9 rounded-xl object-cover border border-[#FBE618]/40 shadow-sm shrink-0" 
+                    />
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-white font-display truncate">Tanaka Gaadzikwa</p>
+                      <p className="text-[10px] text-[#FBE618] font-mono truncate">Founder & CEO • Harare, Zimbabwe</p>
+                    </div>
                   </div>
 
                   {/* WhatsApp */}

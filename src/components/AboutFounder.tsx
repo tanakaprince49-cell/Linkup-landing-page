@@ -126,13 +126,15 @@ export const AboutFounder: React.FC = () => {
             {/* Avatar & Badges */}
             <div className="lg:col-span-4 flex flex-col items-center text-center space-y-4">
               <div className="relative">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl bg-gradient-to-br from-[#FBE618]/30 via-slate-800 to-black p-1 border-2 border-[#FBE618]/50 shadow-[0_0_40px_rgba(251,230,24,0.25)] flex items-center justify-center overflow-hidden">
-                  <div className="w-full h-full bg-[#0a0d14] rounded-[22px] flex flex-col items-center justify-center p-3 text-center">
-                    <span className="font-display font-black text-4xl sm:text-5xl text-[#FBE618] tracking-tighter">TG</span>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 mt-1">Tanaka Gaadzikwa</span>
-                  </div>
+                <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-br from-[#FBE618]/30 via-slate-800 to-black p-1 border-2 border-[#FBE618]/50 shadow-[0_0_40px_rgba(251,230,24,0.3)] flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="https://i.ibb.co/pvvN63sV/20260526-181511.webp" 
+                    alt="Tanaka Gaadzikwa - 15-year-old Founder and CEO of LINKUP (The Startup Cupid & Minister of AI)" 
+                    itemProp="image"
+                    className="w-full h-full object-cover rounded-[22px] transform hover:scale-105 transition-transform duration-500" 
+                  />
                 </div>
-                <div className="absolute -bottom-2 -right-2 bg-[#25D366] text-black p-1.5 rounded-full border-2 border-[#05070D] shadow-lg" title="Active Founder">
+                <div className="absolute -bottom-2 -right-2 bg-[#25D366] text-black p-1.5 rounded-full border-2 border-[#05070D] shadow-lg" title="Verified Founder - Tanaka Gaadzikwa">
                   <CheckCircle2 className="w-4 h-4 text-white" />
                 </div>
               </div>
