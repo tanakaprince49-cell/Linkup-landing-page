@@ -1,18 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const screenshots = [
-  "https://i.ibb.co/xKMv8SwX/screenshot-1.webp",
-  "https://i.ibb.co/5WJLj2RN/screenshot-2.webp",
-  "https://i.ibb.co/fG2HhbSb/screenshot-3.webp",
-  "https://i.ibb.co/nNTHZX9H/screenshot-4.webp",
-  "https://i.ibb.co/H12wY3W/screenshot-1-3.webp",
-  "https://i.ibb.co/60H9YpVH/screenshot-2-1.webp"
-];
+import { SHOWCASE_SCREENSHOTS } from '../data/showcaseScreenshots';
 
 export const AppShowcase: React.FC = () => {
   return (
-    <section className="py-24 relative z-20 overflow-hidden">
+    <section id="app-showcase" aria-label="Inside the LINKUP app" className="py-24 relative z-20 overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FBE618]/5 rounded-full blur-[120px] pointer-events-none" />
       
@@ -39,21 +32,24 @@ export const AppShowcase: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {screenshots.map((src, index) => (
+          {SHOWCASE_SCREENSHOTS.map((screenshot, index) => (
             <motion.div
-              key={index}
+              key={screenshot.src}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="p-2 sm:p-3 rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 glass-panel bg-white/5 relative group"
             >
-              <div className="relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl h-full w-full aspect-[9/19.5] bg-[#05070D]">
+              <div className="relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl h-full w-full aspect-[24/43] bg-[#05070D]">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <img 
-                  src={src} 
-                  alt={`LINKUP App Interface ${index + 1}`} 
-                  className="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  width={768}
+                  height={1376}
+                  decoding="async"
+                  className="w-full h-full object-contain transform group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
               </div>
