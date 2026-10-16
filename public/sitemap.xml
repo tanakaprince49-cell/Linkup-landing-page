@@ -59,4 +59,10 @@
   <url>
     <loc>https://www.linkupbuild.com/app/builders</loc>
   </url>
+  <url>
+    <loc>https://www.linkupbuild.com/privacy</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

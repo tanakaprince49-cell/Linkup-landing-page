@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { tiun } from '@tiun/sdk';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -19,7 +18,7 @@ import { FadeInSection } from './components/FadeInSection';
 import { LinkupAgentFeature } from './components/LinkupAgentFeature';
 import { AboutFounder } from './components/AboutFounder';
 import { BuilderDirectory } from './components/BuilderDirectory';
-import { Analytics } from '@vercel/analytics/react';
+import { ConsentAnalytics } from './components/ConsentAnalytics';
 
 const HomePage = () => (
   <>
@@ -131,13 +130,6 @@ const ScrollToHashOrTop = () => {
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  useEffect(() => {
-    tiun.init({ snippetId: 'your-snippet-id', language: 'en' });
-    return () => {
-      tiun.destroy();
-    };
-  }, []);
-
   const handleToggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
@@ -185,7 +177,7 @@ export default function App() {
 
       <FloatingContact />
       <CookieConsent />
-      <Analytics />
+      <ConsentAnalytics />
     </div>
   );
 }

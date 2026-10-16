@@ -6,28 +6,44 @@ export const CookieConsent: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const hasConsented = localStorage.getItem('linkup_cookie_consent');
-    if (!hasConsented) {
-      // Small delay for better UX before showing
-      const timer = setTimeout(() => setIsVisible(true), 1500);
-      return () => clearTimeout(timer);
+    const open = () => setIsVisible(true);
+    window.addEventListener('linkup:open-privacy-choices', open);
+    if (window.location.hash === '#privacy-choices') {
+      open();
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
     }
+    const timer = window.setTimeout(() => {
+      try { if (!localStorage.getItem('linkup_cookie_consent')) open(); }
+      catch { open(); }
+    }, 1500);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('linkup:open-privacy-choices', open);
+    };
   }, []);
 
-  const handleAccept = () => {
-    localStorage.setItem('linkup_cookie_consent', 'true');
+  const saveChoice = (value: 'true' | 'declined') => {
+    let wasAccepted = false;
+    try {
+      wasAccepted = localStorage.getItem('linkup_cookie_consent') === 'true';
+      localStorage.setItem('linkup_cookie_consent', value);
+    } catch { /* Storage unavailable: analytics remains disabled. */ }
     setIsVisible(false);
+    // Unmounting Analytics alone does not unload the vendor's injected script.
+    if (value === 'declined' && wasAccepted) { window.location.reload(); return; }
+    window.dispatchEvent(new Event('linkup:analytics-consent'));
   };
 
-  const handleDecline = () => {
-    localStorage.setItem('linkup_cookie_consent', 'declined');
-    setIsVisible(false);
-  };
+  const handleAccept = () => saveChoice('true');
+  const handleDecline = () => saveChoice('declined');
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div
+          role="dialog"
+          aria-labelledby="privacy-choice-title"
+          aria-describedby="privacy-choice-description"
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -45,17 +61,17 @@ export const CookieConsent: React.FC = () => {
               
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-1">
-                  <h3 className="text-white font-semibold text-sm">Cookie Privacy</h3>
+                  <h3 id="privacy-choice-title" className="text-white font-semibold text-sm">Privacy choices</h3>
                   <button 
                     onClick={handleDecline}
                     className="text-slate-400 hover:text-white transition-colors"
-                    aria-label="Close"
+                    aria-label="Decline optional analytics and close"
                   >
                     <X className="w-4 h-4" />
                   </button>
                 </div>
-                <p className="text-slate-300 text-xs leading-relaxed mb-4">
-                  We use cookies to improve your experience and analyze our network traffic.
+                <p id="privacy-choice-description" className="text-slate-300 text-xs leading-relaxed mb-4">
+                  Allow optional web traffic analytics? Essential app storage still works if you decline. Read our <a href="/privacy" className="underline">Privacy Policy</a>.
                 </p>
                 
                 <div className="flex items-center gap-2">
@@ -63,13 +79,13 @@ export const CookieConsent: React.FC = () => {
                     onClick={handleAccept}
                     className="flex-1 bg-[#FBE618] hover:bg-[#fff056] text-black font-semibold text-xs py-2 px-3 rounded-lg transition-colors"
                   >
-                    Accept
+                    Accept analytics
                   </button>
                   <button 
                     onClick={handleDecline}
                     className="flex-1 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold text-xs py-2 px-3 rounded-lg transition-colors"
                   >
-                    Decline
+                    Decline analytics
                   </button>
                 </div>
               </div>

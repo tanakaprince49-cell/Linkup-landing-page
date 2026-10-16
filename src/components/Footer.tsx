@@ -189,7 +189,9 @@ export const Footer: React.FC = () => {
               <li><a href="/features" className="hover:text-[#FBE618] transition-colors">Platform Features</a></li>
               <li><a href="/campaigns" className="hover:text-[#FBE618] transition-colors">Founder Campaigns</a></li>
               <li><a href="/faq" className="hover:text-[#FBE618] transition-colors">Frequently Asked Questions</a></li>
-              <li className="pt-2"><a href="https://docs.google.com/document/d/1FUTyaNfaBXzYGUiqbfhrKX73H6S6S809kpI00chyWRM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#FBE618] transition-colors">Privacy Policy</a></li>
+              <li className="pt-2"><a href="/privacy" className="text-slate-500 hover:text-[#FBE618] transition-colors">Privacy Policy</a></li>
+              <li><a href="/app/data-deletion" className="text-slate-500 hover:text-[#FBE618] transition-colors">Account &amp; Data Deletion</a></li>
+              <li><button type="button" onClick={() => window.dispatchEvent(new Event('linkup:open-privacy-choices'))} className="text-slate-500 hover:text-[#FBE618] transition-colors">Privacy choices</button></li>
               <li><a href="https://docs.google.com/document/d/1SPu2VZchQfmWQT0gr2QuvmHbiuLpBZX-aFpmVd-ph2E/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#FBE618] transition-colors">Terms of Service</a></li>
             </ul>
           </div>
@@ -199,7 +201,7 @@ export const Footer: React.FC = () => {
         {/* Bottom copyright & status row */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px]">
           <div>
-            © 2026 LINKUP Network Inc. Founded by Tanaka Gaadzikwa (Harare, Zimbabwe). All rights reserved.
+            © 2026 LINKUP. Operated by Tanaka Gaadzikwa (Harare, Zimbabwe). All rights reserved.
           </div>
           <div className="flex items-center gap-2 text-slate-400">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
