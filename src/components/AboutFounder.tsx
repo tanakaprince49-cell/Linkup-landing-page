@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, MapPin, Award, Heart, MessageSquare, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { MapPin, Award, Heart, MessageSquare, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export const AboutFounder: React.FC = () => {
   const verifiedProfiles = [
@@ -66,9 +66,11 @@ export const AboutFounder: React.FC = () => {
       ctaText: 'Send Email',
       badgeColor: 'border-red-500/30 bg-red-500/10 text-red-400',
       icon: (
-        <svg className="w-7 h-7 shrink-0" viewBox="0 0 24 24" fill="none">
-          <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" fill="#EA4335" />
-        </svg>
+        <img
+          src="https://i.ibb.co/WwPnCND/IMG-20261014-WA0004.webp"
+          alt="Tanaka Gaadzikwa"
+          className="w-7 h-7 shrink-0 rounded-lg object-cover shadow-sm shadow-[#FBE618]/30"
+        />
       ),
     },
     {
@@ -79,11 +81,11 @@ export const AboutFounder: React.FC = () => {
       ctaText: 'Visit tanakagaadzikwa.com',
       badgeColor: 'border-[#FBE618]/30 bg-[#FBE618]/10 text-[#FBE618]',
       icon: (
-        <svg className="w-7 h-7 text-[#FBE618] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <line x1="2" y1="12" x2="22" y2="12" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
+        <img
+          src="https://i.ibb.co/pvvN63sV/20260526-181511.webp"
+          alt="Tanaka Gaadzikwa"
+          className="w-7 h-7 shrink-0 rounded-lg object-cover shadow-sm shadow-[#FBE618]/30"
+        />
       ),
     },
     {
@@ -117,8 +119,7 @@ export const AboutFounder: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FBE618]/10 border border-[#FBE618]/30 text-[#FBE618] text-xs font-mono font-bold tracking-wider uppercase">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#FBE618]/10 border border-[#FBE618]/30 text-[#FBE618] text-xs font-mono font-bold tracking-wider uppercase">
             <span>Meet The Founder & CEO</span>
           </div>
 
