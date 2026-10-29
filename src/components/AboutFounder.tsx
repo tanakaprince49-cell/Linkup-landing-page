@@ -97,7 +97,7 @@ export const AboutFounder: React.FC = () => {
       badgeColor: 'border-[#FBE618]/30 bg-[#FBE618]/10 text-[#FBE618]',
       icon: (
         <img
-          src="https://i.ibb.co/HTfs8tdT/logo-idea-r2-A.webp"
+          src="/images/logo.webp"
           alt="LINKUP Logo"
           className="w-7 h-7 shrink-0 rounded-lg object-cover shadow-sm shadow-[#FBE618]/30"
         />

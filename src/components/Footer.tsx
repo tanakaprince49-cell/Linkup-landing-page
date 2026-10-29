@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
               title="LINKUP - Co-Founder Network"
             >
               <img 
-                src="https://i.ibb.co/HTfs8tdT/logo-idea-r2-A.webp" 
+                src="/images/logo.webp" 
                 alt="LinkUp Logo" 
                 className="w-9 h-9 rounded-xl object-cover shadow-md shadow-[#FBE618]/20 group-hover:scale-105 transition-transform duration-300" 
               />
