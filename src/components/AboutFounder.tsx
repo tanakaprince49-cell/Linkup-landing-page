@@ -136,7 +136,15 @@ export const AboutFounder: React.FC = () => {
         </div>
 
         {/* Founder Bio Card */}
-        <div className="glass-panel rounded-3xl border border-white/15 p-6 sm:p-10 mb-12 relative overflow-hidden bg-gradient-to-b from-white/[0.04] to-transparent shadow-2xl">
+        <div 
+          className="glass-panel rounded-3xl border border-white/15 p-6 sm:p-10 mb-12 relative overflow-hidden bg-gradient-to-b from-white/[0.04] to-transparent shadow-2xl"
+          itemScope 
+          itemType="https://schema.org/Person" 
+          itemID="https://www.linkupbuild.com/#tanaka-gaadzikwa"
+        >
+          <meta itemProp="additionalName" content="Prince" />
+          <meta itemProp="birthDate" content="2010-11-20" />
+          <meta itemProp="disambiguatingDescription" content="Young entrepreneur, tech founder, and CEO of LINKUP born November 20, 2010 in Harare, Zimbabwe. Known globally as the Startup Cupid and The Minister of AI." />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Avatar & Badges */}
@@ -145,7 +153,7 @@ export const AboutFounder: React.FC = () => {
                 <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-br from-[#FBE618]/30 via-slate-800 to-black p-1 border-2 border-[#FBE618]/50 shadow-[0_0_40px_rgba(251,230,24,0.3)] flex items-center justify-center overflow-hidden">
                   <img 
                     src="https://i.ibb.co/pvvN63sV/20260526-181511.webp" 
-                    alt="Tanaka Gaadzikwa - 15-year-old Founder and CEO of LINKUP (The Startup Cupid & Minister of AI)" 
+                    alt="Tanaka Gaadzikwa - Young Founder and CEO of LINKUP (The Startup Cupid & Minister of AI)" 
                     itemProp="image"
                     className="w-full h-full object-cover rounded-[22px] transform hover:scale-105 transition-transform duration-500" 
                   />
@@ -156,15 +164,15 @@ export const AboutFounder: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-2xl font-display font-bold text-white">
+                <h3 itemProp="name" className="text-2xl font-display font-bold text-white">
                   Tanaka Gaadzikwa
                 </h3>
-                <p className="text-sm font-medium text-[#FBE618] mt-0.5">
+                <p itemProp="jobTitle" className="text-sm font-medium text-[#FBE618] mt-0.5">
                   Founder & Chief Executive Officer of LINKUP
                 </p>
                 <div className="flex items-center justify-center gap-1.5 text-xs text-slate-400 mt-2">
                   <MapPin className="w-3.5 h-3.5 text-red-400" />
-                  <span>Harare, Zimbabwe</span>
+                  <span itemProp="homeLocation">Harare, Zimbabwe</span>
                 </div>
               </div>
 
@@ -190,8 +198,8 @@ export const AboutFounder: React.FC = () => {
                 <h4 className="text-lg font-bold text-white font-display flex items-center gap-2">
                   <span>Who is Tanaka Gaadzikwa?</span>
                 </h4>
-                <p className="text-sm sm:text-base leading-relaxed text-slate-300">
-                  <strong className="text-white font-semibold">Tanaka Gaadzikwa</strong> is a 15-year-old entrepreneur and tech founder based in <strong className="text-white font-semibold">Harare, Zimbabwe</strong>, who created <strong className="text-[#FBE618] font-semibold">LINKUP</strong>, an AI-powered networking and co-founder matchmaking platform.
+                <p className="text-sm sm:text-base leading-relaxed text-slate-300" itemProp="description">
+                  <strong className="text-white font-semibold">Tanaka Gaadzikwa</strong> (full name <strong className="text-white font-semibold">Tanaka Prince Gaadzikwa</strong>, born November 20, 2010) is a Young entrepreneur, tech founder, and CEO of <strong className="text-[#FBE618] font-semibold">LINKUP</strong> living and building technology in <strong className="text-white font-semibold">Harare, Zimbabwe</strong>. Known globally as the <em className="text-[#FBE618] not-italic font-semibold">"Startup Cupid"</em> and <em className="text-[#00C2FF] not-italic font-semibold">"The Minister of AI"</em>.
                 </p>
               </div>
 

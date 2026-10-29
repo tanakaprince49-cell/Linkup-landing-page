@@ -1,68 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
   <url>
     <loc>https://www.linkupbuild.com/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://i.ibb.co/pvvN63sV/20260526-181511.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa - Founder and CEO of LINKUP</image:title>
+      <image:caption>Tanaka Gaadzikwa (full name Tanaka Prince Gaadzikwa, born November 20, 2010) is a Young entrepreneur, tech founder, and CEO of LINKUP living and building technology in Harare, Zimbabwe. Known globally as the Startup Cupid and The Minister of AI.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/sdcn3p4x/IMG-20260930-WA0001.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa - Tech Founder building in Harare, Zimbabwe</image:title>
+      <image:caption>Tanaka Gaadzikwa (Tanaka Prince Gaadzikwa, born November 20, 2010) - Young entrepreneur and founder of LINKUP, The Minister of AI.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/WNGVKXg6/IMG-20260930-WA0000.webp</image:loc>
+      <image:title>Tanaka Prince Gaadzikwa - Startup Cupid</image:title>
+      <image:caption>Tanaka Gaadzikwa, tech founder and CEO of LINKUP, Startup Cupid.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/DHnTYFLF/IMG-20260730-114833.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa - Young Entrepreneur in Harare, Zimbabwe</image:title>
+      <image:caption>Tanaka Gaadzikwa building founder networking technology in Harare, Zimbabwe.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/BHN84Z9M/20260526-181536.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa - The Minister of AI</image:title>
+      <image:caption>Tanaka Prince Gaadzikwa, Young entrepreneur and founder of LINKUP, The Minister of AI.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/DHnKZWtw/20250411-090522.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa (born November 20, 2010)</image:title>
+      <image:caption>Tanaka Gaadzikwa, CEO of LINKUP, born November 20, 2010 in Harare, Zimbabwe.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/Q7ww6xBh/20250411-090743.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa portrait</image:title>
+      <image:caption>Tanaka Prince Gaadzikwa - Startup Cupid and founder of LINKUP.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/szxQw83/20250411-090734.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa - CEO and Tech Founder</image:title>
+      <image:caption>Tanaka Gaadzikwa (full name Tanaka Prince Gaadzikwa, born November 20, 2010), tech founder and CEO of LINKUP.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.linkupbuild.com/founder</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://i.ibb.co/pvvN63sV/20260526-181511.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa - Founder and CEO of LINKUP</image:title>
+      <image:caption>Tanaka Gaadzikwa (full name Tanaka Prince Gaadzikwa, born November 20, 2010) is a Young entrepreneur, tech founder, and CEO of LINKUP living and building technology in Harare, Zimbabwe. Known globally as the Startup Cupid and The Minister of AI.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/sdcn3p4x/IMG-20260930-WA0001.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa - Tech Founder &amp; CEO</image:title>
+      <image:caption>Tanaka Gaadzikwa - The Minister of AI, Young entrepreneur building technology in Harare, Zimbabwe.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/WNGVKXg6/IMG-20260930-WA0000.webp</image:loc>
+      <image:title>Tanaka Prince Gaadzikwa - Startup Cupid</image:title>
+      <image:caption>Tanaka Prince Gaadzikwa, tech founder and CEO of LINKUP.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/DHnTYFLF/IMG-20260730-114833.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa in Harare, Zimbabwe</image:title>
+      <image:caption>Tanaka Gaadzikwa, Young entrepreneur and founder of LINKUP.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/BHN84Z9M/20260526-181536.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa - Minister of AI</image:title>
+      <image:caption>Tanaka Gaadzikwa, Young entrepreneur known as The Minister of AI.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/DHnKZWtw/20250411-090522.webp</image:loc>
+      <image:title>Tanaka Prince Gaadzikwa (born November 20, 2010)</image:title>
+      <image:caption>Tanaka Gaadzikwa (Tanaka Prince Gaadzikwa), CEO and founder of LINKUP.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/Q7ww6xBh/20250411-090743.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa - Startup Cupid</image:title>
+      <image:caption>Tanaka Gaadzikwa - Startup Cupid and founder of LINKUP.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/szxQw83/20250411-090734.webp</image:loc>
+      <image:title>Tanaka Gaadzikwa</image:title>
+      <image:caption>Tanaka Gaadzikwa (full name Tanaka Prince Gaadzikwa, born November 20, 2010), tech founder and CEO of LINKUP.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.linkupbuild.com/about</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.linkupbuild.com/builders</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.linkupbuild.com/directory</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.linkupbuild.com/app/landing</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://www.linkupbuild.com/founder</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://www.linkupbuild.com/about</loc>
-    <lastmod>2026-10-15</lastmod>
+    <loc>https://www.linkupbuild.com/app/builders</loc>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.linkupbuild.com/features</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.linkupbuild.com/campaigns</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.linkupbuild.com/faq</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.linkupbuild.com/app/builders</loc>
-  </url>
-  <url>
     <loc>https://www.linkupbuild.com/privacy</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
