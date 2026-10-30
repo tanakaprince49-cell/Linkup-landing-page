@@ -22,13 +22,19 @@ export const SocialProofMarquee: React.FC = () => {
           {[...ACCELERATORS, ...ACCELERATORS, ...ACCELERATORS].map((item, idx) => (
             <div
               key={`${item.name}-${idx}`}
+              aria-hidden={idx >= ACCELERATORS.length || undefined}
               className="glass-panel px-5 py-2.5 rounded-2xl border border-white/10 flex items-center gap-3 group hover:border-[#FBE618]/40 transition-colors"
             >
               {item.logoUrl ? (
                 <div className="w-8 h-8 rounded-full bg-white/10 p-1.5 flex items-center justify-center shrink-0 border border-white/5 group-hover:bg-white/20 transition-colors">
                   <img 
                     src={item.logoUrl} 
-                    alt={item.name} 
+                    alt={`${item.name} logo — ${item.label} on LINKUP`}
+                    title={item.name}
+                    width={32}
+                    height={32}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain rounded-sm" 
                   />
                 </div>

@@ -13,6 +13,7 @@ import {
   Award,
   Sparkles
 } from 'lucide-react';
+import { SHOWCASE_SCREENSHOTS } from '../data/showcaseScreenshots';
 
 export const LinkupAgentFeature: React.FC = () => {
   const [isBotModalOpen, setIsBotModalOpen] = useState(false);
@@ -383,6 +384,36 @@ export const LinkupAgentFeature: React.FC = () => {
           Available right now directly in the LINKUP mobile app & web version. Telegram and WhatsApp integrations rolling out next!
         </p>
       </div>
+
+      {/* Linky in action: indexed product figure in showcase styling */}
+      <motion.figure
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        itemScope
+        itemType="https://schema.org/ImageObject"
+        className="max-w-[260px] mx-auto mt-14 m-0"
+      >
+        <div className="p-2.5 rounded-[2rem] border border-white/10 glass-panel bg-white/5 relative group">
+          <div className="relative rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl aspect-[24/43] bg-[#05070D]">
+            <img
+              src={SHOWCASE_SCREENSHOTS[0].src}
+              alt={SHOWCASE_SCREENSHOTS[0].alt}
+              title="Linkup Agent — Linky AI co-founder matchmaking chat"
+              width={768}
+              height={1376}
+              loading="lazy"
+              decoding="async"
+              itemProp="contentUrl"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+        <figcaption itemProp="caption" className="mt-4 text-sm text-slate-300 leading-relaxed text-center">
+          {SHOWCASE_SCREENSHOTS[0].caption} <a href="/app/landing" className="text-[#FBE618] font-semibold hover:underline whitespace-nowrap">Try it live →</a>
+        </figcaption>
+      </motion.figure>
     </div>
 
     {/* Modal for Telegram / WhatsApp Coming Soon */}

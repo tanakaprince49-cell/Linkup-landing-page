@@ -33,27 +33,34 @@ export const AppShowcase: React.FC = () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {SHOWCASE_SCREENSHOTS.map((screenshot, index) => (
-            <motion.div
+            <motion.figure
               key={screenshot.src}
+              itemProp="image"
+              itemScope
+              itemType="https://schema.org/ImageObject"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="p-2 sm:p-3 rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 glass-panel bg-white/5 relative group"
+              className="p-2 sm:p-3 rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 glass-panel bg-white/5 relative group m-0"
             >
               <div className="relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl h-full w-full aspect-[24/43] bg-[#05070D]">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none flex items-end justify-center p-5">
+                  <p itemProp="caption" className="text-center text-xs sm:text-sm text-white font-medium drop-shadow-lg">{screenshot.caption}</p>
+                </div>
                 <img 
                   src={screenshot.src}
                   alt={screenshot.alt}
+                  title={screenshot.alt}
                   width={768}
                   height={1376}
                   decoding="async"
+                  itemProp="contentUrl"
                   className="w-full h-full object-contain transform group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
               </div>
-            </motion.div>
+            </motion.figure>
           ))}
         </div>
       </div>

@@ -115,7 +115,7 @@ export const BuilderDirectory: React.FC = () => {
                 <div className="flex items-start justify-between gap-3 mb-4">
                   <div className="relative w-14 h-14 rounded-2xl border border-white/10 bg-[#FBE618]/10 text-[#FBE618] flex items-center justify-center font-bold text-xl overflow-hidden shrink-0">
                     <span aria-hidden="true">{initials(builder.name)}</span>
-                    {builder.image && <img src={builder.image} alt={builder.name} itemProp="image" width="56" height="56" loading="lazy" referrerPolicy="no-referrer"
+                    {builder.image && <img src={builder.image} alt={`Photo of ${builder.name}${builder.occupation ? `, ${builder.occupation}` : ''} on LINKUP`} title={builder.name} itemProp="image" width="56" height="56" loading="lazy" decoding="async" referrerPolicy="no-referrer"
                       onError={event => { event.currentTarget.style.display = 'none'; }} className="absolute inset-0 w-full h-full object-cover" />}
                   </div>
                   <span className="text-[10px] font-mono text-[#00C2FF] bg-[#00C2FF]/10 border border-[#00C2FF]/20 px-2 py-1 rounded-full">LINKUP member</span>

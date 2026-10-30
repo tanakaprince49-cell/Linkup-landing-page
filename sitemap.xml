@@ -48,6 +48,36 @@
       <image:title>Tanaka Gaadzikwa - CEO and Tech Founder</image:title>
       <image:caption>Tanaka Gaadzikwa (full name Tanaka Prince Gaadzikwa, born November 20, 2010), tech founder and CEO of LINKUP.</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/showcase/linky-ai-chat.webp</image:loc>
+      <image:title>Linky AI chat in the LINKUP app</image:title>
+      <image:caption>Linky AI chat inside LINKUP — describe your ideal co-founder in plain English and get cited matches.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/showcase/real-time-messaging.webp</image:loc>
+      <image:title>Real-time messaging in the LINKUP app</image:title>
+      <image:caption>Real-time messaging in LINKUP — founder conversations and team threads with every match.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/showcase/startup-partners.webp</image:loc>
+      <image:title>Active startup opportunities in LINKUP</image:title>
+      <image:caption>Active opportunities in LINKUP — startups and builders looking for partners right now.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/showcase/missions-and-rewards.webp</image:loc>
+      <image:title>LINKUP Play missions and rewards</image:title>
+      <image:caption>LINKUP Play — complete builder missions and earn real rewards.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/showcase/recommended-matches.webp</image:loc>
+      <image:title>AI recommended matches in LINKUP</image:title>
+      <image:caption>Recommended matches in LINKUP — AI-ranked builders matched to your goals.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/showcase/trending-stories.webp</image:loc>
+      <image:title>Startup news radar in LINKUP</image:title>
+      <image:caption>LINKUP news radar — trending startup and technology stories, updated daily.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.linkupbuild.com/founder</loc>
