@@ -22,28 +22,34 @@ export const BottomCTA: React.FC = () => {
             </p>
 
             <div className="flex flex-col items-center gap-4 pt-6">
-              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto justify-center">
-                <a 
-                  href="https://play.google.com/store/apps/details?id=com.tana.linkup"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:scale-105 transition-transform"
-                >
-                  <img 
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
-                    alt="Get it on Google Play" 
-                    className="h-20 sm:h-24 object-contain"
-                  />
-                </a>
-                <a 
-                  href="/app/landing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-[#FBE618] hover:bg-[#fff056] text-black font-semibold px-8 py-4 sm:py-5 rounded-2xl shadow-[0_0_30px_rgba(251,230,24,0.3)] transition-all hover:-translate-y-1 w-full sm:w-auto"
-                >
-                  <Globe className="w-5 h-5" />
-                  View Web Version
-                </a>
+              <div className="gooey-button-wrapper">
+                <div className="gooey-container">
+                  <a 
+                    href="https://play.google.com/store/apps/details?id=com.tana.linkup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gooey-btn gooey-btn-dark"
+                  >
+                    <span className="gooey-btn-label">
+                      <img 
+                        src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
+                        alt="Get it on Google Play" 
+                        className="h-14 sm:h-16 object-contain pointer-events-none"
+                      />
+                    </span>
+                  </a>
+                  <a 
+                    href="/app/landing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gooey-btn gooey-btn-primary shadow-[0_0_30px_rgba(251,230,24,0.3)]"
+                  >
+                    <span className="gooey-btn-label text-black font-bold text-base">
+                      <Globe className="w-5 h-5 text-black" />
+                      <span>View Web Version</span>
+                    </span>
+                  </a>
+                </div>
               </div>
               <span className="text-[11px] text-[#00C2FF] font-medium flex items-center gap-1 justify-center">
                 <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>

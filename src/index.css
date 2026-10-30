@@ -192,3 +192,159 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #FBE618;
 }
+
+/* ========================================================
+   CSS-Only Gooey Liquid Animation Effect for Buttons
+   ======================================================== */
+
+/* 1. Parent Wrapper: Applies high contrast (contrast(20)) for the gooey metaball threshold */
+.gooey-button-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: contrast(20);
+  background: transparent;
+  padding: 12px;
+}
+
+/* 2. Container: Applies SVG blur filter to blur elements together into fluid droplets */
+.gooey-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  filter: url('#svg-blur-filter');
+  will-change: transform, filter;
+}
+
+@media (min-width: 640px) {
+  .gooey-container {
+    flex-direction: row;
+    gap: 18px;
+  }
+}
+
+/* 3. Fluid Morphing Animation for Liquid Surface */
+@keyframes liquidMorph {
+  0% {
+    border-radius: 20px 26px 18px 24px;
+  }
+  33% {
+    border-radius: 26px 18px 24px 20px;
+  }
+  66% {
+    border-radius: 18px 24px 26px 18px;
+  }
+  100% {
+    border-radius: 20px 26px 18px 24px;
+  }
+}
+
+/* 4. Gooey Liquid Button Styles */
+.gooey-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  min-height: 52px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              border-radius 0.4s ease, 
+              background-color 0.3s ease;
+  animation: liquidMorph 6s ease-in-out infinite alternate;
+  isolation: isolate;
+  user-select: none;
+}
+
+.gooey-btn-primary {
+  background: #FBE618;
+  color: #05070D;
+}
+
+.gooey-btn-secondary {
+  background: #00C2FF;
+  color: #05070D;
+  animation-delay: -3s;
+}
+
+.gooey-btn-dark {
+  background: #111827;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation-delay: -1.5s;
+}
+
+/* Connecting liquid droplets extending towards neighboring buttons */
+.gooey-btn::before,
+.gooey-btn::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: inherit;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* Right droplet */
+.gooey-btn::after {
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.3);
+}
+
+/* Left droplet */
+.gooey-btn::before {
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.3);
+}
+
+/* On hover or interaction: Buttons expand and droplets shoot out to liquid-merge! */
+.gooey-btn:hover {
+  transform: scale(1.06);
+  z-index: 2;
+}
+
+.gooey-container:hover .gooey-btn::after,
+.gooey-container:hover .gooey-btn::before {
+  opacity: 1;
+}
+
+.gooey-btn:hover::after {
+  transform: translateY(-50%) translateX(12px) scale(1.25);
+  opacity: 1;
+}
+
+.gooey-btn:hover::before {
+  transform: translateY(-50%) translateX(-12px) scale(1.25);
+  opacity: 1;
+}
+
+/* Active pressed state: Liquid depression */
+.gooey-btn:active {
+  transform: scale(0.94);
+  transition-duration: 0.1s;
+}
+
+/* Foreground content: Keeps text and icons crisp inside high-contrast filter */
+.gooey-btn-label {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+
