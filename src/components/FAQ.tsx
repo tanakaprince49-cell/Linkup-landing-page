@@ -128,11 +128,11 @@ export const FAQ: React.FC = () => {
                     >
                       <button
                         onClick={() => toggleFaq(id)}
-                        className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none no-water-btn"
+                        className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
                       >
                         <span className="text-lg font-semibold text-white pr-8">{faq.q}</span>
                         <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-                          isOpen ? 'bg-white/20 text-white border border-white/40' : 'bg-white/5 text-slate-400'
+                          isOpen ? 'bg-[#FBE618] text-black' : 'bg-white/5 text-slate-400'
                         }`}>
                           {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                         </div>

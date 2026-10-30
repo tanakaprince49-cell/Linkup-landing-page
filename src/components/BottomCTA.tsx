@@ -21,17 +21,15 @@ export const BottomCTA: React.FC = () => {
               Stop scrolling LinkedIn. Start building with vetted founders who are as serious as you are.
             </p>
 
-            <div className="flex flex-col items-center gap-5 pt-6">
-              <div className="gooey-button-wrapper py-2 px-3 sm:px-6">
-                <div className="gooey-container gap-6 sm:gap-10">
+            <div className="flex flex-col items-center gap-4 pt-6">
+              <div className="gooey-button-wrapper">
+                <div className="gooey-container">
                   <a 
                     href="https://play.google.com/store/apps/details?id=com.tana.linkup"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="gooey-btn gooey-btn-dark px-6 sm:px-8 py-3 sm:py-4 shadow-lg"
-                    title="Get it on Google Play"
+                    className="gooey-btn gooey-btn-dark"
                   >
-                    <span className="water-drop-right" />
                     <span className="gooey-btn-label">
                       <img 
                         src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
@@ -44,12 +42,10 @@ export const BottomCTA: React.FC = () => {
                     href="/app/landing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="gooey-btn gooey-btn-primary px-8 sm:px-10 py-4 shadow-xl"
-                    title="Launch Web Application"
+                    className="gooey-btn gooey-btn-primary shadow-[0_0_30px_rgba(251,230,24,0.3)]"
                   >
-                    <span className="water-drop-left" />
-                    <span className="gooey-btn-label text-white font-bold text-base">
-                      <Globe className="w-5 h-5 text-white" />
+                    <span className="gooey-btn-label text-black font-bold text-base">
+                      <Globe className="w-5 h-5 text-black" />
                       <span>View Web Version</span>
                     </span>
                   </a>

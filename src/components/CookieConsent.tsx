@@ -64,7 +64,7 @@ export const CookieConsent: React.FC = () => {
                   <h3 id="privacy-choice-title" className="text-white font-semibold text-sm">Privacy choices</h3>
                   <button 
                     onClick={handleDecline}
-                    className="text-slate-400 hover:text-white transition-colors no-water-btn"
+                    className="text-slate-400 hover:text-white transition-colors"
                     aria-label="Decline optional analytics and close"
                   >
                     <X className="w-4 h-4" />
@@ -77,13 +77,13 @@ export const CookieConsent: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <button 
                     onClick={handleAccept}
-                    className="flex-1 water-btn text-white font-semibold text-xs py-2 px-3 rounded-xl transition-all"
+                    className="flex-1 bg-[#FBE618] hover:bg-[#fff056] text-black font-semibold text-xs py-2 px-3 rounded-lg transition-colors"
                   >
                     Accept analytics
                   </button>
                   <button 
                     onClick={handleDecline}
-                    className="flex-1 water-btn text-white font-semibold text-xs py-2 px-3 rounded-xl transition-all"
+                    className="flex-1 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold text-xs py-2 px-3 rounded-lg transition-colors"
                   >
                     Decline analytics
                   </button>

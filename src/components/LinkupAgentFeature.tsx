@@ -330,7 +330,7 @@ export const LinkupAgentFeature: React.FC = () => {
               href="https://play.google.com/store/apps/details?id=com.tana.linkup"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl water-btn text-white font-bold text-base transition-all hover:-translate-y-1"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-[#FBE618] hover:bg-[#fff056] text-black font-bold text-base shadow-[0_0_30px_rgba(251,230,24,0.35)] transition-all hover:-translate-y-1"
             >
               <span>Try Linkup Agent on App</span>
             </a>
@@ -340,9 +340,9 @@ export const LinkupAgentFeature: React.FC = () => {
               href="/app/landing"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl water-btn text-white font-bold text-base transition-all hover:-translate-y-1 group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white font-bold text-base shadow-xl transition-all hover:-translate-y-1 group"
             >
-              <Globe className="w-5 h-5 text-white group-hover:rotate-12 transition-transform" />
+              <Globe className="w-5 h-5 text-[#FBE618] group-hover:rotate-12 transition-transform" />
               <span>Try Linkup Agent on Web</span>
             </a>
 
@@ -351,7 +351,7 @@ export const LinkupAgentFeature: React.FC = () => {
               href="https://t.me/LINKUP_AIBOT"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl water-btn text-white font-semibold text-sm transition-all hover:-translate-y-1 group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-[#229ED9]/15 hover:bg-[#229ED9]/25 border border-[#229ED9]/40 text-white font-semibold text-sm transition-all hover:-translate-y-1 group shadow-lg shadow-[#229ED9]/10"
             >
               <div className="w-6 h-6 rounded-full bg-[#229ED9] flex items-center justify-center text-white shrink-0 shadow-sm">
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -367,7 +367,7 @@ export const LinkupAgentFeature: React.FC = () => {
             {/* WhatsApp is coming soon */}
             <button
               onClick={() => setIsBotModalOpen(true)}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl water-btn text-white text-sm font-medium transition-all cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 text-sm font-medium transition-all cursor-pointer"
             >
               <div className="w-6 h-6 rounded-full bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center text-[#25D366] shrink-0 shadow-sm">
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -434,10 +434,10 @@ export const LinkupAgentFeature: React.FC = () => {
                 href="https://t.me/LINKUP_AIBOT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 rounded-xl water-btn text-white font-bold text-sm transition-all flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-xl bg-[#229ED9] hover:bg-[#1f8fc4] text-white font-bold text-sm transition-all shadow-lg flex items-center justify-center gap-2"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.832.922z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.832.922z"/>
                 </svg>
                 <span>Open Telegram Bot (@LINKUP_AIBOT)</span>
               </a>
@@ -445,7 +445,7 @@ export const LinkupAgentFeature: React.FC = () => {
                 href="https://play.google.com/store/apps/details?id=com.tana.linkup"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 rounded-xl water-btn text-white font-bold text-sm transition-all block text-center"
+                className="w-full py-3 rounded-xl bg-[#FBE618] hover:bg-[#fff056] text-black font-bold text-sm transition-all shadow-lg block text-center"
               >
                 Get LINKUP Mobile App
               </a>
@@ -453,14 +453,14 @@ export const LinkupAgentFeature: React.FC = () => {
                 href="/app/landing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 rounded-xl water-btn text-white font-bold text-sm transition-all flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm transition-all shadow-lg flex items-center justify-center gap-2"
               >
-                <Globe className="w-4 h-4 text-white" />
+                <Globe className="w-4 h-4 text-[#FBE618]" />
                 <span>Try Linkup Agent on Web</span>
               </a>
               <button
                 onClick={() => setIsBotModalOpen(false)}
-                className="w-full py-2.5 rounded-xl text-slate-400 hover:text-white text-xs font-semibold cursor-pointer no-water-btn"
+                className="w-full py-2.5 rounded-xl text-slate-400 hover:text-white text-xs font-semibold cursor-pointer"
               >
                 Close
               </button>
