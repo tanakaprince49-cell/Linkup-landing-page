@@ -3,6 +3,7 @@ export interface FeatureItem {
   iconName: string;
   title: string;
   badge?: string;
+  href?: string;
   category: 'ai' | 'discovery' | 'communication' | 'reputation';
   description: string;
   details: string[];

@@ -1,12 +1,16 @@
 import React from 'react';
 import { MapPin, Award, Heart, MessageSquare, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { useBuilderCount } from '../lib/useBuilderCount';
+import { formatBuilderCount } from '../lib/publicBuilders';
 
 export const AboutFounder: React.FC = () => {
+  const { count, complete } = useBuilderCount();
+  const builderSuffix = count === null ? '' : ` \u2022 ${formatBuilderCount(count)}${complete ? '' : '+'} Builders`;
   const verifiedProfiles = [
     {
       name: 'LINKUP on Google Play',
       handle: 'com.tana.linkup',
-      description: 'Official Android App • 14.2k+ Builders',
+      description: `Official Android App${builderSuffix}`,
       url: 'https://play.google.com/store/apps/details?id=com.tana.linkup',
       ctaText: 'Get on Google Play',
       badgeColor: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400',

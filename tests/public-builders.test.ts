@@ -41,3 +41,15 @@ test('directory source has no mock imports, invented scores or fake verification
   assert.match(source,/fetchMemberPage/);assert.match(source,/href=\{builder\.url\}/);assert.match(source,/role="alert"/);assert.match(source,/Show more builders/);
   assert.doesNotMatch(readFileSync(new URL('../src/data/mockData.ts',import.meta.url),'utf8'),/MOCK_BUILDERS/);
 });
+import {fetchBuilderCount, formatBuilderCount} from '../src/lib/publicBuilders';
+test('builder counter walks the live feed and formats real totals only',async()=>{
+  const previous=globalThis.fetch;
+  try {
+    globalThis.fetch=async(input)=>{const page2=String(input).includes('after=');return new Response(JSON.stringify(page2?{profiles:[{...member,uid:'member-2'}],nextCursor:null}:{profiles:[member],nextCursor:'member-2'}),{headers:{'content-type':'application/json'}});};
+    assert.deepEqual(await fetchBuilderCount(),{count:2,complete:true});
+    globalThis.fetch=async(input)=>{const m=/after=c(\d+)/.exec(String(input));const n=m?Number(m[1])+1:1;return new Response(JSON.stringify({profiles:[{...member,uid:'m-'+n}],nextCursor:'c'+n}),{headers:{'content-type':'application/json'}});};
+    const capped=await fetchBuilderCount();assert.equal(capped.complete,false);assert.equal(capped.count,25);
+    globalThis.fetch=async()=>new Response('down',{status:503});await assert.rejects(fetchBuilderCount());
+    assert.equal(formatBuilderCount(64),'64');assert.equal(formatBuilderCount(1240),'1,240');assert.equal(formatBuilderCount(14200),'14.2k');assert.equal(formatBuilderCount(150000),'150k');
+  } finally {globalThis.fetch=previous;}
+});

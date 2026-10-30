@@ -2,22 +2,66 @@ import { FeatureItem, Testimonial, PricingPlan, FaqItem } from '../types';
 
 export const FEATURES: FeatureItem[] = [
   {
-    id: 'f1',
+    id: 'linky',
     iconName: 'Sparkles',
-    title: 'AI Matchmaking',
-    badge: 'Core AI',
+    title: 'Linky AI Companion',
+    badge: 'Flagship AI',
     category: 'ai',
-    description: 'Smart compatibility scoring powered by AI. LINKUP analyzes your skills, goals, industry, personality, and work style to rank and recommend the most compatible builders for you.',
+    description: 'Your AI co-founder scout. Tell Linky who you need in plain words and get an AI-ranked shortlist of compatible builders \u2014 with drafted intros to break the ice.',
     details: [
-      'Deep skills & work style alignment',
-      'Personality & goal compatibility scoring',
-      'Automated co-founder rank recommendations'
+      'Natural-language match requests',
+      'AI-ranked builder shortlists',
+      'Drafted intros & icebreakers'
     ],
     highlightColor: 'yellow',
   },
   {
-    id: 'f2',
+    id: 'match',
+    iconName: 'Search',
+    title: 'AI Matchmaking',
+    badge: 'Core AI',
+    category: 'ai',
+    description: 'Smart compatibility scoring powered by AI. LINKUP analyzes your skills, goals, industries, work style, commitment and availability to rank the most compatible builders for you.',
+    details: [
+      'Deep skills & work style alignment',
+      'Goals, industry & commitment scoring',
+      'Automated co-founder rank recommendations'
+    ],
+    highlightColor: 'cyan',
+  },
+  {
+    id: 'league',
+    iconName: 'Trophy',
+    title: 'Builder League',
+    badge: 'Weekly Crown',
+    category: 'reputation',
+    description: 'A weekly leaderboard for builders who ship. Earn 10 points per build day plus bonuses for helpful contributions \u2014 number one takes the crown, locally and globally.',
+    details: [
+      'Week, month & all-time boards',
+      '10 pts per build day, #1 crowned',
+      'Local leagues + public results page'
+    ],
+    highlightColor: 'yellow',
+    href: '/app/builder-league',
+  },
+  {
+    id: 'momentum',
     iconName: 'Flame',
+    title: 'Momentum & Ship Log',
+    badge: 'Build Streaks',
+    category: 'reputation',
+    description: 'Log what you shipped every day, grow your streak, and prove it with a contribution calendar plus shareable momentum cards.',
+    details: [
+      'Daily ship log with receipts',
+      'Contribution calendar & streaks',
+      'Shareable momentum cards'
+    ],
+    highlightColor: 'violet',
+    href: '/app/momentum',
+  },
+  {
+    id: 'swipe',
+    iconName: 'Zap',
     title: 'Swipe Discovery',
     badge: 'Matching Engine',
     category: 'discovery',
@@ -30,117 +74,105 @@ export const FEATURES: FeatureItem[] = [
     highlightColor: 'cyan',
   },
   {
-    id: 'f3',
-    iconName: 'Search',
-    title: 'Advanced People Search',
-    badge: 'Smart Search',
+    id: 'games',
+    iconName: 'Gamepad2',
+    title: 'Pitch Battles & Founder Games',
+    badge: 'Play to Learn',
     category: 'discovery',
-    description: 'Search for founders, developers, designers, investors, and operators using filters like skills, industry, role, location, experience, funding stage, and availability with natural language queries like "fintech founder with SaaS experience".',
+    description: 'Sharpen founder skills by playing: head-to-head Pitch Perfect battles, Founder Flip, match-the-pairs, achievements and a saved-ideas box.',
     details: [
-      'Natural language semantic queries',
-      'Multi-attribute filtering (skills, funding, role)',
-      'Custom talent alerts & saved searches'
-    ],
-    highlightColor: 'violet',
-  },
-  {
-    id: 'f4',
-    iconName: 'LayoutDashboard',
-    title: 'Discovery Dashboard',
-    badge: 'Personalized Feed',
-    category: 'discovery',
-    description: 'Personalized home feed showing recommended matches, trending builders, active opportunities, and custom community insights.',
-    details: [
-      'Real-time match recommendations',
-      'Trending ecosystem activity & insights',
-      'Curated opportunities feed'
-    ],
-    highlightColor: 'cyan',
-  },
-  {
-    id: 'f5',
-    iconName: 'MessageSquareText',
-    title: 'Real-Time Messaging',
-    badge: 'Secured Chat',
-    category: 'communication',
-    description: 'Secured chat with matches featuring reply-to-message, AI warm intro generation, conversation pin/archive/mute, meeting scheduler, contact card sharing, and chat export.',
-    details: [
-      'AI warm intro & icebreaker generation',
-      'Meeting scheduler & contact card exchange',
-      'Conversation pin, archive, mute & export'
+      '1v1 Pitch Perfect challenges',
+      'Founder Flip & pair matching',
+      'Achievements & saved ideas'
     ],
     highlightColor: 'yellow',
   },
   {
-    id: 'f6',
-    iconName: 'UserCheck',
-    title: 'Business-Focused Profiles',
-    badge: 'Builder ID',
+    id: 'groups',
+    iconName: 'Users',
+    title: 'Builder Groups',
+    badge: 'Squad Up',
     category: 'communication',
-    description: 'Built for builders (not social media). Displays startup status, skills & tech stack, funding stage, availability, networking intent, REP metrics, and AI match insights.',
+    description: 'Join topic squads of builders. Group chat with shared badges, member profiles and photos \u2014 your crew before you even incorporate.',
     details: [
-      'Startup status & funding stage display',
-      'Verified tech stack & networking intent',
-      'AI compatibility overview & REP score'
+      'Topic-based squads',
+      'Group chat + member profiles',
+      'Shared badges & photos'
     ],
     highlightColor: 'violet',
   },
   {
-    id: 'f7',
+    id: 'daily',
+    iconName: 'CalendarCheck',
+    title: 'Daily Five',
+    badge: 'Fresh Every Morning',
+    category: 'discovery',
+    description: 'Five fresh picks every morning \u2014 builders, opportunities and ideas matched to your goals, needs and availability. Retry today\u2019s picks anytime.',
+    details: [
+      '5 picks matched to your goals',
+      'Builders, opportunities & ideas',
+      'Refine needs, retry anytime'
+    ],
+    highlightColor: 'cyan',
+  },
+  {
+    id: 'campaigns',
+    iconName: 'Target',
+    title: 'Campaigns & Rewards',
+    badge: 'Earn Real Rewards',
+    category: 'discovery',
+    description: 'Complete builder quests and campaigns to earn real rewards. Missions turn networking into a game you actually want to play.',
+    details: [
+      'Quests with real rewards',
+      'Missions for every level',
+      'Track progress & rewards'
+    ],
+    highlightColor: 'yellow',
+    href: '/campaigns',
+  },
+  {
+    id: 'idea',
     iconName: 'TrendingUp',
-    title: 'AI Startup Analyzer',
+    title: 'Idea Deck AI Analyzer',
     badge: 'AI Utility',
     category: 'ai',
-    description: 'Enter a startup concept and get AI-generated score (1-100), verdict, target customer, market potential, competitor mapping, monetization strategy, key risks, and next validation steps.',
+    description: 'Enter a startup concept and get an AI-generated score (1-100), verdict, target customer, market potential, competitor mapping, monetization strategy, key risks, and next validation steps.',
     details: [
       '1-100 concept score & AI verdict',
       'Market potential & competitor mapping',
       'Monetization strategy & key risk analysis'
     ],
-    highlightColor: 'yellow',
+    highlightColor: 'cyan',
   },
   {
-    id: 'f8',
-    iconName: 'Award',
-    title: 'Reputation System (REP Score)',
-    badge: 'Trust Layer',
+    id: 'views',
+    iconName: 'Eye',
+    title: 'Profile Views & Clicks',
+    badge: 'Know Your Fans',
     category: 'reputation',
-    description: 'Proof-of-work REP score calculated from verified GitHub commit velocity, completed projects, activity signals, background credentials, and peer endorsements.',
+    description: 'See exactly who viewed your profile and who clicked through. Know who is checking you out before you reach out.',
     details: [
-      'Verified GitHub commit velocity tracker',
-      'Background credentials & peer endorsements',
-      'Proof-of-work project history rating'
+      'Everyone who viewed you',
+      'Profile click tracking',
+      'Reach out at the right time'
     ],
     highlightColor: 'violet',
   },
   {
-    id: 'f9',
-    iconName: 'Briefcase',
-    title: 'Active Opportunities',
-    badge: 'Co-Founder Board',
+    id: 'radar',
+    iconName: 'Newspaper',
+    title: 'Startups & News Radar',
+    badge: 'Stay Sharp',
     category: 'discovery',
-    description: 'Browse builders & startups actively seeking cofounders, developers, designers, marketers, investors, or mentors.',
+    description: 'Browse the startup directory and a curated startup news feed \u2014 spot trends, study competitors and find your edge.',
     details: [
-      'Role-based co-founder recruitment',
-      'Filter by equity split & stage',
-      'Direct fast-track application flow'
-    ],
-    highlightColor: 'cyan',
-  },
-  {
-    id: 'f10',
-    iconName: 'Users',
-    title: 'Trending Builders',
-    badge: 'Leaderboard',
-    category: 'reputation',
-    description: 'Discover top-ranked builders based on earned REP score, activity signals, technical skills, and community engagement.',
-    details: [
-      'Leaderboard ranked by earned REP score',
-      'Live build activity & engagement signals',
-      'Featured talent highlights in tech & growth'
+      'Searchable startup directory',
+      'Curated startup news feed',
+      'Trend & competitor signals'
     ],
     highlightColor: 'yellow',
-  }
+    href: '/app/startups',
+  },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [

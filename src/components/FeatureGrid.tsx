@@ -5,28 +5,32 @@ import {
   Sparkles, 
   Flame, 
   Search, 
-  LayoutDashboard, 
-  MessageSquareText, 
-  UserCheck, 
   TrendingUp, 
-  Award, 
-  Briefcase, 
   Users, 
   CheckCircle2, 
-  Zap
+  Zap,
+  Trophy,
+  Gamepad2,
+  Eye,
+  Newspaper,
+  Target,
+  CalendarCheck,
+  ArrowUpRight
 } from 'lucide-react';
 
 const iconMap: Record<string, React.FC<{ className?: string }>> = {
   Sparkles: ({ className }) => <Sparkles className={className} />,
   Flame: ({ className }) => <Flame className={className} />,
   Search: ({ className }) => <Search className={className} />,
-  LayoutDashboard: ({ className }) => <LayoutDashboard className={className} />,
-  MessageSquareText: ({ className }) => <MessageSquareText className={className} />,
-  UserCheck: ({ className }) => <UserCheck className={className} />,
   TrendingUp: ({ className }) => <TrendingUp className={className} />,
-  Award: ({ className }) => <Award className={className} />,
-  Briefcase: ({ className }) => <Briefcase className={className} />,
   Users: ({ className }) => <Users className={className} />,
+  Zap: ({ className }) => <Zap className={className} />,
+  Trophy: ({ className }) => <Trophy className={className} />,
+  Gamepad2: ({ className }) => <Gamepad2 className={className} />,
+  Eye: ({ className }) => <Eye className={className} />,
+  Newspaper: ({ className }) => <Newspaper className={className} />,
+  Target: ({ className }) => <Target className={className} />,
+  CalendarCheck: ({ className }) => <CalendarCheck className={className} />,
 };
 
 export const FeatureGrid: React.FC = () => {
@@ -60,13 +64,15 @@ export const FeatureGrid: React.FC = () => {
             const IconComponent = iconMap[feature.iconName] || Sparkles;
 
             return (
-              <motion.div
+              <motion.article
                 key={feature.id}
+                id={`feature-${feature.id}`}
+                aria-labelledby={`${feature.id}-title`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: (idx % 6) * 0.06 }}
-                className="glass-panel glass-card-hover p-6 sm:p-7 rounded-3xl transition-all duration-300 flex flex-col justify-between group"
+                className="glass-panel glass-card-hover p-6 sm:p-7 rounded-3xl transition-all duration-300 flex flex-col justify-between group scroll-mt-28"
               >
                 <div>
                   {/* Card Header */}
@@ -82,7 +88,7 @@ export const FeatureGrid: React.FC = () => {
                   </div>
 
                   {/* Title & Desc */}
-                  <h3 className="text-xl font-display font-bold text-white mb-2.5 group-hover:text-[#FBE618] transition-colors flex items-center gap-1.5">
+                  <h3 id={`${feature.id}-title`} className="text-xl font-display font-bold text-white mb-2.5 group-hover:text-[#FBE618] transition-colors flex items-center gap-1.5">
                     {feature.title}
                   </h3>
                   <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
@@ -98,8 +104,16 @@ export const FeatureGrid: React.FC = () => {
                       </li>
                     ))}
                   </ul>
+                  {feature.href && (
+                    <a
+                      href={feature.href}
+                      className="inline-flex items-center gap-1 mt-4 text-xs font-bold text-[#FBE618] hover:gap-2 transition-all"
+                    >
+                      Open live <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>

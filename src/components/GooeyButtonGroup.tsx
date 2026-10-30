@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Globe, Sparkles, Zap, ArrowRight } from 'lucide-react';
+import { useBuilderCount } from '../lib/useBuilderCount';
+import { formatBuilderCount } from '../lib/publicBuilders';
 
 interface GooeyButtonGroupProps {
   className?: string;
@@ -11,6 +13,7 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
   variant = 'cta',
 }) => {
   const [activeTab, setActiveTab] = useState<'app' | 'web'>('web');
+  const { count, complete } = useBuilderCount();
 
   if (variant === 'cta') {
     return (
@@ -80,7 +83,7 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
           >
             <span className="gooey-btn-label">
               <Sparkles className="w-4 h-4 text-white" />
-              <span>Browse 14.2k Builders</span>
+              <span>Browse{count === null ? '' : ' ' + formatBuilderCount(count) + (complete ? '' : '+')} Builders</span>
             </span>
           </button>
         </div>

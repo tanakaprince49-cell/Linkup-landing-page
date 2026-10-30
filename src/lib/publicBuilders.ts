@@ -74,3 +74,24 @@ export function matchesBuilder(p: PublicBuilder, query: string, role: string) {
 export function initials(name: string) {
   return name.trim().split(/\s+/).slice(0, 2).map(s => s[0] || '').join('').toUpperCase();
 }
+
+const COUNT_PAGE_CAP = 25; // 25 pages x 40 profiles: safety ceiling, not a displayed number
+export type BuilderCount = { count: number; complete: boolean };
+// Live marketing counter: walks the same public member feed as the directory
+// and counts eligible profiles. No totals are invented - failures throw so the
+// UI shows a loading state instead of a stale or fake number.
+export async function fetchBuilderCount(signal?: AbortSignal): Promise<BuilderCount> {
+  let count = 0, cursor = '', pages = 0;
+  for (;;) {
+    const page = await fetchMemberPage(cursor, signal);
+    count += page.profiles.length;
+    cursor = page.nextCursor || '';
+    if (!cursor) return { count, complete: true };
+    if (++pages >= COUNT_PAGE_CAP) return { count, complete: false };
+  }
+}
+export function formatBuilderCount(count: number): string {
+  if (count < 10000) return count.toLocaleString('en-US');
+  const k = count / 1000;
+  return (k >= 100 ? String(Math.round(k)) : k.toFixed(1).replace(/\.0$/, '')) + 'k';
+}

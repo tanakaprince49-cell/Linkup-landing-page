@@ -38,6 +38,9 @@ const HomePage = () => (
       <AppShowcase />
     </FadeInSection>
     <FadeInSection delay={0.1}>
+      <FeatureGrid />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
       <AboutFounder />
     </FadeInSection>
     <FadeInSection delay={0.1}>

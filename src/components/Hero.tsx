@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Globe } from 'lucide-react';
+import { useBuilderCount } from '../lib/useBuilderCount';
+import { formatBuilderCount } from '../lib/publicBuilders';
 
 export const Hero: React.FC = () => {
+  const { count, complete } = useBuilderCount();
   return (
     <section className="relative py-20 lg:py-28 overflow-hidden flex items-center justify-center hero-radial-grid">
       {/* Background Glowing Lights */}
@@ -124,7 +127,9 @@ export const Hero: React.FC = () => {
             className="pt-8 border-t border-white/10 grid grid-cols-3 gap-6 max-w-lg mx-auto text-center"
           >
             <div>
-              <div className="font-display font-bold text-2xl sm:text-3xl text-white">14.2k+</div>
+              <div className="font-display font-bold text-2xl sm:text-3xl text-white" aria-live="polite">
+                {count === null ? <span className="animate-pulse text-slate-500">•••</span> : <>{formatBuilderCount(count)}{complete ? '' : '+'}</>}
+              </div>
               <div className="text-xs text-slate-400 font-medium mt-1">Active Builders</div>
             </div>
             <div>
