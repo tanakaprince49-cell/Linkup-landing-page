@@ -137,7 +137,7 @@ export default function App() {
   return (
     <div className={`min-h-screen transition-colors duration-300 relative ${isDarkMode ? 'bg-[#05070D] text-slate-100' : 'bg-[#05070D] text-white'}`}>      
       
-      {/* 3D Liquid Background */}
+      {/* Clean Dark Site Background */}
       <div className="liquid-bg-container">
         <div className="liquid-blob"></div>
         <div className="liquid-blob"></div>

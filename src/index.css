@@ -87,6 +87,7 @@
   animation: gradientShift 8s ease infinite;
 }
 
+/* Clean Dark Site Background */
 .liquid-bg-container {
   position: fixed;
   top: 0;
@@ -95,7 +96,7 @@
   height: 100vh;
   z-index: 0;
   overflow: hidden;
-  background-color: #05070D; /* Keep the base dark */
+  background-color: #05070D;
   pointer-events: none;
 }
 
@@ -103,7 +104,7 @@
   position: absolute;
   filter: blur(140px);
   background: #FBE618;
-  opacity: 0.4;
+  opacity: 0.35;
   border-radius: 50%;
 }
 
@@ -126,7 +127,7 @@
   height: 40vw;
   top: 25%;
   left: 35%;
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
 /* Glassmorphism utility classes */
@@ -142,14 +143,6 @@
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   border: 1px solid rgba(251, 230, 24, 0.2);
-}
-
-.liquid-glass-nav {
-  background: rgba(251, 230, 24, 0.12);
-  backdrop-filter: blur(24px) saturate(150%);
-  -webkit-backdrop-filter: blur(24px) saturate(150%);
-  border-bottom: 1px solid rgba(251, 230, 24, 0.3);
-  box-shadow: 0 10px 40px rgba(251, 230, 24, 0.15);
 }
 
 .glass-card-hover {

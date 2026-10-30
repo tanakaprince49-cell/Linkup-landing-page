@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
 Sitemap: https://www.linkupbuild.com/sitemap.xml
 Sitemap: https://www.linkupbuild.com/app/sitemap.xml
