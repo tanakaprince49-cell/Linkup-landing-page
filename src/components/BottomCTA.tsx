@@ -48,8 +48,8 @@ export const BottomCTA: React.FC = () => {
                     title="Launch Web Application"
                   >
                     <span className="water-drop-left" />
-                    <span className="gooey-btn-label text-white font-bold text-base">
-                      <Globe className="w-5 h-5 text-white" />
+                    <span className="gooey-btn-label text-black font-bold text-base">
+                      <Globe className="w-5 h-5 text-black" />
                       <span>View Web Version</span>
                     </span>
                   </a>
