@@ -84,11 +84,11 @@ export const BuilderDirectory: React.FC = () => {
             <input type="search" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} aria-label="Search loaded builders"
               placeholder="Search loaded builders by name, skill, role, company, or location..."
               className="w-full bg-[#0d121f]/90 border border-white/10 rounded-2xl pl-12 pr-16 py-3.5 text-white placeholder-slate-400 focus:outline-none focus:border-[#FBE618]/60 focus:ring-1 focus:ring-[#FBE618]/40 transition-all text-sm font-medium shadow-xl" />
-            {searchQuery && <button onClick={() => setSearchQuery('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400 hover:text-white">Clear</button>}
+            {searchQuery && <button onClick={() => setSearchQuery('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400 hover:text-white no-water-btn">Clear</button>}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1" aria-label="Filter by role">
             {roleCategories.map(role => <button key={role} onClick={() => setSelectedRole(role)} aria-pressed={selectedRole === role}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${selectedRole === role ? 'bg-[#FBE618] text-black shadow-[0_0_15px_rgba(251,230,24,0.3)]' : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border border-white/10'}`}>
+              className={`tab-pill px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${selectedRole === role ? 'bg-white/20 text-white border border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.2)]' : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border border-white/10'}`}>
               {role}
             </button>)}
           </div>
@@ -100,7 +100,7 @@ export const BuilderDirectory: React.FC = () => {
 
         {error && <div role="alert" className="max-w-3xl mx-auto mb-8 p-5 rounded-2xl border border-amber-300/20 bg-amber-300/5 text-sm text-slate-200 text-center">
           <p>{error}</p>
-          <button onClick={() => void loadPage()} className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-xl text-black bg-[#FBE618] font-semibold"><RefreshCw className="w-4 h-4" />Try again</button>
+          <button onClick={() => void loadPage()} className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-xl text-white water-btn font-semibold"><RefreshCw className="w-4 h-4" />Try again</button>
           <a href="/app/builders" className="inline-block ml-4 underline">Browse public directory</a>
         </div>}
 
@@ -132,7 +132,7 @@ export const BuilderDirectory: React.FC = () => {
                 {builder.lookingFor.length > 0 && <div className="mb-4 pt-2 border-t border-white/5"><span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#FBE618] block mb-1">Looking for</span><p className="text-[11px] text-slate-200 line-clamp-2">{builder.lookingFor.join(', ')}</p></div>}
                 <div className="flex flex-wrap gap-1.5 mb-4">{builder.skills.slice(0, 6).map(tag => <span key={tag} itemProp="knowsAbout" className="text-[10px] font-mono bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{tag}</span>)}</div>
               </div>
-              <a href={builder.url} className="w-full py-2.5 rounded-xl bg-white/10 hover:bg-[#FBE618] hover:text-black text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 border border-white/10 hover:border-transparent group/btn shadow-md">
+              <a href={builder.url} className="w-full py-2.5 rounded-xl water-btn text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 group/btn shadow-md">
                 <span>View LINKUP profile</span><ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
               </a>
             </motion.article>)}
@@ -142,7 +142,7 @@ export const BuilderDirectory: React.FC = () => {
         {!loading && !error && visibleBuilders.length === 0 && <p className="text-center text-slate-300 py-10">
           {builders.length ? 'No loaded profiles match those filters. Try another name or skill, or load more builders.' : 'No public profiles are available on this page yet.'}
         </p>}
-        {hasMore && <div className="mt-9 text-center"><button onClick={showMore} disabled={loading} className="px-6 py-3 rounded-2xl border border-white/20 text-white hover:border-[#FBE618]/60 disabled:opacity-50 font-semibold text-sm">{loading ? 'Loading…' : 'Show more builders'}</button></div>}
+        {hasMore && <div className="mt-9 text-center"><button onClick={showMore} disabled={loading} className="px-6 py-3 rounded-2xl water-btn text-white disabled:opacity-50 font-semibold text-sm">{loading ? 'Loading…' : 'Show more builders'}</button></div>}
 
         <div className="mt-14 p-6 sm:p-8 rounded-3xl glass-panel border border-white/10 bg-gradient-to-r from-[#FBE618]/10 via-[#00C2FF]/10 to-transparent flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center sm:text-left">
@@ -150,7 +150,7 @@ export const BuilderDirectory: React.FC = () => {
             <p className="text-xs sm:text-sm text-slate-300">Create a LINKUP profile and turn on Public Discovery to join the public directory.</p>
             <a href="/app/builders" className="inline-block text-xs text-[#FBE618] underline mt-2">Browse all public builder pages</a>
           </div>
-          <a href="/app/landing" className="shrink-0 px-6 py-3.5 rounded-2xl bg-[#FBE618] hover:bg-[#fff056] text-black font-bold text-sm shadow-[0_0_25px_rgba(251,230,24,0.3)] transition-all hover:-translate-y-0.5">Create Your Builder Profile</a>
+          <a href="/app/landing" className="shrink-0 px-6 py-3.5 rounded-2xl water-btn text-white font-bold text-sm transition-all hover:-translate-y-0.5">Create Your Builder Profile</a>
         </div>
       </div>
     </section>

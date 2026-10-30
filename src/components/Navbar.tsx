@@ -113,11 +113,11 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
         <div className="relative translate-x-1 md:translate-x-0">
           <button
             onClick={() => setIsFounderMenuOpen(!isFounderMenuOpen)}
-            className="flex items-center gap-2 bg-[#FBE618]/10 hover:bg-[#FBE618]/20 border border-[#FBE618]/30 text-[#FBE618] px-4 py-2 rounded-xl text-sm font-semibold transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white water-btn transition-all"
           >
-            <MessageCircle className="w-4 h-4" />
+            <MessageCircle className="w-4 h-4 text-white" />
             Talk to Founder
-            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isFounderMenuOpen ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-4 h-4 text-white transition-transform duration-300 ${isFounderMenuOpen ? 'rotate-180' : ''}`} />
           </button>
 
           <AnimatePresence>
@@ -222,7 +222,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors ml-1"
+          className="md:hidden p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors ml-1 no-water-btn"
+          aria-label="Toggle navigation menu"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

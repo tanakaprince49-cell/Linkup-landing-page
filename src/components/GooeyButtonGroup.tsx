@@ -25,8 +25,8 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
             title="Launch Web Application"
           >
             <span className="water-drop-right" />
-            <span className="gooey-btn-label font-bold text-black text-base">
-              <Globe className="w-5 h-5 text-black" />
+            <span className="gooey-btn-label font-bold text-white text-base">
+              <Globe className="w-5 h-5 text-white" />
               <span>View Web Version</span>
             </span>
           </a>
@@ -40,8 +40,8 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
             title="Download on Google Play Store"
           >
             <span className="water-drop-left" />
-            <span className="gooey-btn-label font-bold text-black text-base">
-              <Sparkles className="w-5 h-5 text-black" />
+            <span className="gooey-btn-label font-bold text-white text-base">
+              <Sparkles className="w-5 h-5 text-white" />
               <span>Get Android App</span>
             </span>
           </a>
@@ -64,7 +64,7 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
             }`}
           >
             <span className="gooey-btn-label">
-              <Zap className="w-4 h-4 text-[#FBE618]" />
+              <Zap className="w-4 h-4 text-white" />
               <span>Instant AI Match</span>
             </span>
           </button>
@@ -79,7 +79,7 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
             }`}
           >
             <span className="gooey-btn-label">
-              <Sparkles className="w-4 h-4 text-[#00C2FF]" />
+              <Sparkles className="w-4 h-4 text-white" />
               <span>Browse 14.2k Builders</span>
             </span>
           </button>

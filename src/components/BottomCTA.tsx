@@ -44,12 +44,12 @@ export const BottomCTA: React.FC = () => {
                     href="/app/landing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="gooey-btn gooey-btn-primary px-8 sm:px-10 py-4 shadow-[0_0_35px_rgba(251,230,24,0.35)]"
+                    className="gooey-btn gooey-btn-primary px-8 sm:px-10 py-4 shadow-xl"
                     title="Launch Web Application"
                   >
                     <span className="water-drop-left" />
-                    <span className="gooey-btn-label text-black font-bold text-base">
-                      <Globe className="w-5 h-5 text-black" />
+                    <span className="gooey-btn-label text-white font-bold text-base">
+                      <Globe className="w-5 h-5 text-white" />
                       <span>View Web Version</span>
                     </span>
                   </a>
