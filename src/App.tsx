@@ -19,6 +19,8 @@ import { LinkupAgentFeature } from './components/LinkupAgentFeature';
 import { AboutFounder } from './components/AboutFounder';
 import { BuilderDirectory } from './components/BuilderDirectory';
 import { ConsentAnalytics } from './components/ConsentAnalytics';
+import { NotFound } from './components/NotFound';
+import { SeoRoute } from './lib/SeoRoute';
 
 const HomePage = () => (
   <>
@@ -158,6 +160,7 @@ export default function App() {
 
         {/* Main Content Sections */}
         <ScrollToHashOrTop />
+        <SeoRoute />
         <main className="pt-24 flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -168,7 +171,7 @@ export default function App() {
             <Route path="/about" element={<FounderPage />} />
             <Route path="/campaigns" element={<CampaignsPage />} />
             <Route path="/faq" element={<FAQPage />} />
-            <Route path="*" element={<HomePage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 

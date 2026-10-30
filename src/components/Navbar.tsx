@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
             { name: 'Home', path: '/' },
             { name: 'Linkup Agent', path: '/#linkup-agent', isNew: true },
             { name: 'Features', path: '/features' },
-            { name: 'Founder', path: '/#founder' },
+            { name: 'Founder', path: '/founder' },
             { name: 'Campaigns', path: '/campaigns' },
             { name: 'FAQ', path: '/faq' },
           ].map((link) => {
@@ -245,7 +245,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
                 { name: 'Home', path: '/' },
                 { name: 'Linkup Agent', path: '/#linkup-agent', isNew: true },
                 { name: 'Features', path: '/features' },
-                { name: 'Founder', path: '/#founder' },
+                { name: 'Founder', path: '/founder' },
                 { name: 'Campaigns', path: '/campaigns' },
                 { name: 'FAQ', path: '/faq' },
               ].map((link) => {
