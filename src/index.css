@@ -194,10 +194,32 @@
 }
 
 /* ========================================================
-   CSS-Only Gooey Liquid Animation Effect for All Site Buttons
+   Header & Navigation Protection (Prevents turning black or distorting)
+   ======================================================== */
+header,
+header nav,
+header .group {
+  filter: none !important;
+}
+
+header button,
+header a {
+  animation: none !important;
+}
+
+header button::before,
+header button::after,
+header a::before,
+header a::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ========================================================
+   CSS-Only Gooey Liquid Animation Effect for CTA Buttons
    ======================================================== */
 
-/* 1. Parent Wrapper: Applies high contrast (contrast(18)) for the gooey metaball threshold */
+/* 1. Parent Wrapper: Applies contrast filter threshold for gooey metaballs */
 .gooey-button-wrapper,
 .gooey-wrapper {
   position: relative;
@@ -217,14 +239,14 @@
   }
 }
 
-/* 2. Container: Applies SVG blur filter with generous separation so buttons don't bleed at rest */
+/* 2. Container: SVG blur filter with wide 48px separation so resting state is 100% clean */
 .gooey-container {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 36px; /* Generous separation so resting state never overlaps or messes up */
+  gap: 36px;
   filter: url('#svg-blur-filter');
   will-change: transform, filter;
   width: 100%;
@@ -233,12 +255,12 @@
 @media (min-width: 640px) {
   .gooey-container {
     flex-direction: row;
-    gap: 48px; /* Clean 48px desktop separation */
+    gap: 48px;
     width: auto;
   }
 }
 
-/* 3. Fluid Morphing Animation for Liquid Surface */
+/* 3. Fluid Morphing Keyframe Animation */
 @keyframes liquidMorph {
   0% {
     border-radius: 18px 24px 16px 22px;
@@ -254,13 +276,10 @@
   }
 }
 
-/* 4. Global Gooey Liquid Button Styles across ALL site buttons */
-button,
-a.gooey-btn,
+/* 4. Gooey Liquid Button Styles for CTA Buttons */
 .gooey-btn,
-.btn,
-a.btn-primary,
-a.btn-secondary {
+.gooey-container button,
+a.gooey-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -303,13 +322,15 @@ a.btn-secondary {
   animation-delay: -1.5s;
 }
 
-/* Connecting liquid droplets extending towards neighboring buttons on interaction */
+/* Liquid droplet pseudo-elements for Gooey buttons */
 .gooey-btn::before,
-.gooey-btn::after {
+.gooey-btn::after,
+.gooey-container button::before,
+.gooey-container button::after {
   content: '';
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   background: inherit;
   border-radius: 50%;
   pointer-events: none;
@@ -318,56 +339,57 @@ a.btn-secondary {
   z-index: -1;
 }
 
-/* Right droplet */
-.gooey-btn::after {
-  right: -10px;
+.gooey-btn::after,
+.gooey-container button::after {
+  right: -8px;
   top: 50%;
   transform: translateY(-50%) scale(0.2);
 }
 
-/* Left droplet */
-.gooey-btn::before {
-  left: -10px;
+.gooey-btn::before,
+.gooey-container button::before {
+  left: -8px;
   top: 50%;
   transform: translateY(-50%) scale(0.2);
 }
 
-/* On hover or interaction: Buttons expand and droplets shoot out to liquid-merge! */
+/* Hover Liquid Scaling and Droplet Merge Extension */
 .gooey-btn:hover,
-button:hover {
-  transform: scale(1.06) translateY(-2px);
+.gooey-container button:hover {
+  transform: scale(1.05) translateY(-2px);
   z-index: 2;
 }
 
 .gooey-container:hover .gooey-btn::after,
-.gooey-container:hover .gooey-btn::before {
+.gooey-container:hover .gooey-btn::before,
+.gooey-container:hover button::after,
+.gooey-container:hover button::before {
   opacity: 1;
 }
 
-.gooey-btn:hover::after {
-  transform: translateY(-50%) translateX(16px) scale(1.3);
+.gooey-btn:hover::after,
+.gooey-container button:hover::after {
+  transform: translateY(-50%) translateX(14px) scale(1.25);
   opacity: 1;
 }
 
-.gooey-btn:hover::before {
-  transform: translateY(-50%) translateX(-16px) scale(1.3);
+.gooey-btn:hover::before,
+.gooey-container button:hover::before {
+  transform: translateY(-50%) translateX(-14px) scale(1.25);
   opacity: 1;
 }
 
-/* Active pressed state: Liquid depression */
+/* Active depression */
 .gooey-btn:active,
-button:active {
+.gooey-container button:active {
   transform: scale(0.95);
   transition-duration: 0.1s;
 }
 
-/* Crisp foreground label container inside contrast filter */
+/* Foreground content: Keeps text and icons crisp inside high-contrast filter */
 .gooey-btn-label {
   position: relative;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 8px;
   pointer-events: none;
 }
 
