@@ -173,6 +173,51 @@ export const FEATURES: FeatureItem[] = [
     highlightColor: 'yellow',
     href: '/app/startups',
   },
+  {
+    id: 'workspace',
+    iconName: 'LayoutGrid',
+    title: 'Dedicated Builder Workspace',
+    badge: 'New in v17',
+    category: 'reputation',
+    description: 'One-tap bottom-bar command center for your daily Ship Log, weekly build targets, protected rest days, private builder rooms, and Linky appearance settings.',
+    details: [
+      'One-tap Workspace tab on bottom bar',
+      'Weekly shipping rhythm & Ship Log',
+      'Private rooms & appearance controls'
+    ],
+    highlightColor: 'cyan',
+    href: '/app/builder',
+  },
+  {
+    id: 'homesearch',
+    iconName: 'Search',
+    title: 'Instant Homescreen Search',
+    badge: 'New in v17',
+    category: 'discovery',
+    description: 'Find any verified builder, founder, engineer, designer, skill, role, or city directly from the top of your Homescreen without digging through menus.',
+    details: [
+      'Pinned search bar right on Home',
+      'Filter by name, @username, skill, or city',
+      'Instant public & member profile lookup'
+    ],
+    highlightColor: 'yellow',
+    href: '/app/feed',
+  },
+  {
+    id: 'moods',
+    iconName: 'BellRing',
+    title: 'Expressive Linky Icons & Check-Ins',
+    badge: '11 Live Moods',
+    category: 'ai',
+    description: '11 reactive launcher and browser-tab icons that reflect your live momentum \u2014 from fiery red after 1 missed day to crowned on League podiums \u2014 paired with randomly timed daily push and full-screen email check-ins.',
+    details: [
+      '11 dynamic Android, iOS & web icons',
+      'Randomly timed morning & evening nudges',
+      'Full-bleed Linky mood emails (4h+ apart)'
+    ],
+    highlightColor: 'violet',
+    href: '/app/builder?section=Settings',
+  },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [

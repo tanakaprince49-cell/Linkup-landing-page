@@ -33,6 +33,14 @@ const faqCategories = [
     ]
   },
   {
+    category: "Version 17 & Daily Momentum",
+    questions: [
+      { q: "How do the 11 Expressive Linky Icons work?", a: "In LINKUP 17.0, your Android/iOS launcher icon and web browser tab automatically reflect your real builder momentum: bright yellow when you're plugged in, fiery red after 1 missed day, rainy after 3+ days away, cobwebs at 7+ days, blazing orange when an active streak is still open at night, crowned on the Builder League podium, sunglasses when today's build is logged, and confetti on streak milestones. You can also pin any favorite icon or lock the classic yellow icon anytime in Workspace → Settings." },
+      { q: "Where did Search and Workspace move in Version 17?", a: "Search now lives directly at the top of your Homescreen so you can look up any founder, engineer, designer, @username, skill, or city in one tap. Workspace now has its own dedicated tab on the main bottom navigation bar for instant access to your Ship Log, weekly shipping goals, and private builder groups." },
+      { q: "How do Smart Randomized Check-Ins avoid notification spam?", a: "Instead of sending robotic alerts at a fixed clock time, Linky schedules two personalized check-ins per day (one morning/midday and one afternoon/evening) at unique random local minutes for each member, strictly separated by at least 4 hours so notifications and full-screen expressive Linky emails never stack together. One-click unsubscribe and notification toggles are available anytime." }
+    ]
+  },
+  {
     category: "General",
     questions: [
       { q: "What is LINKUP?", a: "LINKUP is a founder networking app that connects builders, founders, and early adopters. You can swipe to discover people, share ideas on Idea Deck, analyze startup ideas with AI, get warm introductions, and collaborate in real-time." },

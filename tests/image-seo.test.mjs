@@ -69,3 +69,18 @@ test('software JSON-LD exposes screenshots, entity image and social alts', () =>
   assert.match(html, /og:image:alt/);
   assert.match(html, /twitter:image:alt/);
 });
+
+test('version 17 spotlight ships all 11 WebP mood icons and 15 indexed features', () => {
+  const v17 = read('src/components/Version17Spotlight.tsx');
+  const moods = [...v17.matchAll(/image: '(\/images\/moods\/[a-z0-9-]+\.webp)'/g)].map(m => m[1]);
+  assert.equal(moods.length, 11);
+  for (const m of moods) {
+    const buf = readFileSync(new URL('../public' + m, import.meta.url));
+    assert.ok(buf.length > 500, m);
+  }
+  const html = read('index.html');
+  assert.match(html, /"numberOfItems": 15/);
+  assert.match(html, /#feature-workspace/);
+  assert.match(html, /#feature-homesearch/);
+  assert.match(html, /#feature-moods/);
+});

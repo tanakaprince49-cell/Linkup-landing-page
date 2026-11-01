@@ -15,12 +15,12 @@ export const Hero: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
         <div className="space-y-8 max-w-4xl mx-auto">
           
-          {/* New Announcement Badge */}
+          {/* New Announcement Badges */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center"
+            className="flex flex-wrap items-center justify-center gap-2.5"
           >
             <a
               href="#linkup-agent"
@@ -28,6 +28,14 @@ export const Hero: React.FC = () => {
             >
               <span>Meet Linkup Agent — Natural Language Founder Matchmaking</span>
               <span className="text-[#FBE618] font-mono group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+            <a
+              href="#version-17"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full glass-panel border border-[#00C2FF]/40 bg-[#00C2FF]/10 hover:bg-[#00C2FF]/20 transition-all hover:scale-105 text-white text-xs sm:text-sm font-semibold group"
+            >
+              <span className="px-1.5 py-0.5 rounded bg-[#FBE618] text-black text-[10px] font-mono font-extrabold uppercase">v17.0</span>
+              <span>Expressive Icons, Workspace &amp; Homescreen Search</span>
+              <span className="text-[#00C2FF] font-mono group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
           </motion.div>
 

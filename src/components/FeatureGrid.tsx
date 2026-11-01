@@ -15,6 +15,8 @@ import {
   Newspaper,
   Target,
   CalendarCheck,
+  LayoutGrid,
+  BellRing,
   ArrowUpRight
 } from 'lucide-react';
 
@@ -31,6 +33,8 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
   Newspaper: ({ className }) => <Newspaper className={className} />,
   Target: ({ className }) => <Target className={className} />,
   CalendarCheck: ({ className }) => <CalendarCheck className={className} />,
+  LayoutGrid: ({ className }) => <LayoutGrid className={className} />,
+  BellRing: ({ className }) => <BellRing className={className} />,
 };
 
 export const FeatureGrid: React.FC = () => {
