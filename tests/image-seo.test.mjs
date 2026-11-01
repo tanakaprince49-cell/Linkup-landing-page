@@ -83,4 +83,7 @@ test('version 17 spotlight ships all 11 WebP mood icons and 15 indexed features'
   assert.match(html, /#feature-workspace/);
   assert.match(html, /#feature-homesearch/);
   assert.match(html, /#feature-moods/);
+  for (const f of ['src/components/Version17Spotlight.tsx', 'src/components/FeatureGrid.tsx', 'src/components/GooeyButtonGroup.tsx', 'src/components/NotFound.tsx', 'src/components/LinkupAgentFeature.tsx', 'src/data/mockData.ts']) {
+    assert.doesNotMatch(read(f), /Sparkle|✨/i, `no sparkles allowed in ${f}`);
+  }
 });

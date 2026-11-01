@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Home, Sparkles, Users, HelpCircle } from 'lucide-react';
+import { Home, Layers, Users, HelpCircle } from 'lucide-react';
 
 const LINKS = [
   { to: '/', icon: Home, label: 'Homepage' },
-  { to: '/features', icon: Sparkles, label: 'All features' },
+  { to: '/features', icon: Layers, label: 'All features' },
   { to: '/builders', icon: Users, label: 'Browse builders' },
   { to: '/faq', icon: HelpCircle, label: 'FAQ' },
 ];

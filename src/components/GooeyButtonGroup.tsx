@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Sparkles, Zap, ArrowRight } from 'lucide-react';
+import { Globe, Smartphone, Users, Zap, ArrowRight } from 'lucide-react';
 import { useBuilderCount } from '../lib/useBuilderCount';
 import { formatBuilderCount } from '../lib/publicBuilders';
 
@@ -44,7 +44,7 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
           >
             <span className="water-drop-left" />
             <span className="gooey-btn-label font-bold text-white text-base">
-              <Sparkles className="w-5 h-5 text-white" />
+              <Smartphone className="w-5 h-5 text-white" />
               <span>Get Android App</span>
             </span>
           </a>
@@ -82,7 +82,7 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
             }`}
           >
             <span className="gooey-btn-label">
-              <Sparkles className="w-4 h-4 text-white" />
+              <Users className="w-4 h-4 text-white" />
               <span>Browse{count === null ? '' : ' ' + formatBuilderCount(count) + (complete ? '' : '+')} Builders</span>
             </span>
           </button>

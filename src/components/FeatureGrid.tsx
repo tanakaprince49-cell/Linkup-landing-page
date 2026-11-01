@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { FEATURES } from '../data/mockData';
 import { 
-  Sparkles, 
+  Bot, 
   Flame, 
   Search, 
   TrendingUp, 
@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 const iconMap: Record<string, React.FC<{ className?: string }>> = {
-  Sparkles: ({ className }) => <Sparkles className={className} />,
+  Bot: ({ className }) => <Bot className={className} />,
   Flame: ({ className }) => <Flame className={className} />,
   Search: ({ className }) => <Search className={className} />,
   TrendingUp: ({ className }) => <TrendingUp className={className} />,
@@ -65,7 +65,7 @@ export const FeatureGrid: React.FC = () => {
         {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {FEATURES.map((feature, idx) => {
-            const IconComponent = iconMap[feature.iconName] || Sparkles;
+            const IconComponent = iconMap[feature.iconName] || Zap;
 
             return (
               <motion.article

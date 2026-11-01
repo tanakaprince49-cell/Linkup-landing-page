@@ -10,8 +10,7 @@ import {
   ArrowRight,
   Globe,
   CheckCircle2,
-  Award,
-  Sparkles
+  Award
 } from 'lucide-react';
 import { SHOWCASE_SCREENSHOTS } from '../data/showcaseScreenshots';
 

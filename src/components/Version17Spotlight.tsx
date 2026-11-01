@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
-  Sparkles,
   Search,
   LayoutGrid,
   BellRing,
@@ -138,7 +137,7 @@ export const Version17Spotlight: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-[#FBE618]/40 bg-[#FBE618]/10 text-xs font-mono font-bold text-[#FBE618] uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" /> New in LINKUP 17.0
+            New in LINKUP 17.0
           </div>
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
             Built For Daily Momentum —{' '}
@@ -355,12 +354,12 @@ export const Version17Spotlight: React.FC = () => {
                 Smart Randomized Check-Ins
               </h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-5">
-                Stay accountable without robotic alarm fatigue. Linky checks in twice daily at fresh, randomly chosen local times — spaced hours apart across mobile push, browser Web Push, and full-screen expressive emails.
+                Stay accountable without inbox clutter. Linky sends at most one expressive full-screen email per day at a fresh random local time, paired with smart mobile &amp; browser push check-ins.
               </p>
               <ul className="space-y-2 text-xs text-slate-300 border-t border-white/5 pt-4">
                 <li className="flex items-start gap-2">
                   <Clock className="w-4 h-4 text-[#FBE618] shrink-0 mt-0.5" />
-                  <span>Unique random daytime &amp; evening times (never stacked)</span>
+                  <span>Max 1 email per day at a unique random local time</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail className="w-4 h-4 text-[#FBE618] shrink-0 mt-0.5" />

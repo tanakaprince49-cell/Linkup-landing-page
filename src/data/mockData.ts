@@ -3,7 +3,7 @@ import { FeatureItem, Testimonial, PricingPlan, FaqItem } from '../types';
 export const FEATURES: FeatureItem[] = [
   {
     id: 'linky',
-    iconName: 'Sparkles',
+    iconName: 'Bot',
     title: 'Linky AI Companion',
     badge: 'Flagship AI',
     category: 'ai',
@@ -212,8 +212,8 @@ export const FEATURES: FeatureItem[] = [
     description: '11 reactive launcher and browser-tab icons that reflect your live momentum \u2014 from fiery red after 1 missed day to crowned on League podiums \u2014 paired with randomly timed daily push and full-screen email check-ins.',
     details: [
       '11 dynamic Android, iOS & web icons',
-      'Randomly timed morning & evening nudges',
-      'Full-bleed Linky mood emails (4h+ apart)'
+      'Randomly timed push check-ins',
+      'Max 1 expressive Linky email per day'
     ],
     highlightColor: 'violet',
     href: '/app/builder?section=Settings',
