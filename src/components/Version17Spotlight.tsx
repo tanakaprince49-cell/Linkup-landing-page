@@ -9,6 +9,10 @@ import {
   Mail,
   Clock,
   CheckCircle2,
+  GitBranch,
+  Cpu,
+  FolderGit2,
+  Landmark,
 } from 'lucide-react';
 
 interface LinkyMoodItem {
@@ -373,6 +377,76 @@ export const Version17Spotlight: React.FC = () => {
             >
               Log today’s build <ArrowUpRight className="w-4 h-4" />
             </a>
+          </div>
+        </div>
+
+        {/* Automated Venture Engine — 4-Pillar Factory */}
+        <div className="mt-10 glass-panel rounded-3xl p-6 sm:p-8 border border-[#FBE618]/25">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-7">
+            <div>
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider bg-[#FBE618]/15 border border-[#FBE618]/35 text-[#FBE618] mb-3">
+                Automated Venture Engine
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
+                From networking app to an automated company-building factory.
+              </h3>
+            </div>
+            <a
+              href="/app/lvlup"
+              className="inline-flex items-center gap-1.5 text-sm font-bold text-[#FBE618] hover:gap-2.5 transition-all shrink-0"
+            >
+              Open Venture Bridge <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="rounded-2xl p-5 bg-white/[0.03] border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-[#FBE618]/15 border border-[#FBE618]/30 flex items-center justify-center text-[#FBE618] mb-4">
+                <FolderGit2 className="w-5 h-5" />
+              </div>
+              <h4 className="font-display font-bold text-white text-base mb-2">
+                Codebase-Aware Linky
+              </h4>
+              <p className="text-slate-300 text-xs leading-relaxed">
+                Linky inspects your project manifests and directory skeleton without reading private code to pinpoint the exact engineer, designer, or GTM co-founder you need next.
+              </p>
+            </div>
+
+            <div className="rounded-2xl p-5 bg-white/[0.03] border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-[#00C2FF]/15 border border-[#00C2FF]/30 flex items-center justify-center text-[#00C2FF] mb-4">
+                <GitBranch className="w-5 h-5" />
+              </div>
+              <h4 className="font-display font-bold text-white text-base mb-2">
+                Passive GitHub League
+              </h4>
+              <p className="text-slate-300 text-xs leading-relaxed">
+                Signed GitHub and Cursor push webhooks advance your Builder League rank automatically whenever you commit code. Stop shipping and your streak breaks naturally.
+              </p>
+            </div>
+
+            <div className="rounded-2xl p-5 bg-white/[0.03] border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-[#FBE618]/15 border border-[#FBE618]/30 flex items-center justify-center text-[#FBE618] mb-4">
+                <Cpu className="w-5 h-5" />
+              </div>
+              <h4 className="font-display font-bold text-white text-base mb-2">
+                Splicing &amp; Day-1 Workplace
+              </h4>
+              <p className="text-slate-300 text-xs leading-relaxed">
+                Pairs puzzle-piece builders by complementary stack and timezone, then instantly provisions a shared Venture Room, reserved Launchpad domain, and Day-1 scaffold.
+              </p>
+            </div>
+
+            <div className="rounded-2xl p-5 bg-white/[0.03] border border-white/10">
+              <div className="w-10 h-10 rounded-xl bg-[#22C55E]/15 border border-[#22C55E]/30 flex items-center justify-center text-[#22C55E] mb-4">
+                <Landmark className="w-5 h-5" />
+              </div>
+              <h4 className="font-display font-bold text-white text-base mb-2">
+                VC $50K Deal Bridge
+              </h4>
+              <p className="text-slate-300 text-xs leading-relaxed">
+                Top-velocity squads trigger live Breakout Alerts for partners like LvlUp Ventures with one-click SHA-256 timestamped $50,000 SAFE term-sheet dispatch.
+              </p>
+            </div>
           </div>
         </div>
       </div>
