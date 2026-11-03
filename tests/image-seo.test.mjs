@@ -70,7 +70,7 @@ test('software JSON-LD exposes screenshots, entity image and social alts', () =>
   assert.match(html, /twitter:image:alt/);
 });
 
-test('version 17 spotlight ships all 11 WebP mood icons and 15 indexed features', () => {
+test('version 17 & founder blogs spotlights ship all 11 WebP mood icons, 17 indexed features, and zero sparkles', () => {
   const v17 = read('src/components/Version17Spotlight.tsx');
   const moods = [...v17.matchAll(/image: '(\/images\/moods\/[a-z0-9-]+\.webp)'/g)].map(m => m[1]);
   assert.equal(moods.length, 11);
@@ -78,12 +78,20 @@ test('version 17 spotlight ships all 11 WebP mood icons and 15 indexed features'
     const buf = readFileSync(new URL('../public' + m, import.meta.url));
     assert.ok(buf.length > 500, m);
   }
+  const blogsSpotlight = read('src/components/FounderBlogsSpotlight.tsx');
+  assert.match(blogsSpotlight, /\/app\/blogs/);
+  assert.match(blogsSpotlight, /\/app\/blogs\/rss\.xml/);
+  assert.match(blogsSpotlight, /Author Analytics \(Visible Only to You\)/);
+
   const html = read('index.html');
-  assert.match(html, /"numberOfItems": 15/);
+  assert.match(html, /"numberOfItems": 17/);
+  assert.match(html, /#feature-radar/);
+  assert.match(html, /#feature-blog-analytics/);
+  assert.match(html, /#feature-venture-engine/);
   assert.match(html, /#feature-workspace/);
   assert.match(html, /#feature-homesearch/);
   assert.match(html, /#feature-moods/);
-  for (const f of ['src/components/Version17Spotlight.tsx', 'src/components/FeatureGrid.tsx', 'src/components/GooeyButtonGroup.tsx', 'src/components/NotFound.tsx', 'src/components/LinkupAgentFeature.tsx', 'src/data/mockData.ts']) {
+  for (const f of ['src/components/FounderBlogsSpotlight.tsx', 'src/components/Version17Spotlight.tsx', 'src/components/FeatureGrid.tsx', 'src/components/GooeyButtonGroup.tsx', 'src/components/NotFound.tsx', 'src/components/LinkupAgentFeature.tsx', 'src/data/mockData.ts']) {
     assert.doesNotMatch(read(f), /Sparkle|✨/i, `no sparkles allowed in ${f}`);
   }
 });

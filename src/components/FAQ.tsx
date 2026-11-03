@@ -33,6 +33,23 @@ const faqCategories = [
     ]
   },
   {
+    category: "Founder Blogs, Google News SEO & Author Analytics",
+    questions: [
+      {
+        q: "Do blogs published on LINKUP show up on Google Search, Google News, and Google Images?",
+        a: "Yes. Every published community blog gets a dedicated server-rendered URL (/app/blogs/your-title) with NewsArticle and BlogPosting JSON-LD structured data, a live Google News XML sitemap, a Media RSS 2.0 feed, and multi-aspect 16:9, 4:3, and 1:1 high-resolution ImageObject cover metadata so your essays and cover pictures are indexed across Google Search, Google News, Google Discover, and Google Images without requiring readers to log in."
+      },
+      {
+        q: "Who can see my blog's views and link clicks?",
+        a: "Only you — the blog's author. Your private Author Analytics dashboard tracks total blog views, unique readers, feed card opens, and a per-link click breakdown across both highlighted inline word links and referenced links, while automatically excluding your own self-views and search engine bots."
+      },
+      {
+        q: "How do the 16:9 Cover Cropper and Highlight-to-Insert-Link editor work?",
+        a: "When you upload a blog cover photo, you control how it sits inside the 16:9 frame — drag to pan, zoom up to 3x, or switch to Fit Full Picture so nothing important gets cut off, and add a custom Google Images caption. In the body editor, simply highlight any word to summon the floating selection bar and tap Insert Link (or press Cmd/Ctrl+K) alongside headings, quotes, lists, highlights, and code blocks."
+      }
+    ]
+  },
+  {
     category: "Version 17 & Daily Momentum",
     questions: [
       { q: "How do the 11 Expressive Linky Icons work?", a: "In LINKUP 17.0, your Android/iOS launcher icon and web browser tab automatically reflect your real builder momentum: bright yellow when you're plugged in, fiery red after 1 missed day, rainy after 3+ days away, cobwebs at 7+ days, blazing orange when an active streak is still open at night, crowned on the Builder League podium, sunglasses when today's build is logged, and confetti on streak milestones. You can also pin any favorite icon or lock the classic yellow icon anytime in Workspace → Settings." },

@@ -161,17 +161,47 @@ export const FEATURES: FeatureItem[] = [
   {
     id: 'radar',
     iconName: 'Newspaper',
-    title: 'Startups & Founder Blogs',
+    title: 'Founder Blogs & Google News SEO',
     badge: 'Google Indexed',
     category: 'discovery',
-    description: 'Browse the startup directory and publish community founder blogs indexed across Google Search, Google News, and Google Images \u2014 complete with 16:9 cover cropping, highlight-to-link rich formatting, Verified Author badges, and private author-only Views & Clicks analytics.',
+    description: 'Publish original startup essays, engineering deep-dives, and launch playbooks indexed automatically across Google Search, Google News, and Google Images \u2014 with 16:9 cover cropping, highlight-word-to-link rich formatting, custom categories, and Verified Author badges.',
     details: [
-      'Indexed on Google Search, News & Images',
-      'Private author-only Views & Clicks stats',
-      '16:9 cover cropper, inline links & Verified Author badge'
+      'Google Search, Google News & Image Sitemap SEO',
+      'Interactive 16:9 cover cropper & custom alt captions',
+      'Highlight any word to insert links + Verified Author badge'
     ],
     highlightColor: 'yellow',
     href: '/app/blogs',
+  },
+  {
+    id: 'blog-analytics',
+    iconName: 'BarChart3',
+    title: 'Private Author Blog Analytics',
+    badge: 'Author Only',
+    category: 'reputation',
+    description: 'Track how every essay performs without exposing vanity counters to the public. Only the blog author sees total views, unique readers, card opens, and a per-link click breakdown across inline word links and referenced URLs.',
+    details: [
+      'Strictly private to the blog author',
+      'Views, unique readers & card-open tracking',
+      'Per-link click breakdown (self-views & bots excluded)'
+    ],
+    highlightColor: 'cyan',
+    href: '/app/news-feed',
+  },
+  {
+    id: 'venture-engine',
+    iconName: 'Cpu',
+    title: 'Automated Venture Factory & $50K Bridge',
+    badge: 'Venture Engine',
+    category: 'ai',
+    description: 'From codebase-aware co-founder diagnostics and passive GitHub push league scoring to Day-1 Venture Rooms and one-click SHA-256 timestamped $50,000 SAFE term-sheet dispatch with partner VCs.',
+    details: [
+      'Codebase-aware Linky stack diagnostics',
+      'Passive GitHub & Cursor push League scoring',
+      'Day-1 Venture Rooms & $50K VC Deal Bridge'
+    ],
+    highlightColor: 'violet',
+    href: '/app/lvlup',
   },
   {
     id: 'workspace',

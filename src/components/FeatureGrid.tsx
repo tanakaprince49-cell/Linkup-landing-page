@@ -17,6 +17,8 @@ import {
   CalendarCheck,
   LayoutGrid,
   BellRing,
+  BarChart3,
+  Cpu,
   ArrowUpRight
 } from 'lucide-react';
 
@@ -35,6 +37,8 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
   CalendarCheck: ({ className }) => <CalendarCheck className={className} />,
   LayoutGrid: ({ className }) => <LayoutGrid className={className} />,
   BellRing: ({ className }) => <BellRing className={className} />,
+  BarChart3: ({ className }) => <BarChart3 className={className} />,
+  Cpu: ({ className }) => <Cpu className={className} />,
 };
 
 export const FeatureGrid: React.FC = () => {

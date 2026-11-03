@@ -37,6 +37,14 @@ export const Hero: React.FC = () => {
               <span>Expressive Icons, Workspace &amp; Homescreen Search</span>
               <span className="text-[#00C2FF] font-mono group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
+            <a
+              href="#founder-blogs"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full glass-panel border border-emerald-400/40 bg-emerald-500/10 hover:bg-emerald-500/20 transition-all hover:scale-105 text-white text-xs sm:text-sm font-semibold group"
+            >
+              <span className="px-1.5 py-0.5 rounded bg-emerald-400 text-black text-[10px] font-mono font-extrabold uppercase">NEW</span>
+              <span>Founder Blogs — Google News, Image SEO &amp; Private Views/Clicks</span>
+              <span className="text-emerald-300 font-mono group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
           </motion.div>
 
           {/* Main Headline */}
