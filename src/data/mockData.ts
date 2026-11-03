@@ -161,17 +161,17 @@ export const FEATURES: FeatureItem[] = [
   {
     id: 'radar',
     iconName: 'Newspaper',
-    title: 'Startups & News Radar',
-    badge: 'Stay Sharp',
+    title: 'Startups & Founder Blogs',
+    badge: 'Community Blogs',
     category: 'discovery',
-    description: 'Browse the startup directory and a curated startup news feed \u2014 spot trends, study competitors and find your edge.',
+    description: 'Browse the startup directory and publish community founder blogs with cover pages, rich formatting, read time, custom categories, and Verified Author badges.',
     details: [
       'Searchable startup directory',
-      'Curated startup news feed',
-      'Trend & competitor signals'
+      'Rich founder blogs with cover pages & read time',
+      'Verified Author profiles & inline links'
     ],
     highlightColor: 'yellow',
-    href: '/app/startups',
+    href: '/app/blogs',
   },
   {
     id: 'workspace',
