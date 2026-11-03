@@ -21,8 +21,18 @@ test('marketing homepage, assets, forms and similar prefixes are not proxied',()
   for(const path of ['/','/features','/founder','/faq','/assets/index.js','/api/contact','/application','/app-other'])assert.equal(route(path),'/index.html');
   assert.ok(!config.redirects?.some(r=>r.destination?.includes('linkup-muqu.vercel.app')));
 });
-test('robots discovers both sitemaps and the footer links to the public member directory',()=>{
-  const robots=read('public/robots.txt');assert.ok(robots.includes('Sitemap: https://www.linkupbuild.com/sitemap.xml'));assert.ok(robots.includes('Sitemap: https://www.linkupbuild.com/app/sitemap.xml'));
-  assert.match(read('src/components/Footer.tsx'),/href="\/app\/builders"/);
-  for(const file of ['public/sitemap.xml','sitemap.xml'])assert.match(read(file),/<loc>https:\/\/www.linkupbuild.com\/app\/builders<\/loc>/);
+test('robots discovers sitemaps (including Google News & Blogs) and the footer links to builders and blogs',()=>{
+  const robots=read('public/robots.txt');
+  assert.ok(robots.includes('Sitemap: https://www.linkupbuild.com/sitemap.xml'));
+  assert.ok(robots.includes('Sitemap: https://www.linkupbuild.com/app/sitemap.xml'));
+  assert.ok(robots.includes('Sitemap: https://www.linkupbuild.com/app/sitemap-google-news.xml'));
+  assert.ok(robots.includes('Sitemap: https://www.linkupbuild.com/app/sitemap-blogs-0.xml'));
+  assert.ok(robots.includes('User-agent: Googlebot-News'));
+  const footer=read('src/components/Footer.tsx');
+  assert.match(footer,/href="\/app\/builders"/);
+  assert.match(footer,/href="\/app\/blogs"/);
+  for(const file of ['public/sitemap.xml','sitemap.xml']){
+    assert.match(read(file),/<loc>https:\/\/www.linkupbuild.com\/app\/builders<\/loc>/);
+    assert.match(read(file),/<loc>https:\/\/www.linkupbuild.com\/app\/blogs<\/loc>/);
+  }
 });

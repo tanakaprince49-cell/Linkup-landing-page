@@ -162,13 +162,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'radar',
     iconName: 'Newspaper',
     title: 'Startups & Founder Blogs',
-    badge: 'Community Blogs',
+    badge: 'Google Indexed',
     category: 'discovery',
-    description: 'Browse the startup directory and publish community founder blogs with cover pages, rich formatting, read time, custom categories, and Verified Author badges.',
+    description: 'Browse the startup directory and publish community founder blogs indexed across Google Search, Google News, and Google Images \u2014 complete with 16:9 cover cropping, highlight-to-link rich formatting, Verified Author badges, and private author-only Views & Clicks analytics.',
     details: [
-      'Searchable startup directory',
-      'Rich founder blogs with cover pages & read time',
-      'Verified Author profiles & inline links'
+      'Indexed on Google Search, News & Images',
+      'Private author-only Views & Clicks stats',
+      '16:9 cover cropper, inline links & Verified Author badge'
     ],
     highlightColor: 'yellow',
     href: '/app/blogs',

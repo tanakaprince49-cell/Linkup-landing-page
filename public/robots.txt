@@ -4,8 +4,13 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-News
+Allow: /
+
 User-agent: Googlebot-Image
 Allow: /
 
 Sitemap: https://www.linkupbuild.com/sitemap.xml
 Sitemap: https://www.linkupbuild.com/app/sitemap.xml
+Sitemap: https://www.linkupbuild.com/app/sitemap-google-news.xml
+Sitemap: https://www.linkupbuild.com/app/sitemap-blogs-0.xml
