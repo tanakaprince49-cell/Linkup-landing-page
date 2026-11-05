@@ -30,6 +30,14 @@ export const Hero: React.FC = () => {
               <span>Building Alone Is the #1 Silent Startup Killer — Don&apos;t Die Solo</span>
               <span className="text-red-300 font-mono group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
+            <a
+              href="#launch-film"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-[#FBE618]/60 bg-[#FBE618]/15 hover:bg-[#FBE618]/25 transition-all hover:scale-105 shadow-[0_0_24px_rgba(251,230,24,0.3)] text-white text-xs sm:text-sm font-semibold group"
+            >
+              <span className="px-1.5 py-0.5 rounded bg-[#FBE618] text-black text-[10px] font-mono font-extrabold uppercase">WATCH</span>
+              <span>Official 60-Second Launch Film</span>
+              <span className="text-[#FBE618] font-mono group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
           </motion.div>
 
           {/* Main Headline */}

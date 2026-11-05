@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
   <url>
@@ -78,7 +79,17 @@
       <image:title>Startup news radar in LINKUP</image:title>
       <image:caption>LINKUP news radar — trending startup and technology stories, updated daily.</image:caption>
     </image:image>
-  </url>
+      <video:video>
+      <video:thumbnail_loc>https://www.linkupbuild.com/images/video/linkup-launch-poster.jpg</video:thumbnail_loc>
+      <video:title>LINKUP Official 60-Second Launch Film</video:title>
+      <video:description>Tell Linky AI who you need, match with compatible builders, connect through mutual opt-in intros, and keep building together.</video:description>
+      <video:content_loc>https://www.linkupbuild.com/videos/linkup-launch-60s.mp4</video:content_loc>
+      <video:player_loc>https://www.linkupbuild.com/#launch-film</video:player_loc>
+      <video:duration>60</video:duration>
+      <video:publication_date>2026-11-05T09:00:00Z</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+</url>
   <url>
     <loc>https://www.linkupbuild.com/founder</loc>
     <lastmod>2026-10-29</lastmod>

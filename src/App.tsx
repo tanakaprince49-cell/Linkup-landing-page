@@ -26,11 +26,15 @@ import { FounderBlogsSpotlight } from './components/FounderBlogsSpotlight';
 import { SoloFounderWarning } from './components/SoloFounderWarning';
 import { LandingBlogsSection } from './components/LandingBlogsSection';
 import { LandingBlogIndexPage, LandingBlogPostPage } from './components/LandingBlogPages';
+import { LaunchFilm } from './components/LaunchFilm';
 
 const HomePage = () => (
   <>
     <FadeInSection delay={0.1}>
       <Hero />
+    </FadeInSection>
+    <FadeInSection delay={0.15}>
+      <LaunchFilm />
     </FadeInSection>
     <FadeInSection delay={0.2}>
       <SocialProofMarquee />

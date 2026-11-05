@@ -57,6 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
         <nav className="hidden md:flex items-center gap-6">
           {[
             { name: 'Home', path: '/' },
+            { name: 'Launch Film', path: '/#launch-film', isNew: true },
             { name: 'Linkup Agent', path: '/#linkup-agent', isNew: true },
             { name: 'Blogs', path: '/blog', isNew: true },
             { name: 'Features', path: '/features' },
@@ -244,6 +245,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
             <div className="px-6 py-6 flex flex-col gap-6">
               {[
                 { name: 'Home', path: '/' },
+                { name: 'Launch Film', path: '/#launch-film', isNew: true },
                 { name: 'Linkup Agent', path: '/#linkup-agent', isNew: true },
                 { name: 'Blogs', path: '/blog', isNew: true },
                 { name: 'Features', path: '/features' },
