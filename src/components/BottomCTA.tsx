@@ -12,13 +12,13 @@ export const BottomCTA: React.FC = () => {
 
           <div className="relative z-10 space-y-8">
             <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
-              Ready to find your Co-Founder?
+              Don&apos;t Let Building Alone Kill Your Startup.
               <br />
-              <span className="text-[#FBE618]">Join the network today.</span>
+              <span className="text-[#FBE618]">Find Your Co-Founder Before Burnout Wins.</span>
             </h2>
             
-            <p className="text-slate-300 text-lg max-w-xl mx-auto">
-              Stop scrolling LinkedIn. Start building with vetted founders who are as serious as you are.
+            <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+              Every week you spend building without a co-founder is another week a two-founder squad ships twice as fast and takes your market. Stop carrying an entire company alone—match with vetted co-founders on LINKUP today.
             </p>
 
             <div className="flex flex-col items-center gap-5 pt-6">

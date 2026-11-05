@@ -23,19 +23,19 @@ export const Hero: React.FC = () => {
             className="flex flex-wrap items-center justify-center gap-2.5"
           >
             <a
+              href="#solo-graveyard"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-red-500/50 bg-red-500/15 hover:bg-red-500/25 transition-all hover:scale-105 shadow-[0_0_24px_rgba(239,68,68,0.25)] text-white text-xs sm:text-sm font-semibold group"
+            >
+              <span className="px-1.5 py-0.5 rounded bg-red-500 text-white text-[10px] font-mono font-extrabold uppercase">WARNING</span>
+              <span>Building Alone Is the #1 Silent Startup Killer — Don&apos;t Die Solo</span>
+              <span className="text-red-300 font-mono group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+            <a
               href="#linkup-agent"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-[#FBE618]/40 bg-[#FBE618]/10 hover:bg-[#FBE618]/20 transition-all hover:scale-105 shadow-[0_0_20px_rgba(251,230,24,0.2)] text-white text-xs sm:text-sm font-semibold group"
             >
               <span>Meet Linkup Agent — Natural Language Founder Matchmaking</span>
               <span className="text-[#FBE618] font-mono group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-            <a
-              href="#version-17"
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full glass-panel border border-[#00C2FF]/40 bg-[#00C2FF]/10 hover:bg-[#00C2FF]/20 transition-all hover:scale-105 text-white text-xs sm:text-sm font-semibold group"
-            >
-              <span className="px-1.5 py-0.5 rounded bg-[#FBE618] text-black text-[10px] font-mono font-extrabold uppercase">v17.0</span>
-              <span>Expressive Icons, Workspace &amp; Homescreen Search</span>
-              <span className="text-[#00C2FF] font-mono group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
             <a
               href="#founder-blogs"
@@ -54,7 +54,8 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white leading-[1.08]"
           >
-            Join LINKUP & Find Your <br />
+            Building Alone Kills Startups. <br />
+            Find Your{' '}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-white via-[#FBE618] to-[#00C2FF] bg-clip-text text-transparent">
                 Startup Co-Founder
@@ -63,6 +64,7 @@ export const Hero: React.FC = () => {
                 <path d="M0,0 Q50,12 100,0" fill="none" stroke="currentColor" strokeWidth="4" />
               </svg>
             </span>{' '}
+            Now.
           </motion.h1>
 
           {/* Sub-copy */}
@@ -73,10 +75,10 @@ export const Hero: React.FC = () => {
             className="max-w-2xl mx-auto space-y-3"
           >
             <p className="text-lg sm:text-xl text-white font-medium leading-relaxed">
-              Stop swiping. Tell Linkup Agent who you need, get instant compatible matches, and connect via double opt-in intros.
+              Right now, a two-founder team in your exact market is shipping twice as fast—one writing code while the other closes customers and investors. Every week you build without a co-founder, you carry 100% of the 2:00 AM burnout and blind spots alone.
             </p>
-            <p className="text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-              LINKUP is the elite AI-powered co-founder network. Connect with verified technical architects, growth leaders, and product visionaries ready to launch your next startup.
+            <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+              Don&apos;t let your startup die in silence because you tried to do engineering, sales, design, and fundraising by yourself. Tell Linkup Agent who you&apos;re missing and get matched with vetted technical, growth, and product co-founders before solo burnout wins.
             </p>
           </motion.div>
 
@@ -140,7 +142,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="pt-8 border-t border-white/10 grid grid-cols-3 gap-6 max-w-lg mx-auto text-center"
+            className="pt-8 border-t border-white/10 grid grid-cols-2 gap-6 max-w-md mx-auto text-center"
           >
             <div>
               <div className="font-display font-bold text-2xl sm:text-3xl text-white" aria-live="polite">
@@ -151,10 +153,6 @@ export const Hero: React.FC = () => {
             <div>
               <div className="font-display font-bold text-2xl sm:text-3xl text-[#FBE618]">98.4%</div>
               <div className="text-xs text-slate-400 font-medium mt-1">AI Match Precision</div>
-            </div>
-            <div>
-              <div className="font-display font-bold text-2xl sm:text-3xl text-[#00C2FF]">$42M+</div>
-              <div className="text-xs text-slate-400 font-medium mt-1">Capital Raised</div>
             </div>
           </motion.div>
 

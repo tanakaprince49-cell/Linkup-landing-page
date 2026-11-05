@@ -91,7 +91,11 @@ test('version 17 & founder blogs spotlights ship all 11 WebP mood icons, 17 inde
   assert.match(html, /#feature-workspace/);
   assert.match(html, /#feature-homesearch/);
   assert.match(html, /#feature-moods/);
-  for (const f of ['src/components/FounderBlogsSpotlight.tsx', 'src/components/Version17Spotlight.tsx', 'src/components/FeatureGrid.tsx', 'src/components/GooeyButtonGroup.tsx', 'src/components/NotFound.tsx', 'src/components/LinkupAgentFeature.tsx', 'src/data/mockData.ts']) {
+  for (const f of ['src/components/Hero.tsx', 'src/components/SoloFounderWarning.tsx', 'src/components/FounderBlogsSpotlight.tsx', 'src/components/Version17Spotlight.tsx', 'src/components/FeatureGrid.tsx', 'src/components/GooeyButtonGroup.tsx', 'src/components/NotFound.tsx', 'src/components/LinkupAgentFeature.tsx', 'src/data/mockData.ts']) {
     assert.doesNotMatch(read(f), /Sparkle|✨/i, `no sparkles allowed in ${f}`);
   }
+  const heroSrc = read('src/components/Hero.tsx');
+  assert.doesNotMatch(heroSrc, /\$42M\+|Capital Raised/i, 'removed $42M+ Capital Raised claim');
+  assert.match(heroSrc, /Building Alone Kills Startups/);
+  assert.match(read('src/components/SoloFounderWarning.tsx'), /Why Every Week Without a Co-Founder/);
 });

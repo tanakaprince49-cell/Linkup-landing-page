@@ -23,6 +23,7 @@ import { NotFound } from './components/NotFound';
 import { SeoRoute } from './lib/SeoRoute';
 import { Version17Spotlight } from './components/Version17Spotlight';
 import { FounderBlogsSpotlight } from './components/FounderBlogsSpotlight';
+import { SoloFounderWarning } from './components/SoloFounderWarning';
 
 const HomePage = () => (
   <>
@@ -31,6 +32,9 @@ const HomePage = () => (
     </FadeInSection>
     <FadeInSection delay={0.2}>
       <SocialProofMarquee />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <SoloFounderWarning />
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <LinkupAgentFeature />
@@ -92,6 +96,9 @@ const FounderPage = () => (
 
 const FeaturesPage = () => (
   <>
+    <FadeInSection delay={0.1}>
+      <SoloFounderWarning />
+    </FadeInSection>
     <FadeInSection delay={0.1}>
       <HowItWorks />
     </FadeInSection>
