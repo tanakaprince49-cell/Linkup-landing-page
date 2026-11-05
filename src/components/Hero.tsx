@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
         <div className="space-y-8 max-w-4xl mx-auto">
           
-          {/* New Announcement Badges */}
+          {/* Announcement Badge */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,21 +29,6 @@ export const Hero: React.FC = () => {
               <span className="px-1.5 py-0.5 rounded bg-red-500 text-white text-[10px] font-mono font-extrabold uppercase">WARNING</span>
               <span>Building Alone Is the #1 Silent Startup Killer — Don&apos;t Die Solo</span>
               <span className="text-red-300 font-mono group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-            <a
-              href="#linkup-agent"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-[#FBE618]/40 bg-[#FBE618]/10 hover:bg-[#FBE618]/20 transition-all hover:scale-105 shadow-[0_0_20px_rgba(251,230,24,0.2)] text-white text-xs sm:text-sm font-semibold group"
-            >
-              <span>Meet Linkup Agent — Natural Language Founder Matchmaking</span>
-              <span className="text-[#FBE618] font-mono group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-            <a
-              href="#founder-blogs"
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full glass-panel border border-emerald-400/40 bg-emerald-500/10 hover:bg-emerald-500/20 transition-all hover:scale-105 text-white text-xs sm:text-sm font-semibold group"
-            >
-              <span className="px-1.5 py-0.5 rounded bg-emerald-400 text-black text-[10px] font-mono font-extrabold uppercase">NEW</span>
-              <span>Founder Blogs — Google News, Image SEO &amp; Private Views/Clicks</span>
-              <span className="text-emerald-300 font-mono group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
           </motion.div>
 

@@ -96,6 +96,7 @@ test('version 17 & founder blogs spotlights ship all 11 WebP mood icons, 17 inde
   }
   const heroSrc = read('src/components/Hero.tsx');
   assert.doesNotMatch(heroSrc, /\$42M\+|Capital Raised/i, 'removed $42M+ Capital Raised claim');
+  assert.doesNotMatch(heroSrc, /Meet Linkup Agent|Private Views\/Clicks|#founder-blogs/i, 'removed cluttered hero announcement pills');
   assert.match(heroSrc, /Building Alone Kills Startups/);
   assert.match(read('src/components/SoloFounderWarning.tsx'), /Why Every Week Without a Co-Founder/);
 });
