@@ -189,7 +189,13 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-3 space-y-4 md:text-right">
             <h4 className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">Navigation & Legal</h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="/#builders" className="hover:text-[#FBE618] transition-colors">Public Builders Directory</a></li>
+              <li><a href="/blog" className="text-[#FBE618] font-semibold hover:text-white transition-colors">Why Building Alone Is Dangerous (5 Blogs)</a></li>
+              <li><a href="/blog/burnout" className="hover:text-[#FBE618] transition-colors">01. Solo Founder Burnout</a></li>
+              <li><a href="/blog/distribution" className="hover:text-[#FBE618] transition-colors">02. Zero Distribution Risk</a></li>
+              <li><a href="/blog/blindspots" className="hover:text-[#FBE618] transition-colors">03. The Solo Echo Chamber</a></li>
+              <li><a href="/blog/investors" className="hover:text-[#FBE618] transition-colors">04. Why Investors Reject Solo Risk</a></li>
+              <li><a href="/blog/velocity" className="hover:text-[#FBE618] transition-colors">05. Two Founder Velocity</a></li>
+              <li className="pt-1"><a href="/#builders" className="hover:text-[#FBE618] transition-colors">Public Builders Directory</a></li>
               <li><a href="/#founder" className="hover:text-[#FBE618] transition-colors">About Tanaka Gaadzikwa</a></li>
               <li><a href="/features" className="hover:text-[#FBE618] transition-colors">Platform Features</a></li>
               <li><a href="/campaigns" className="hover:text-[#FBE618] transition-colors">Founder Campaigns</a></li>

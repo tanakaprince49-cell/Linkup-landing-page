@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Why Building Alone Is Dangerous | LINKUP Founder Journal</title>
+    <link>https://www.linkupbuild.com/blog</link>
+    <description>Five in depth founder reports explaining why building a startup alone leads to burnout, blind spots, zero distribution, investor rejection, and lost market velocity.</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Nov 2026 09:00:00 GMT</lastBuildDate>
+    <atom:link href="https://www.linkupbuild.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Why Solo Founder Burnout Destroys Promising Startups Before Product Market Fit</title>
+      <link>https://www.linkupbuild.com/blog/burnout</link>
+      <guid isPermaLink="true">https://www.linkupbuild.com/blog/burnout</guid>
+      <pubDate>Thu, 05 Nov 2026 09:00:00 GMT</pubDate>
+      <category>Founder Psychology</category>
+      <description>Discover why building a startup alone triggers severe decision fatigue and emotional burnout before product market fit, and how a cofounder protects survival.</description>
+    </item>
+    <item>
+      <title>Why Building Alone Starves Your Startup Of Distribution And Revenue</title>
+      <link>https://www.linkupbuild.com/blog/distribution</link>
+      <guid isPermaLink="true">https://www.linkupbuild.com/blog/distribution</guid>
+      <pubDate>Thu, 05 Nov 2026 09:00:00 GMT</pubDate>
+      <category>Growth And Distribution</category>
+      <description>Learn why solo founders fall into the build trap with zero customers, and why splitting engineering and distribution between two cofounders unlocks revenue.</description>
+    </item>
+    <item>
+      <title>The Echo Chamber Trap Why Solo Builders Ship Products Nobody Wants</title>
+      <link>https://www.linkupbuild.com/blog/blindspots</link>
+      <guid isPermaLink="true">https://www.linkupbuild.com/blog/blindspots</guid>
+      <pubDate>Thu, 05 Nov 2026 09:00:00 GMT</pubDate>
+      <category>Product Execution</category>
+      <description>Without an equal cofounder challenging bad assumptions, solo builders fall prey to confirmation bias and waste months engineering features nobody buys.</description>
+    </item>
+    <item>
+      <title>Why Venture Investors Quietly Reject Solo Founders As A Single Point Of Failure</title>
+      <link>https://www.linkupbuild.com/blog/investors</link>
+      <guid isPermaLink="true">https://www.linkupbuild.com/blog/investors</guid>
+      <pubDate>Thu, 05 Nov 2026 09:00:00 GMT</pubDate>
+      <category>Fundraising Reality</category>
+      <description>Understand why accelerators and seed VCs view solo founders as a single point of failure, and why recruiting a strong cofounder unlocks investor conviction.</description>
+    </item>
+    <item>
+      <title>Why A Two Founder Team Ships Twice As Fast And Wins Every Competitive Market</title>
+      <link>https://www.linkupbuild.com/blog/velocity</link>
+      <guid isPermaLink="true">https://www.linkupbuild.com/blog/velocity</guid>
+      <pubDate>Thu, 05 Nov 2026 09:00:00 GMT</pubDate>
+      <category>Startup Velocity</category>
+      <description>See how context switching slows solo builders down while parallel execution lets two cofounders ship faster, learn faster, and win competitive markets.</description>
+    </item>
+  </channel>
+</rss>

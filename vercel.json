@@ -21,6 +21,54 @@
       "destination": "/privacy.html"
     },
     {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/burnout",
+      "destination": "/blog/burnout/index.html"
+    },
+    {
+      "source": "/blog/burnout/",
+      "destination": "/blog/burnout/index.html"
+    },
+    {
+      "source": "/blog/distribution",
+      "destination": "/blog/distribution/index.html"
+    },
+    {
+      "source": "/blog/distribution/",
+      "destination": "/blog/distribution/index.html"
+    },
+    {
+      "source": "/blog/blindspots",
+      "destination": "/blog/blindspots/index.html"
+    },
+    {
+      "source": "/blog/blindspots/",
+      "destination": "/blog/blindspots/index.html"
+    },
+    {
+      "source": "/blog/investors",
+      "destination": "/blog/investors/index.html"
+    },
+    {
+      "source": "/blog/investors/",
+      "destination": "/blog/investors/index.html"
+    },
+    {
+      "source": "/blog/velocity",
+      "destination": "/blog/velocity/index.html"
+    },
+    {
+      "source": "/blog/velocity/",
+      "destination": "/blog/velocity/index.html"
+    },
+    {
       "source": "/app/",
       "destination": "https://linkup-muqu.vercel.app/index.html"
     },

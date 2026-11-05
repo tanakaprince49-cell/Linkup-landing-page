@@ -185,4 +185,65 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.linkupbuild.com/blog</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.linkupbuild.com/blog/burnout</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/landingblog/burnout.webp</image:loc>
+      <image:title>Why Solo Founder Burnout Destroys Promising Startups Before Product Market Fit</image:title>
+      <image:caption>Solo founder burnout happens quietly when one builder absorbs every technical failure, customer objection, and financial pressure alone.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.linkupbuild.com/blog/distribution</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/landingblog/distribution.webp</image:loc>
+      <image:title>Why Building Alone Starves Your Startup Of Distribution And Revenue</image:title>
+      <image:caption>Thousands of polished solo products die with fewer than ten paying customers because nobody ran distribution while code was written.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.linkupbuild.com/blog/blindspots</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/landingblog/blindspots.webp</image:loc>
+      <image:title>The Echo Chamber Trap Why Solo Builders Ship Products Nobody Wants</image:title>
+      <image:caption>Confirmation bias thrives in isolation when nobody with equal ownership pushes back on flawed product assumptions.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.linkupbuild.com/blog/investors</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/landingblog/investors.webp</image:loc>
+      <image:title>Why Venture Investors Quietly Reject Solo Founders As A Single Point Of Failure</image:title>
+      <image:caption>Institutional seed investors evaluate founder team resilience first because early products pivot while founding partnerships endure.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.linkupbuild.com/blog/velocity</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>https://www.linkupbuild.com/images/landingblog/velocity.webp</image:loc>
+      <image:title>Why A Two Founder Team Ships Twice As Fast And Wins Every Competitive Market</image:title>
+      <image:caption>Startup velocity compounds weekly when two aligned cofounders eliminate context switching and run product and market loops in parallel.</image:caption>
+    </image:image>
+  </url>
 </urlset>

@@ -24,6 +24,8 @@ import { SeoRoute } from './lib/SeoRoute';
 import { Version17Spotlight } from './components/Version17Spotlight';
 import { FounderBlogsSpotlight } from './components/FounderBlogsSpotlight';
 import { SoloFounderWarning } from './components/SoloFounderWarning';
+import { LandingBlogsSection } from './components/LandingBlogsSection';
+import { LandingBlogIndexPage, LandingBlogPostPage } from './components/LandingBlogPages';
 
 const HomePage = () => (
   <>
@@ -35,6 +37,9 @@ const HomePage = () => (
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <SoloFounderWarning />
+    </FadeInSection>
+    <FadeInSection delay={0.1}>
+      <LandingBlogsSection />
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <LinkupAgentFeature />
@@ -185,6 +190,8 @@ export default function App() {
         <main className="pt-24 flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/blog" element={<LandingBlogIndexPage />} />
+            <Route path="/blog/:slug" element={<LandingBlogPostPage />} />
             <Route path="/features" element={<FeaturesPage />} />
             <Route path="/builders" element={<DirectoryPage />} />
             <Route path="/directory" element={<DirectoryPage />} />
