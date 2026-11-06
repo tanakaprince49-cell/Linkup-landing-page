@@ -59,11 +59,6 @@ const ROUTES: Record<string, RouteMeta> = {
     description: 'Tanaka Gaadzikwa (Tanaka Prince Gaadzikwa, born November 20, 2010) is the Young founder and CEO of LINKUP in Harare, Zimbabwe — the Startup Cupid and Minister of AI.',
     canonical: SITE + '/founder',
   },
-  '/campaigns': {
-    title: 'LINKUP Campaigns — Builder Quests With Real Rewards',
-    description: 'Complete builder quests and campaigns on LINKUP to earn real rewards. Missions for every level, tracked progress and community competition.',
-    canonical: SITE + '/campaigns',
-  },
   '/faq': {
     title: 'LINKUP FAQ — Co-Founder Matching Questions Answered',
     description: 'How does LINKUP match co-founders? How does verification work? Answers about AI matchmaking, REP scores, messaging and building part-time.',

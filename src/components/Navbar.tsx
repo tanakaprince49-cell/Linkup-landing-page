@@ -62,7 +62,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
             { name: 'Blogs', path: '/blog', isNew: true },
             { name: 'Features', path: '/features' },
             { name: 'Founder', path: '/founder' },
-            { name: 'Campaigns', path: '/campaigns' },
             { name: 'FAQ', path: '/faq' },
           ].map((link) => {
             const isAnchor = link.path.startsWith('/#');
@@ -250,7 +249,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
                 { name: 'Blogs', path: '/blog', isNew: true },
                 { name: 'Features', path: '/features' },
                 { name: 'Founder', path: '/founder' },
-                { name: 'Campaigns', path: '/campaigns' },
                 { name: 'FAQ', path: '/faq' },
               ].map((link) => {
                 const isAnchor = link.path.startsWith('/#');

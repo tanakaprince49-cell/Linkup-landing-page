@@ -5,7 +5,7 @@ const read = p => readFileSync(new URL('../' + p, import.meta.url), 'utf8');
 
 test('every sitemap page has its own title, description and canonical', () => {
   const src = read('src/lib/SeoRoute.tsx');
-  for (const path of ['/', '/features', '/builders', '/directory', '/founder', '/about', '/campaigns', '/faq', '/index.html']) assert.ok(src.includes(`'${path}':`), path);
+  for (const path of ['/', '/features', '/builders', '/directory', '/founder', '/about', '/faq', '/index.html']) assert.ok(src.includes(`'${path}':`), path);
   assert.ok(src.includes("canonical: SITE + '/builders'"), 'directory dedupes to builders');
   assert.ok(src.includes("canonical: SITE + '/founder'"), 'about dedupes to founder');
   assert.match(src, /noindex, nofollow/);

@@ -6,7 +6,6 @@ import { SocialProofMarquee } from './components/SocialProofMarquee';
 import { HowItWorks } from './components/HowItWorks';
 import { AppShowcase } from './components/AppShowcase';
 import { FeatureGrid } from './components/FeatureGrid';
-import { CampaignsFeature } from './components/CampaignsFeature';
 import { Reviews } from './components/Reviews';
 import { FAQ } from './components/FAQ';
 import { BottomCTA } from './components/BottomCTA';
@@ -126,14 +125,6 @@ const FeaturesPage = () => (
   </>
 );
 
-const CampaignsPage = () => (
-  <>
-    <FadeInSection delay={0.1}>
-      <CampaignsFeature />
-    </FadeInSection>
-  </>
-);
-
 const FAQPage = () => (
   <>
     <FadeInSection delay={0.1}>
@@ -201,7 +192,6 @@ export default function App() {
             <Route path="/directory" element={<DirectoryPage />} />
             <Route path="/founder" element={<FounderPage />} />
             <Route path="/about" element={<FounderPage />} />
-            <Route path="/campaigns" element={<CampaignsPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

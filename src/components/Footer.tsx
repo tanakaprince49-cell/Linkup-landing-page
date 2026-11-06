@@ -198,7 +198,6 @@ export const Footer: React.FC = () => {
               <li className="pt-1"><a href="/#builders" className="hover:text-[#FBE618] transition-colors">Public Builders Directory</a></li>
               <li><a href="/#founder" className="hover:text-[#FBE618] transition-colors">About Tanaka Gaadzikwa</a></li>
               <li><a href="/features" className="hover:text-[#FBE618] transition-colors">Platform Features</a></li>
-              <li><a href="/campaigns" className="hover:text-[#FBE618] transition-colors">Founder Campaigns</a></li>
               <li><a href="/faq" className="hover:text-[#FBE618] transition-colors">Frequently Asked Questions</a></li>
               <li className="pt-2"><a href="/privacy" className="text-slate-500 hover:text-[#FBE618] transition-colors">Privacy Policy</a></li>
               <li><a href="/app/data-deletion" className="text-slate-500 hover:text-[#FBE618] transition-colors">Account &amp; Data Deletion</a></li>
