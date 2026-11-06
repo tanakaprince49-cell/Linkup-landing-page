@@ -7,6 +7,7 @@ function route(pathname) {
   for(const rule of config.rewrites) {
     if(rule.source===pathname)return rule.destination;
     if(rule.source==='/app/:path*' && pathname.startsWith('/app/'))return rule.destination.replace(':path*',pathname.slice(5));
+    if(rule.source==='/campaigns/:path*' && pathname.startsWith('/campaigns/'))return rule.destination.replace(':path*',pathname.slice(11));
     if(rule.source==='/(.*)')return rule.destination.replace('$1',pathname.slice(1));
   }
 }
@@ -16,6 +17,18 @@ test('both bare app entrances proxy directly to the upstream HTML, not its slash
 });
 test('deep routes, assets, APIs, SEO and PWA stay under the existing app proxy',()=>{
   for(const path of ['landing','login','profile/member-1','api/payonifyWebhook','api/payonifyCheckout','api/payonifyStatus','api/linky','_expo/static/js/web/chunk.js','manifest.webmanifest','service-worker.js','icons/icon-192.png','p/member-1','builders','sitemap.xml','__/auth/handler'])assert.equal(route('/app/'+path),'https://linkup-muqu.vercel.app/'+path);
+});
+test('campaigns and the public member globe proxy to the app origin',()=>{
+  assert.equal(route('/campaigns'),'https://linkup-muqu.vercel.app/campaigns');
+  assert.equal(route('/campaigns/'),'https://linkup-muqu.vercel.app/campaigns');
+  assert.equal(route('/campaigns/north-star-launch'),'https://linkup-muqu.vercel.app/campaigns/north-star-launch');
+  assert.equal(route('/search'),'https://linkup-muqu.vercel.app/search');
+  assert.equal(route('/search/'),'https://linkup-muqu.vercel.app/search');
+  // the app proxy still owns /app/*, the catch-all still owns everything else
+  assert.equal(route('/app/campaigns'),'https://linkup-muqu.vercel.app/campaigns');
+  assert.equal(route('/app/search'),'https://linkup-muqu.vercel.app/search');
+  assert.equal(route('/searched'),'/index.html');
+  assert.equal(route('/campaign'),'/index.html');
 });
 test('marketing homepage, assets, forms and similar prefixes are not proxied',()=>{
   for(const path of ['/','/features','/founder','/faq','/assets/index.js','/api/contact','/application','/app-other'])assert.equal(route(path),'/index.html');

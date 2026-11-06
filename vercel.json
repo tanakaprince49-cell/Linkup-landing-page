@@ -81,6 +81,26 @@
       "destination": "https://linkup-muqu.vercel.app/:path*"
     },
     {
+      "source": "/campaigns",
+      "destination": "https://linkup-muqu.vercel.app/campaigns"
+    },
+    {
+      "source": "/campaigns/",
+      "destination": "https://linkup-muqu.vercel.app/campaigns"
+    },
+    {
+      "source": "/campaigns/:path*",
+      "destination": "https://linkup-muqu.vercel.app/campaigns/:path*"
+    },
+    {
+      "source": "/search",
+      "destination": "https://linkup-muqu.vercel.app/search"
+    },
+    {
+      "source": "/search/",
+      "destination": "https://linkup-muqu.vercel.app/search"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
