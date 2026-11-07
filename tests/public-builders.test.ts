@@ -38,7 +38,8 @@ test('feed uses the same-origin live API, disables caching and never replaces fa
 test('directory source has no mock imports, invented scores or fake verification claims',()=>{
   const source=readFileSync(new URL('../src/components/BuilderDirectory.tsx',import.meta.url),'utf8');
   assert.doesNotMatch(source,/MOCK_BUILDERS|matchScore|repScore|builder\.verified|ShieldCheck|Unsplash|thousands of verified/i);
-  assert.match(source,/fetchMemberPage/);assert.match(source,/href=\{builder\.url\}/);assert.match(source,/role="alert"/);assert.match(source,/Show more builders/);
+  assert.match(source,/fetchMemberPage/);assert.match(source,/role="alert"/);
+  assert.doesNotMatch(source,/motion\.article|View LINKUP profile|Show more builders|Create Your Builder Profile|Browse all public builder pages/);
   assert.doesNotMatch(readFileSync(new URL('../src/data/mockData.ts',import.meta.url),'utf8'),/MOCK_BUILDERS/);
 });
 test('landing directory replaces the old intro copy with the real interactive Earth search',()=>{

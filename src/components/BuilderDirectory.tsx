@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
-import { Search, MapPin, ArrowUpRight, Users, RefreshCw } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { fetchMemberPage, mergeBuilders, matchesBuilder, initials, type PublicBuilder } from '../lib/publicBuilders';
+import { Search, Users, RefreshCw } from 'lucide-react';
+import { fetchMemberPage, mergeBuilders, matchesBuilder, type PublicBuilder } from '../lib/publicBuilders';
 const LazyInteractiveEarthSearch = React.lazy(() => import('./InteractiveEarthSearch').then(module => ({ default: module.InteractiveEarthSearch })));
 
 const roleCategories = ['All', 'AI / ML', 'Engineering', 'Product / CEO', 'Design', 'Fintech / BioTech'];
@@ -10,27 +9,23 @@ export const BuilderDirectory: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRole, setSelectedRole] = useState('All');
   const [builders, setBuilders] = useState<PublicBuilder[]>([]);
-  const [nextCursor, setNextCursor] = useState<string | null>(null);
-  const [visibleCount, setVisibleCount] = useState(12);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const activeRequest = useRef<AbortController | null>(null);
   const earthAnchorRef = useRef<HTMLDivElement>(null);
   const [earthInView, setEarthInView] = useState(false);
 
-  const loadPage = useCallback(async (cursor = '', append = false) => {
+  const loadBuilders = useCallback(async () => {
     activeRequest.current?.abort();
     const controller = new AbortController();
     activeRequest.current = controller;
     setLoading(true);
     setError('');
-    if (!append) { setBuilders([]); setNextCursor(null); }
+    setBuilders([]);
     try {
-      const page = await fetchMemberPage(cursor, controller.signal);
+      const page = await fetchMemberPage('', controller.signal);
       if (controller.signal.aborted || activeRequest.current !== controller) return;
-      setBuilders(previous => mergeBuilders(append ? previous : [], page.profiles));
-      setNextCursor(page.nextCursor);
-      setVisibleCount(previous => append ? previous + 12 : 12);
+      setBuilders(mergeBuilders([], page.profiles));
     } catch {
       if (!controller.signal.aborted && activeRequest.current === controller) {
         setError('We couldn’t load public profiles right now. Please try again, or browse the public directory.');
@@ -41,10 +36,10 @@ export const BuilderDirectory: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    void loadPage();
+    void loadBuilders();
     // Recheck visibility when a visitor returns; never persist profile data
     // in localStorage or fall back to sample people when the API is offline.
-    const refresh = () => { if (document.visibilityState === 'visible') void loadPage(); };
+    const refresh = () => { if (document.visibilityState === 'visible') void loadBuilders(); };
     window.addEventListener('focus', refresh);
     document.addEventListener('visibilitychange', refresh);
     return () => {
@@ -52,7 +47,8 @@ export const BuilderDirectory: React.FC = () => {
       window.removeEventListener('focus', refresh);
       document.removeEventListener('visibilitychange', refresh);
     };
-  }, [loadPage]);
+  }, [loadBuilders]);
+
   useEffect(() => {
     const node = earthAnchorRef.current;
     if (!node) return;
@@ -66,18 +62,11 @@ export const BuilderDirectory: React.FC = () => {
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
-  useEffect(() => { setVisibleCount(12); }, [searchQuery, selectedRole]);
 
   const filteredBuilders = useMemo(() => builders.filter(p => matchesBuilder(p, searchQuery, selectedRole)), [builders, searchQuery, selectedRole]);
-  const visibleBuilders = filteredBuilders.slice(0, visibleCount);
-  const hasMore = visibleCount < filteredBuilders.length || !!nextCursor;
-  const showMore = () => {
-    if (visibleCount < filteredBuilders.length) setVisibleCount(count => count + 12);
-    else if (nextCursor) void loadPage(nextCursor, true);
-  };
 
   return (
-    <section id="builders" aria-labelledby="builders-heading" itemScope itemType="https://schema.org/ItemList"
+    <section id="builders" aria-labelledby="builders-heading"
       className="py-24 relative overflow-hidden z-20 border-t border-white/5">
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#00C2FF]/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#FBE618]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -86,10 +75,10 @@ export const BuilderDirectory: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-mono font-bold tracking-wider uppercase">
             <Users className="w-3.5 h-3.5" /><span>People building on LINKUP</span>
           </div>
-          <h2 id="builders-heading" itemProp="name" className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
+          <h2 id="builders-heading" className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
             Meet the Builders on <span className="text-[#FBE618]">LINKUP</span>
           </h2>
-          <p itemProp="description" className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
             Search the LINKUP community on an interactive, real-world globe. Spin the Earth, zoom in, and open public builders by location.
           </p>
         </div>
@@ -109,74 +98,24 @@ export const BuilderDirectory: React.FC = () => {
             </button>)}
           </div>
           <p className="text-xs text-slate-400 text-center" role="status" aria-live="polite">
-            {loading ? 'Loading public LINKUP profiles…' : `Showing ${visibleBuilders.length} of ${filteredBuilders.length} matching loaded profiles.`}
-            {!loading && nextCursor ? ' Load more to explore additional members.' : ''}
+            {loading ? 'Loading public LINKUP profiles…' : error ? 'Public profiles are currently unavailable.' : `Showing ${filteredBuilders.length} of ${builders.length} matching loaded profiles.`}
           </p>
         </div>
 
         {error && <div role="alert" className="max-w-3xl mx-auto mb-8 p-5 rounded-2xl border border-amber-300/20 bg-amber-300/5 text-sm text-slate-200 text-center">
           <p>{error}</p>
-          <button onClick={() => void loadPage()} className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-xl text-white water-btn font-semibold"><RefreshCw className="w-4 h-4" />Try again</button>
+          <button onClick={() => void loadBuilders()} className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-xl text-white water-btn font-semibold"><RefreshCw className="w-4 h-4" />Try again</button>
           <a href="/app/builders" className="inline-block ml-4 underline">Browse public directory</a>
         </div>}
 
         <div ref={earthAnchorRef}>
           {earthInView ? (
-            <React.Suspense fallback={<div role="status" className="mx-auto mb-10 grid min-h-[420px] place-items-center rounded-[30px] border border-white/10 bg-[#07111d] text-sm text-slate-300">Loading the real LINKUP member globe…</div>}>
+            <React.Suspense fallback={<div role="status" className="mx-auto grid min-h-[420px] place-items-center rounded-[30px] border border-white/10 bg-[#07111d] text-sm text-slate-300">Loading the real LINKUP member globe…</div>}>
               <LazyInteractiveEarthSearch members={filteredBuilders} />
             </React.Suspense>
           ) : (
-            <div aria-hidden="true" className="mx-auto mb-10 min-h-[390px] rounded-[30px] border border-white/10 bg-[radial-gradient(ellipse_at_50%_55%,#10283d_0%,#08111d_55%,#04070c_100%)]" />
+            <div aria-hidden="true" className="mx-auto min-h-[390px] rounded-[30px] border border-white/10 bg-[radial-gradient(ellipse_at_50%_55%,#10283d_0%,#08111d_55%,#04070c_100%)]" />
           )}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" aria-busy={loading}>
-          {loading && builders.length === 0 && Array.from({ length: 8 }, (_, i) => <div key={`loading-${i}`} aria-hidden="true" className="rounded-3xl border border-white/10 p-5 bg-white/[0.03] animate-pulse h-72"><div className="h-14 w-14 bg-white/10 rounded-2xl mb-6" /><div className="h-4 bg-white/10 rounded w-3/4 mb-3" /><div className="h-3 bg-white/5 rounded w-full" /></div>)}
-          <AnimatePresence>
-            {visibleBuilders.map((builder, idx) => <motion.article key={builder.uid} data-member-id={builder.uid} layout
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.3, delay: Math.min(idx, 5) * 0.04 }}
-              itemProp="itemListElement" itemScope itemType="https://schema.org/Person"
-              className="glass-panel rounded-3xl border border-white/10 p-5 bg-[#0a0e1a]/80 hover:border-[#FBE618]/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group shadow-xl">
-              <div>
-                <div className="flex items-start justify-between gap-3 mb-4">
-                  <div className="relative w-14 h-14 rounded-2xl border border-white/10 bg-[#FBE618]/10 text-[#FBE618] flex items-center justify-center font-bold text-xl overflow-hidden shrink-0">
-                    <span aria-hidden="true">{initials(builder.name)}</span>
-                    {builder.image && <img src={builder.image} alt={`Photo of ${builder.name}${builder.occupation ? `, ${builder.occupation}` : ''} on LINKUP`} title={builder.name} itemProp="image" width="56" height="56" loading="lazy" decoding="async" referrerPolicy="no-referrer"
-                      onError={event => { event.currentTarget.style.display = 'none'; }} className="absolute inset-0 w-full h-full object-cover" />}
-                  </div>
-                  <span className="text-[10px] font-mono text-[#00C2FF] bg-[#00C2FF]/10 border border-[#00C2FF]/20 px-2 py-1 rounded-full">LINKUP member</span>
-                </div>
-                <div className="space-y-1 mb-3">
-                  <h3 itemProp="name" className="text-lg font-bold text-white font-display group-hover:text-[#FBE618] transition-colors">
-                    <a itemProp="url" href={builder.url}>{builder.name}</a>
-                  </h3>
-                  {builder.occupation && <p itemProp="jobTitle" className="text-xs font-semibold text-[#00C2FF] line-clamp-2">{builder.occupation}</p>}
-                  {builder.company && <p className="text-xs text-slate-300 line-clamp-1">{builder.company}</p>}
-                  {builder.location && <div className="flex items-center gap-1 text-[11px] text-slate-400"><MapPin className="w-3 h-3 text-red-400 shrink-0" /><span>{builder.location}</span></div>}
-                </div>
-                {builder.bio && <p itemProp="description" className="text-xs text-slate-300 leading-relaxed line-clamp-3 mb-3">{builder.bio}</p>}
-                {builder.lookingFor.length > 0 && <div className="mb-4 pt-2 border-t border-white/5"><span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#FBE618] block mb-1">Looking for</span><p className="text-[11px] text-slate-200 line-clamp-2">{builder.lookingFor.join(', ')}</p></div>}
-                <div className="flex flex-wrap gap-1.5 mb-4">{builder.skills.slice(0, 6).map(tag => <span key={tag} itemProp="knowsAbout" className="text-[10px] font-mono bg-white/5 border border-white/10 px-2 py-0.5 rounded-md text-slate-300">{tag}</span>)}</div>
-              </div>
-              <a href={builder.url} className="w-full py-2.5 rounded-xl water-btn text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 group/btn shadow-md">
-                <span>View LINKUP profile</span><ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
-              </a>
-            </motion.article>)}
-          </AnimatePresence>
-        </div>
-
-        {!loading && !error && visibleBuilders.length === 0 && <p className="text-center text-slate-300 py-10">
-          {builders.length ? 'No loaded profiles match those filters. Try another name or skill, or load more builders.' : 'No public profiles are available on this page yet.'}
-        </p>}
-        {hasMore && <div className="mt-9 text-center"><button onClick={showMore} disabled={loading} className="px-6 py-3 rounded-2xl water-btn text-white disabled:opacity-50 font-semibold text-sm">{loading ? 'Loading…' : 'Show more builders'}</button></div>}
-
-        <div className="mt-14 p-6 sm:p-8 rounded-3xl glass-panel border border-white/10 bg-gradient-to-r from-[#FBE618]/10 via-[#00C2FF]/10 to-transparent flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center sm:text-left">
-            <h3 className="text-xl font-bold text-white font-display">Building something? Meet your next collaborator.</h3>
-            <p className="text-xs sm:text-sm text-slate-300">Create a LINKUP profile and turn on Public Discovery to join the public directory.</p>
-            <a href="/app/builders" className="inline-block text-xs text-[#FBE618] underline mt-2">Browse all public builder pages</a>
-          </div>
-          <a href="/app/landing" className="shrink-0 px-6 py-3.5 rounded-2xl water-btn text-white font-bold text-sm transition-all hover:-translate-y-0.5">Create Your Builder Profile</a>
         </div>
       </div>
     </section>

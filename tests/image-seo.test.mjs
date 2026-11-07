@@ -30,11 +30,11 @@ test('linkup agent section shows an indexed Linky figure', () => {
   assert.match(src, /itemProp="contentUrl"/);
 });
 
-test('member photos use descriptive namespaced alt text', () => {
-  const src = read('src/components/BuilderDirectory.tsx');
-  assert.match(src, /Photo of \$\{builder\.name\}/);
-  assert.match(src, /on LINKUP/);
-  assert.match(src, /decoding="async"/);
+test('globe profile links pair decorative member photos with visible names', () => {
+  const src = read('src/components/InteractiveEarthSearch.tsx');
+  assert.match(src, /href=\{member\.url\}/);
+  assert.match(src, /<img src=\{member\.image\} alt="" loading="lazy"/);
+  assert.match(src, /<b>\{member\.name\}<\/b>/);
 });
 
 test('accelerator logos load lazily with hidden marquee duplicates', () => {

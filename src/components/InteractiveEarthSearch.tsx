@@ -359,7 +359,7 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
         <div className="earth-vignette" aria-hidden="true" />
         {webglUnsupported && (
           <div className="earth-fallback" role="img" aria-label="World map of LINKUP member locations">
-            <span>Interactive 3D is not available in this browser. Public profiles are still searchable below.</span>
+            <span>Interactive 3D is not available in this browser. Use the location buttons to explore public builders.</span>
           </div>
         )}
         <div className="earth-hint"><span>✦</span> Explore founders around the world</div>
@@ -390,7 +390,7 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
           ))}
         </div>
       )}
-      {groups.length === 0 && <p className="earth-no-locations">No matching public location is available for these loaded profiles yet. You can still search and open their profiles below.</p>}
+      {groups.length === 0 && <p className="earth-no-locations">No matching public location is available for these loaded profiles yet. Try a different search or role filter.</p>}
     </div>
   );
 };
