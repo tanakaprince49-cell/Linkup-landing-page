@@ -49,6 +49,7 @@ test('landing directory replaces the old intro copy with the real interactive Ea
   assert.match(directory,/IntersectionObserver/);
   assert.match(globe,/OrbitControls/);assert.match(globe,/SphereGeometry\(radius, 96, 64\)/);
   assert.match(globe,/earth-blue-marble\.jpg/);assert.match(globe,/pointerup/);assert.match(globe,/Search builders by place/);
+  assert.match(globe,/markerHit\.distance < earthHit\.distance/,'only visible front-side map markers can be selected');
   assert.doesNotMatch(globe,/cdn\.(?:jsdelivr|cdnjs)\.net/);
   const image=new URL('../public/images/earth-blue-marble.jpg',import.meta.url);
   assert.ok(readFileSync(image).byteLength>500_000);

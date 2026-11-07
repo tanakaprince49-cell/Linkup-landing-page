@@ -178,7 +178,11 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
       pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
       pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
       raycaster.setFromCamera(pointer, camera);
-      const hit = raycaster.intersectObjects(markers, false)[0]?.object as THREE.Mesh | undefined;
+      const markerHit = raycaster.intersectObjects(markers, false)[0];
+      const earthHit = raycaster.intersectObject(earth, false)[0];
+      const hit = markerHit && (!earthHit || markerHit.distance < earthHit.distance)
+        ? markerHit.object as THREE.Mesh
+        : undefined;
       const index = hit?.userData.groupIndex;
       if (Number.isInteger(index)) setSelected(groups[index] || null);
     };
