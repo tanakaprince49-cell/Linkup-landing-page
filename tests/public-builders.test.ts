@@ -41,6 +41,18 @@ test('directory source has no mock imports, invented scores or fake verification
   assert.match(source,/fetchMemberPage/);assert.match(source,/href=\{builder\.url\}/);assert.match(source,/role="alert"/);assert.match(source,/Show more builders/);
   assert.doesNotMatch(readFileSync(new URL('../src/data/mockData.ts',import.meta.url),'utf8'),/MOCK_BUILDERS/);
 });
+test('landing directory replaces the old intro copy with the real interactive Earth search',()=>{
+  const directory=readFileSync(new URL('../src/components/BuilderDirectory.tsx',import.meta.url),'utf8');
+  const globe=readFileSync(new URL('../src/components/InteractiveEarthSearch.tsx',import.meta.url),'utf8');
+  assert.doesNotMatch(directory,/Real public profiles from the LINKUP community/);
+  assert.match(directory,/<LazyInteractiveEarthSearch members=\{filteredBuilders\} \/>/);
+  assert.match(directory,/IntersectionObserver/);
+  assert.match(globe,/OrbitControls/);assert.match(globe,/SphereGeometry\(radius, 96, 64\)/);
+  assert.match(globe,/earth-blue-marble\.jpg/);assert.match(globe,/pointerup/);assert.match(globe,/Search builders by place/);
+  assert.doesNotMatch(globe,/cdn\.(?:jsdelivr|cdnjs)\.net/);
+  const image=new URL('../public/images/earth-blue-marble.jpg',import.meta.url);
+  assert.ok(readFileSync(image).byteLength>500_000);
+});
 import {fetchBuilderCount, formatBuilderCount} from '../src/lib/publicBuilders';
 test('builder counter walks the live feed and formats real totals only',async()=>{
   const previous=globalThis.fetch;

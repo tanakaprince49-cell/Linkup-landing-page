@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react'
 import { Search, MapPin, ArrowUpRight, Users, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fetchMemberPage, mergeBuilders, matchesBuilder, initials, type PublicBuilder } from '../lib/publicBuilders';
+const LazyInteractiveEarthSearch = React.lazy(() => import('./InteractiveEarthSearch').then(module => ({ default: module.InteractiveEarthSearch })));
 
 const roleCategories = ['All', 'AI / ML', 'Engineering', 'Product / CEO', 'Design', 'Fintech / BioTech'];
 
@@ -14,6 +15,8 @@ export const BuilderDirectory: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const activeRequest = useRef<AbortController | null>(null);
+  const earthAnchorRef = useRef<HTMLDivElement>(null);
+  const [earthInView, setEarthInView] = useState(false);
 
   const loadPage = useCallback(async (cursor = '', append = false) => {
     activeRequest.current?.abort();
@@ -50,6 +53,19 @@ export const BuilderDirectory: React.FC = () => {
       document.removeEventListener('visibilitychange', refresh);
     };
   }, [loadPage]);
+  useEffect(() => {
+    const node = earthAnchorRef.current;
+    if (!node) return;
+    if (!('IntersectionObserver' in window)) { setEarthInView(true); return; }
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        setEarthInView(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: '420px 0px' });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => { setVisibleCount(12); }, [searchQuery, selectedRole]);
 
   const filteredBuilders = useMemo(() => builders.filter(p => matchesBuilder(p, searchQuery, selectedRole)), [builders, searchQuery, selectedRole]);
@@ -74,7 +90,7 @@ export const BuilderDirectory: React.FC = () => {
             Meet the Builders on <span className="text-[#FBE618]">LINKUP</span>
           </h2>
           <p itemProp="description" className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            Real public profiles from the LINKUP community. Explore their skills, see what they’re building, and find your next collaborator.
+            Search the LINKUP community on an interactive, real-world globe. Spin the Earth, zoom in, and open public builders by location.
           </p>
         </div>
 
@@ -103,6 +119,16 @@ export const BuilderDirectory: React.FC = () => {
           <button onClick={() => void loadPage()} className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-xl text-white water-btn font-semibold"><RefreshCw className="w-4 h-4" />Try again</button>
           <a href="/app/builders" className="inline-block ml-4 underline">Browse public directory</a>
         </div>}
+
+        <div ref={earthAnchorRef}>
+          {earthInView ? (
+            <React.Suspense fallback={<div role="status" className="mx-auto mb-10 grid min-h-[420px] place-items-center rounded-[30px] border border-white/10 bg-[#07111d] text-sm text-slate-300">Loading the real LINKUP member globe…</div>}>
+              <LazyInteractiveEarthSearch members={filteredBuilders} />
+            </React.Suspense>
+          ) : (
+            <div aria-hidden="true" className="mx-auto mb-10 min-h-[390px] rounded-[30px] border border-white/10 bg-[radial-gradient(ellipse_at_50%_55%,#10283d_0%,#08111d_55%,#04070c_100%)]" />
+          )}
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" aria-busy={loading}>
           {loading && builders.length === 0 && Array.from({ length: 8 }, (_, i) => <div key={`loading-${i}`} aria-hidden="true" className="rounded-3xl border border-white/10 p-5 bg-white/[0.03] animate-pulse h-72"><div className="h-14 w-14 bg-white/10 rounded-2xl mb-6" /><div className="h-4 bg-white/10 rounded w-3/4 mb-3" /><div className="h-3 bg-white/5 rounded w-full" /></div>)}
