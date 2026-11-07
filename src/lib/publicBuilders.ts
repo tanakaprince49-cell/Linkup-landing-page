@@ -11,6 +11,7 @@ export type PublicBuilder = {
   url: string;
 };
 export const MEMBER_FEED = '/app/api/publicSeo?mode=members';
+export const MEMBER_COUNT_FEED = '/app/api/publicSeo?mode=builder-count';
 const text = (v: unknown, cap = 700) => typeof v === 'string' ? v.trim().slice(0, cap) : '';
 const list = (v: unknown, cap = 20): string[] => Array.isArray(v) ? [...new Set(v.slice(0, cap).map(s => text(s, 80)).filter(Boolean))] : [];
 const validId = (v: unknown): v is string => typeof v === 'string' && /^[A-Za-z0-9_-]{1,128}$/.test(v);
@@ -75,19 +76,28 @@ export function initials(name: string) {
   return name.trim().split(/\s+/).slice(0, 2).map(s => s[0] || '').join('').toUpperCase();
 }
 
-const COUNT_PAGE_CAP = 25; // 25 pages x 40 profiles: safety ceiling, not a displayed number
 export type BuilderCount = { count: number; complete: boolean };
-// Live marketing counter: walks the same public member feed as the directory
-// and counts eligible profiles. No totals are invented - failures throw so the
-// UI shows a loading state instead of a stale or fake number.
+// Live marketing counter: use the app's cheap aggregate endpoint instead of
+// downloading every profile page. Failures throw; no totals are invented.
 export async function fetchBuilderCount(signal?: AbortSignal): Promise<BuilderCount> {
-  let count = 0, cursor = '', pages = 0;
-  for (;;) {
-    const page = await fetchMemberPage(cursor, signal);
-    count += page.profiles.length;
-    cursor = page.nextCursor || '';
-    if (!cursor) return { count, complete: true };
-    if (++pages >= COUNT_PAGE_CAP) return { count, complete: false };
+  const controller = new AbortController();
+  const abort = () => controller.abort();
+  signal?.addEventListener('abort', abort, { once: true });
+  if (signal?.aborted) abort();
+  const timeout = setTimeout(abort, 15000);
+  try {
+    const response = await fetch(MEMBER_COUNT_FEED, {
+      headers: { Accept: 'application/json' }, cache: 'no-store', signal: controller.signal,
+    });
+    if (!response.ok) throw new Error('Builder count is temporarily unavailable');
+    if (!(response.headers.get('content-type') || '').includes('application/json')) throw new Error('Invalid builder count response');
+    const data: unknown = await response.json();
+    const count = data && typeof data === 'object' ? (data as { count?: unknown }).count : null;
+    if (typeof count !== 'number' || !Number.isSafeInteger(count) || count < 0) throw new Error('Invalid builder count response');
+    return { count, complete: true };
+  } finally {
+    clearTimeout(timeout);
+    signal?.removeEventListener('abort', abort);
   }
 }
 export function formatBuilderCount(count: number): string {

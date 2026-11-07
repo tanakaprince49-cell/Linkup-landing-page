@@ -58,14 +58,15 @@ test('landing directory replaces the old intro copy with the real interactive Ea
   const image=new URL('../public/images/earth-blue-marble.jpg',import.meta.url);
   assert.ok(readFileSync(image).byteLength>500_000);
 });
-import {fetchBuilderCount, formatBuilderCount} from '../src/lib/publicBuilders';
-test('builder counter walks the live feed and formats real totals only',async()=>{
+import {fetchBuilderCount, formatBuilderCount, MEMBER_COUNT_FEED} from '../src/lib/publicBuilders';
+test('builder counter uses the lightweight live aggregate and formats real totals only',async()=>{
   const previous=globalThis.fetch;
   try {
-    globalThis.fetch=async(input)=>{const page2=String(input).includes('after=');return new Response(JSON.stringify(page2?{profiles:[{...member,uid:'member-2'}],nextCursor:null}:{profiles:[member],nextCursor:'member-2'}),{headers:{'content-type':'application/json'}});};
-    assert.deepEqual(await fetchBuilderCount(),{count:2,complete:true});
-    globalThis.fetch=async(input)=>{const m=/after=c(\d+)/.exec(String(input));const n=m?Number(m[1])+1:1;return new Response(JSON.stringify({profiles:[{...member,uid:'m-'+n}],nextCursor:'c'+n}),{headers:{'content-type':'application/json'}});};
-    const capped=await fetchBuilderCount();assert.equal(capped.complete,false);assert.equal(capped.count,25);
+    let calls=0;let seenUrl='';let seenInit:RequestInit|undefined;
+    globalThis.fetch=async(input,init)=>{calls++;seenUrl=String(input);seenInit=init;return new Response(JSON.stringify({count:73,updatedAt:'2026-11-07T17:00:00.000Z'}),{headers:{'content-type':'application/json'}});};
+    assert.deepEqual(await fetchBuilderCount(),{count:73,complete:true});
+    assert.equal(calls,1);assert.equal(seenUrl,MEMBER_COUNT_FEED);assert.equal(seenInit?.cache,'no-store');assert.ok(seenInit?.signal);
+    for(const count of [-1,1.5,'73',null]){globalThis.fetch=async()=>new Response(JSON.stringify({count}),{headers:{'content-type':'application/json'}});await assert.rejects(fetchBuilderCount());}
     globalThis.fetch=async()=>new Response('down',{status:503});await assert.rejects(fetchBuilderCount());
     assert.equal(formatBuilderCount(64),'64');assert.equal(formatBuilderCount(1240),'1,240');assert.equal(formatBuilderCount(14200),'14.2k');assert.equal(formatBuilderCount(150000),'150k');
   } finally {globalThis.fetch=previous;}

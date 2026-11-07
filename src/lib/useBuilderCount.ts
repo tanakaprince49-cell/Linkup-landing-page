@@ -18,11 +18,17 @@ function readCache(): (State & { at: number }) | null {
 
 // Single in-flight walk shared by every mounted counter.
 let inflight: Promise<BuilderCount> | null = null;
+let retryNotBefore = 0;
 function loadShared(): Promise<BuilderCount> {
+  if (Date.now() < retryNotBefore) return Promise.reject(new Error('Builder count retry is cooling down'));
   if (!inflight) {
     const started = fetchBuilderCount().then(result => {
+      retryNotBefore = 0;
       try { sessionStorage.setItem(KEY, JSON.stringify({ count: result.count, complete: result.complete, at: Date.now() })); } catch { /* private mode */ }
       return result;
+    }).catch(error => {
+      retryNotBefore = Date.now() + 60_000;
+      throw error;
     });
     inflight = started;
     const clear = () => { if (inflight === started) inflight = null; };
@@ -40,7 +46,12 @@ export function useBuilderCount(): State {
     let alive = true;
     if (readCache()) { const cached = readCache(); if (cached && alive) setState({ count: cached.count, complete: !!cached.complete }); }
     else void loadShared().then(result => { if (alive) setState({ count: result.count, complete: result.complete }); }, () => { /* keep loading dots, never invent */ });
-    const refresh = () => { if (document.visibilityState === 'visible') void loadShared().then(result => { if (alive) setState({ count: result.count, complete: result.complete }); }, () => {}); };
+    const refresh = () => {
+      if (document.visibilityState !== 'visible') return;
+      const cached = readCache();
+      if (cached) { if (alive) setState({ count: cached.count, complete: !!cached.complete }); return; }
+      void loadShared().then(result => { if (alive) setState({ count: result.count, complete: result.complete }); }, () => {});
+    };
     document.addEventListener('visibilitychange', refresh);
     return () => { alive = false; document.removeEventListener('visibilitychange', refresh); };
   }, []);

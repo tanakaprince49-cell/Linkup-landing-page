@@ -12,10 +12,14 @@ export const BuilderDirectory: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const activeRequest = useRef<AbortController | null>(null);
+  const lastLoadAttempt = useRef(0);
   const earthAnchorRef = useRef<HTMLDivElement>(null);
   const [earthInView, setEarthInView] = useState(false);
 
-  const loadBuilders = useCallback(async () => {
+  const loadBuilders = useCallback(async (force = false) => {
+    const now = Date.now();
+    if (!force && now - lastLoadAttempt.current < 60_000) return;
+    lastLoadAttempt.current = now;
     activeRequest.current?.abort();
     const controller = new AbortController();
     activeRequest.current = controller;
@@ -104,7 +108,7 @@ export const BuilderDirectory: React.FC = () => {
 
         {error && <div role="alert" className="max-w-3xl mx-auto mb-8 p-5 rounded-2xl border border-amber-300/20 bg-amber-300/5 text-sm text-slate-200 text-center">
           <p>{error}</p>
-          <button onClick={() => void loadBuilders()} className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-xl text-white water-btn font-semibold"><RefreshCw className="w-4 h-4" />Try finding them again</button>
+          <button onClick={() => void loadBuilders(true)} className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-xl text-white water-btn font-semibold"><RefreshCw className="w-4 h-4" />Try finding them again</button>
           <a href="/app/builders" className="inline-block ml-4 underline">Browse possible partners</a>
         </div>}
 
