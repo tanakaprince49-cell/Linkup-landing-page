@@ -15,31 +15,6 @@ export const Hero: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
         <div className="space-y-8 max-w-4xl mx-auto">
           
-          {/* Announcement Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-2.5"
-          >
-            <a
-              href="#solo-graveyard"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-red-500/50 bg-red-500/15 hover:bg-red-500/25 transition-all hover:scale-105 shadow-[0_0_24px_rgba(239,68,68,0.25)] text-white text-xs sm:text-sm font-semibold group"
-            >
-              <span className="px-1.5 py-0.5 rounded bg-red-500 text-white text-[10px] font-mono font-extrabold uppercase">WARNING</span>
-              <span>Your Future Co-Founder Is Meeting People. Rude.</span>
-              <span className="text-red-300 font-mono group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-            <a
-              href="#launch-film"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-[#FBE618]/60 bg-[#FBE618]/15 hover:bg-[#FBE618]/25 transition-all hover:scale-105 shadow-[0_0_24px_rgba(251,230,24,0.3)] text-white text-xs sm:text-sm font-semibold group"
-            >
-              <span className="px-1.5 py-0.5 rounded bg-[#FBE618] text-black text-[10px] font-mono font-extrabold uppercase">WATCH</span>
-              <span>Watch Your Next Partnership Begin</span>
-              <span className="text-[#FBE618] font-mono group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </motion.div>
-
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

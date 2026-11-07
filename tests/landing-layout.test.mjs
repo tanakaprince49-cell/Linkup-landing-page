@@ -15,6 +15,7 @@ for (const path of ['/', '/features']) {
 
     assert.doesNotMatch(html, /id="(?:founder-blogs|version-17)"/);
     assert.doesNotMatch(html, /Write Once on LINKUP|Rank on Google Search, News|New in LINKUP 17\.0|Built For Daily Momentum/);
+    assert.doesNotMatch(html, /Your Future Co-Founder Is Meeting People|Watch Your Next Partnership Begin|>WARNING<|>WATCH</);
     assert.match(html, /id="linkup-agent"/);
     assert.match(html, /id="features"/);
 

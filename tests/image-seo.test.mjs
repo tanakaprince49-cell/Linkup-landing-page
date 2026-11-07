@@ -92,5 +92,5 @@ test('removed version 17 and founder blog spotlight sections stay off the landin
   assert.doesNotMatch(heroSrc, /\$42M\+|Capital Raised/i, 'removed $42M+ Capital Raised claim');
   assert.doesNotMatch(heroSrc, /Meet Linkup Agent|Private Views\/Clicks|#founder-blogs/i, 'removed cluttered hero announcement pills');
   assert.match(heroSrc, /Your Person Is Out There/);
-  assert.match(read('src/components/SoloFounderWarning.tsx'), /Why Every Week Without a Co-Founder/);
+  assert.match(read('src/components/SoloFounderWarning.tsx'), /Every Week Without a Co-Founder/);
 });

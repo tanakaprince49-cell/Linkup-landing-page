@@ -14,26 +14,26 @@ const SOLO_TRAPS = [
   {
     step: 'TRAP 01',
     icon: Flame,
-    title: 'The 2:00 AM Breaking Point',
-    body: 'When production breaks, users churn, and your bank balance drops in the same week, nobody is in the foxhole with you. Solo founders quit at the exact moment a co-founder would have pulled them through.',
+    title: 'The Night You Almost Quit',
+    body: 'Production breaks. A user leaves. Your savings shrink. You sit there fixing everything alone, wondering why you wanted this in the first place. A co-founder does not erase hard nights, but they make sure you are not carrying every one of them by yourself.',
   },
   {
     step: 'TRAP 02',
     icon: TrendingDown,
-    title: 'Shipped Code, Zero Distribution',
-    body: 'One human cannot write 12 hours of deep code AND run 20 customer calls, GTM campaigns, founder blogs, and investor outreach every day. Building alone guarantees half your startup is starving.',
+    title: 'Your Product Gets Your Best. Your Market Gets What Is Left.',
+    body: 'You cannot give your best to deep code, customer calls, distribution, and investor outreach in the same day. Something always waits. Usually, it is the person who would have loved your product—if you had time to reach them.',
   },
   {
     step: 'TRAP 03',
     icon: AlertTriangle,
-    title: 'Investors Quietly Pass on Solo Risk',
-    body: 'Seed funds and accelerators see a solo founder as a single point of failure—one burnout week, one blind spot, or one unchallenged bad assumption away from total shutdown.',
+    title: 'Investors See the Risk You Carry Alone',
+    body: 'To an investor, one founder can mean one point of failure: one burnout week, one blind spot, one decision nobody challenged. You know your idea deserves belief. Give people a team that can carry that belief with you.',
   },
   {
     step: 'TRAP 04',
     icon: Clock,
-    title: 'A Two-Founder Duo Is Taking Your Market Right Now',
-    body: 'While you tell yourself "I will look for a co-founder after I finish the MVP," a technical + growth duo in your exact category is shipping AND closing your early customers simultaneously.',
+    title: 'Someone Else’s Co-Founder Is Building With Them Today',
+    body: 'While you promise to search after the MVP, another founder is already splitting the work with their person: one ships, one sells. They are not necessarily better than you. They simply stopped waiting. Yes, that should sting.',
   },
 ];
 
@@ -52,18 +52,18 @@ export const SoloFounderWarning: React.FC = () => {
         <div className="max-w-3xl mx-auto text-center space-y-5">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/40 bg-red-500/10 text-red-300 text-xs sm:text-sm font-bold tracking-wide uppercase">
             <AlertTriangle className="w-4 h-4 text-red-400" />
-            <span>The Silent Startup Killer Nobody Warned You About</span>
+            <span>The Silent Startup Killer: Carrying Everything Alone</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-[1.08]">
-            Why Every Week Without a Co-Founder{' '}
+            Every Week Without a Co-Founder{' '}
             <span className="bg-gradient-to-r from-red-400 via-[#FBE618] to-white bg-clip-text text-transparent">
-              Should Scare You.
+              Is a Week You Cannot Get Back.
             </span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            Solo startups rarely die in an explosion—they bleed out quietly. First you pause distribution to fix bugs. Then you freeze engineering to chase users. Six months later, you are burned out, isolated, and watching a two-founder squad win the market you saw first.
+            You are not failing because you lack discipline or talent. You are doing the work of two people while someone with your missing strengths is out there hoping to meet you too. Every week you delay, another founder finds their person. Not because they deserve it more—because they started looking.
           </p>
         </div>
 
@@ -105,27 +105,27 @@ export const SoloFounderWarning: React.FC = () => {
           <div className="rounded-3xl p-7 sm:p-9 border border-red-500/30 bg-gradient-to-br from-red-950/35 to-black/60 space-y-5">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-extrabold uppercase tracking-wider text-red-300">
               <XCircle className="w-4 h-4 text-red-400" />
-              <span>6 Months From Now — Still Building Alone</span>
+              <span>Six Months From Now — Still Just You</span>
             </div>
             <h3 className="text-2xl font-display font-extrabold text-white">
-              Carrying 100% of the Company on One Pair of Shoulders
+              Your Idea Deserves More Than One Exhausted Pair of Shoulders
             </h3>
             <ul className="space-y-3 text-sm sm:text-base text-slate-300">
               <li className="flex items-start gap-3">
                 <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                <span>Debugging alone at 2:00 AM with zero warm customer pipeline</span>
+                <span>Still debugging at 2:00 AM, then waking up to be the entire sales team</span>
               </li>
               <li className="flex items-start gap-3">
                 <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                <span>Echo-chamber decisions—nobody challenging weak pricing or roadmap traps</span>
+                <span>Making every hard call with nobody close enough to challenge your blind spots</span>
               </li>
               <li className="flex items-start gap-3">
                 <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                <span>Investors replying: &ldquo;Love the product—come back when you have a co-founder&rdquo;</span>
+                <span>Hearing investors say: &ldquo;We like the product. We need to see the team.&rdquo;</span>
               </li>
               <li className="flex items-start gap-3">
                 <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                <span>Watching a funded two-person team out-ship and out-sell you every single week</span>
+                <span>Watching another duo build momentum with the same customers you wanted</span>
               </li>
             </ul>
           </div>
@@ -134,27 +134,27 @@ export const SoloFounderWarning: React.FC = () => {
           <div className="rounded-3xl p-7 sm:p-9 border border-[#FBE618]/45 bg-gradient-to-br from-[#FBE618]/10 via-[#00C2FF]/5 to-black/60 space-y-5 shadow-[0_0_50px_rgba(251,230,24,0.08)]">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-extrabold uppercase tracking-wider text-[#FBE618]">
               <CheckCircle2 className="w-4 h-4 text-[#FBE618]" />
-              <span>Starting Today on LINKUP — Matched With Your Missing Half</span>
+              <span>Starting Today on LINKUP — Meet Your Missing Person</span>
             </div>
             <h3 className="text-2xl font-display font-extrabold text-white">
-              Two Obsessed Founders Splitting Code &amp; Distribution
+              You Bring the Obsession. They Bring the Missing Strength.
             </h3>
             <ul className="space-y-3 text-sm sm:text-base text-slate-200">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#FBE618] shrink-0 mt-0.5" />
-                <span>Linky inspects your stack &amp; goals to splice you with the exact role you lack</span>
+                <span>Tell Linky your stack, goals, and gaps so you can meet the person who complements you</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#FBE618] shrink-0 mt-0.5" />
-                <span>One founder ships product daily while the other closes users, revenue, and GTM</span>
+                <span>One of you pushes product forward while the other builds customers, revenue, and distribution</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#FBE618] shrink-0 mt-0.5" />
-                <span>Verified GitHub commit streaks prove real execution before you ever hop on a call</span>
+                <span>See real execution through verified GitHub commit streaks before you invest in a call</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#FBE618] shrink-0 mt-0.5" />
-                <span>Double opt-in introductions—zero tire-kickers, zero cold spam, pure conviction</span>
+                <span>Use double opt-in introductions so the interest is mutual before the conversation begins</span>
               </li>
             </ul>
 
@@ -165,7 +165,7 @@ export const SoloFounderWarning: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-[#FBE618] hover:bg-[#ffe938] text-black font-extrabold text-sm sm:text-base transition-transform hover:scale-[1.02] shadow-lg"
               >
-                <span>Find My Co-Founder Before I Burn Out Alone</span>
+                <span>I’m Ready to Meet My Co-Founder</span>
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
