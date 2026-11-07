@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync, existsSync} from 'node:fs';
 const read = p => readFileSync(new URL('../' + p, import.meta.url), 'utf8');
 const SHOTS = ['linky-ai-chat', 'real-time-messaging', 'startup-partners', 'missions-and-rewards', 'recommended-matches', 'trending-stories'];
 
@@ -70,18 +70,12 @@ test('software JSON-LD exposes screenshots, entity image and social alts', () =>
   assert.match(html, /twitter:image:alt/);
 });
 
-test('version 17 & founder blogs spotlights ship all 11 WebP mood icons, 17 indexed features, and zero sparkles', () => {
-  const v17 = read('src/components/Version17Spotlight.tsx');
-  const moods = [...v17.matchAll(/image: '(\/images\/moods\/[a-z0-9-]+\.webp)'/g)].map(m => m[1]);
-  assert.equal(moods.length, 11);
-  for (const m of moods) {
-    const buf = readFileSync(new URL('../public' + m, import.meta.url));
-    assert.ok(buf.length > 500, m);
+test('removed version 17 and founder blog spotlight sections stay off the landing page', () => {
+  const app = read('src/App.tsx');
+  assert.doesNotMatch(app, /Version17Spotlight|FounderBlogsSpotlight/);
+  for (const f of ['src/components/Version17Spotlight.tsx', 'src/components/FounderBlogsSpotlight.tsx']) {
+    assert.ok(!existsSync(new URL('../' + f, import.meta.url)), f + ' should be deleted');
   }
-  const blogsSpotlight = read('src/components/FounderBlogsSpotlight.tsx');
-  assert.match(blogsSpotlight, /\/app\/blogs/);
-  assert.match(blogsSpotlight, /\/app\/blogs\/rss\.xml/);
-  assert.match(blogsSpotlight, /Author Analytics \(Visible Only to You\)/);
 
   const html = read('index.html');
   assert.match(html, /"numberOfItems": 17/);
@@ -91,7 +85,7 @@ test('version 17 & founder blogs spotlights ship all 11 WebP mood icons, 17 inde
   assert.match(html, /#feature-workspace/);
   assert.match(html, /#feature-homesearch/);
   assert.match(html, /#feature-moods/);
-  for (const f of ['src/components/Hero.tsx', 'src/components/SoloFounderWarning.tsx', 'src/components/FounderBlogsSpotlight.tsx', 'src/components/Version17Spotlight.tsx', 'src/components/FeatureGrid.tsx', 'src/components/GooeyButtonGroup.tsx', 'src/components/NotFound.tsx', 'src/components/LinkupAgentFeature.tsx', 'src/data/mockData.ts']) {
+  for (const f of ['src/components/Hero.tsx', 'src/components/SoloFounderWarning.tsx', 'src/components/FeatureGrid.tsx', 'src/components/GooeyButtonGroup.tsx', 'src/components/NotFound.tsx', 'src/components/LinkupAgentFeature.tsx', 'src/data/mockData.ts']) {
     assert.doesNotMatch(read(f), /Sparkle|✨/i, `no sparkles allowed in ${f}`);
   }
   const heroSrc = read('src/components/Hero.tsx');

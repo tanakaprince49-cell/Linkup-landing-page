@@ -20,8 +20,6 @@ import { BuilderDirectory } from './components/BuilderDirectory';
 import { ConsentAnalytics } from './components/ConsentAnalytics';
 import { NotFound } from './components/NotFound';
 import { SeoRoute } from './lib/SeoRoute';
-import { Version17Spotlight } from './components/Version17Spotlight';
-import { FounderBlogsSpotlight } from './components/FounderBlogsSpotlight';
 import { SoloFounderWarning } from './components/SoloFounderWarning';
 import { LandingBlogsSection } from './components/LandingBlogsSection';
 import { LandingBlogIndexPage, LandingBlogPostPage } from './components/LandingBlogPages';
@@ -46,12 +44,6 @@ const HomePage = () => (
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <LinkupAgentFeature />
-    </FadeInSection>
-    <FadeInSection delay={0.1}>
-      <Version17Spotlight />
-    </FadeInSection>
-    <FadeInSection delay={0.1}>
-      <FounderBlogsSpotlight />
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <BuilderDirectory />
@@ -109,12 +101,6 @@ const FeaturesPage = () => (
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <HowItWorks />
-    </FadeInSection>
-    <FadeInSection delay={0.1}>
-      <FounderBlogsSpotlight />
-    </FadeInSection>
-    <FadeInSection delay={0.1}>
-      <Version17Spotlight />
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <LinkupAgentFeature />
