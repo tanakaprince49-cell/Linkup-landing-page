@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "node --import tsx scripts/prerender-landing-blogs.mjs && npm run test:privacy && npm run test:routing && npm run test:builders && npm run test:showcase && npm run test:images && npm run test:routeseo && npm run test:landingblogs && vite build && node --import tsx scripts/prerender-landing-blogs.mjs && node --import tsx --test tests/landing-blogs.test.mjs",
+    "build": "node --import tsx scripts/prerender-landing-blogs.mjs && npm run test:privacy && npm run test:routing && npm run test:builders && npm run test:showcase && npm run test:images && npm run test:routeseo && npm run test:layout && npm run test:landingblogs && vite build && node --import tsx scripts/prerender-landing-blogs.mjs && node --import tsx --test tests/landing-blogs.test.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
@@ -17,6 +17,7 @@
     "test:privacy-browser": "node scripts/smoke-privacy.cjs",
     "test:images": "node --test tests/image-seo.test.mjs",
     "test:routeseo": "node --test tests/route-seo.test.mjs",
+    "test:layout": "node --import tsx --test tests/landing-layout.test.mjs",
     "test:landingblogs": "node --import tsx --test tests/landing-blogs.test.mjs"
   },
   "dependencies": {
