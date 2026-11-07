@@ -49,7 +49,10 @@ test('landing directory replaces the old intro copy with the real interactive Ea
   assert.match(directory,/IntersectionObserver/);
   assert.match(globe,/OrbitControls/);assert.match(globe,/SphereGeometry\(radius, 96, 64\)/);
   assert.match(globe,/earth-blue-marble\.jpg/);assert.match(globe,/pointerup/);assert.match(globe,/Search builders by place/);
-  assert.match(globe,/markerHit\.distance < earthHit\.distance/,'only visible front-side map markers can be selected');
+  assert.match(globe,/faceHit\.distance < earthHit\.distance/,'only visible front-side profile photos can be selected');
+  assert.match(globe,/avatarTextureLoader\.load\(member\.image/,'real public profile photos are used as globe markers');
+  assert.match(globe,/place\.label\}, \$\{resolvedCountry\}/,'city and country are combined in map labels');
+  assert.match(globe,/earth-marker-tooltip/,'hovering a face reveals its city and country label');
   assert.doesNotMatch(globe,/cdn\.(?:jsdelivr|cdnjs)\.net/);
   const image=new URL('../public/images/earth-blue-marble.jpg',import.meta.url);
   assert.ok(readFileSync(image).byteLength>500_000);

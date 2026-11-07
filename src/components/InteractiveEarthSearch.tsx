@@ -18,9 +18,15 @@ type Props = { members: PublicBuilder[] };
 
 function getLocation(location: string) {
   const parts = location.split(/[·,]/).map(part => part.trim()).filter(Boolean);
-  const country = parts.at(-1) || '';
+  const country = parts.length > 1 ? parts.at(-1) || '' : '';
   const city = parts.length > 1 ? parts.slice(0, -1).join(' ') : '';
-  return resolveLocation(city, country) || resolveLocation('', country) || resolveLocation(parts[0] || '', '');
+  const place = resolveLocation(city, country) || resolveLocation('', parts.at(-1) || '') || resolveLocation(parts[0] || '', '');
+  if (!place) return null;
+  const resolvedCountry = place.precision === 'country' ? place.label : country;
+  const label = place.precision === 'city' && resolvedCountry
+    ? `${place.label}, ${resolvedCountry}`
+    : place.label;
+  return { ...place, country: resolvedCountry, label };
 }
 
 function vectorFor(lat: number, lng: number, radius: number) {
@@ -35,6 +41,7 @@ function vectorFor(lat: number, lng: number, radius: number) {
 
 export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
   const hostRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
   const [selected, setSelected] = useState<PlaceGroup | null>(null);
   const [webglUnsupported, setWebglUnsupported] = useState(false);
   const groups = useMemo(() => {
@@ -138,32 +145,102 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
     const stars = new THREE.Points(starsGeometry, new THREE.PointsMaterial({ color: 0xc8ddf2, size: 0.04, transparent: true, opacity: 0.68 }));
     scene.add(stars);
 
-    const markerGeometry = new THREE.SphereGeometry(0.027, 12, 10);
-    const markers: THREE.Mesh[] = [];
-    const markerMaterials: THREE.MeshStandardMaterial[] = [];
-    groups.forEach((group, index) => {
-      const material = new THREE.MeshStandardMaterial({
-        color: index < 5 ? 0xfbe63f : 0x63dcff,
-        emissive: index < 5 ? 0x9c7011 : 0x075477,
-        emissiveIntensity: 0.75,
-        roughness: 0.28,
-        metalness: 0.05,
+    // Face sprites are distributed round-robin so a single large city cannot hide every other location.
+    const maxFaceMarkers = 240;
+    const faceEntries: Array<{ group: PlaceGroup; groupIndex: number; member: PublicBuilder; memberIndex: number }> = [];
+    for (let depth = 0; faceEntries.length < maxFaceMarkers; depth += 1) {
+      let foundAtDepth = false;
+      groups.forEach((group, groupIndex) => {
+        const member = group.members[depth];
+        if (member && faceEntries.length < maxFaceMarkers) {
+          faceEntries.push({ group, groupIndex, member, memberIndex: depth });
+          foundAtDepth = true;
+        }
       });
-      markerMaterials.push(material);
-      const marker = new THREE.Mesh(markerGeometry, material);
-      marker.position.copy(vectorFor(group.lat, group.lng, radius + 0.025));
-      marker.userData.placeKey = group.key;
-      marker.userData.groupIndex = index;
-      earthGroup.add(marker);
-      markers.push(marker);
+      if (!foundAtDepth) break;
+    }
+    const faceSprites: THREE.Sprite[] = [];
+    const faceMaterials: THREE.SpriteMaterial[] = [];
+    const initialsTexture = (name: string) => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 96;
+      canvas.height = 96;
+      const context = canvas.getContext('2d');
+      if (!context) return null;
+      context.fillStyle = '#10283d';
+      context.beginPath();
+      context.arc(48, 48, 46, 0, Math.PI * 2);
+      context.fill();
+      context.strokeStyle = '#7ee7ff';
+      context.lineWidth = 5;
+      context.stroke();
+      context.fillStyle = '#fbe63f';
+      context.font = '800 34px ui-sans-serif, sans-serif';
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.fillText(name.split(/\\s+/).slice(0, 2).map(part => part[0] || '').join('').toUpperCase(), 48, 50);
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      return texture;
+    };
+    const avatarTextureLoader = new THREE.TextureLoader();
+    avatarTextureLoader.setCrossOrigin('anonymous');
+    faceEntries.forEach(({ group, groupIndex, member, memberIndex }) => {
+      const material = new THREE.SpriteMaterial({
+        map: initialsTexture(member.name),
+        color: 0xffffff,
+        transparent: true,
+        depthTest: true,
+        depthWrite: false,
+        sizeAttenuation: true,
+      });
+      const sprite = new THREE.Sprite(material);
+      const angle = memberIndex * 2.399;
+      const spread = Math.min(memberIndex, 10) * 0.032;
+      const position = vectorFor(group.lat, group.lng, radius + 0.075);
+      position.x += Math.cos(angle) * spread;
+      position.y += Math.sin(angle) * spread;
+      sprite.position.copy(position.normalize().multiplyScalar(radius + 0.075));
+      sprite.scale.set(0.13, 0.13, 1);
+      sprite.userData.placeKey = group.key;
+      sprite.userData.groupIndex = groupIndex;
+      sprite.userData.memberName = member.name;
+      sprite.userData.memberUid = member.uid;
+      earthGroup.add(sprite);
+      faceSprites.push(sprite);
+      faceMaterials.push(material);
 
-      if (group.members.length > 1) {
-        const pulse = new THREE.Mesh(
-          new THREE.SphereGeometry(0.043 + Math.min(group.members.length, 8) * 0.002, 12, 10),
-          new THREE.MeshBasicMaterial({ color: index < 5 ? 0xfbe63f : 0x63dcff, transparent: true, opacity: 0.24, depthWrite: false }),
-        );
-        pulse.position.copy(marker.position);
-        earthGroup.add(pulse);
+      if (member.image) {
+        avatarTextureLoader.load(member.image, sourceTexture => {
+          const source = sourceTexture.image as CanvasImageSource;
+          const canvas = document.createElement('canvas');
+          canvas.width = 96;
+          canvas.height = 96;
+          const context = canvas.getContext('2d');
+          if (context) {
+            const imageWidth = (source as HTMLImageElement).naturalWidth || (source as HTMLVideoElement).videoWidth || 1;
+            const imageHeight = (source as HTMLImageElement).naturalHeight || (source as HTMLVideoElement).videoHeight || 1;
+            const crop = Math.min(imageWidth, imageHeight);
+            context.save();
+            context.beginPath();
+            context.arc(48, 48, 46, 0, Math.PI * 2);
+            context.clip();
+            context.drawImage(source, (imageWidth - crop) / 2, (imageHeight - crop) / 2, crop, crop, 2, 2, 92, 92);
+            context.restore();
+            context.beginPath();
+            context.arc(48, 48, 46, 0, Math.PI * 2);
+            context.strokeStyle = '#7ee7ff';
+            context.lineWidth = 5;
+            context.stroke();
+            const faceTexture = new THREE.CanvasTexture(canvas);
+            faceTexture.colorSpace = THREE.SRGBColorSpace;
+            faceTexture.needsUpdate = true;
+            if (material.map) material.map.dispose();
+            material.map = faceTexture;
+            material.needsUpdate = true;
+          }
+          sourceTexture.dispose();
+        }, undefined, () => { /* Keep initials visible if an image host blocks canvas access. */ });
       }
     });
 
@@ -178,24 +255,47 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
       pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
       pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
       raycaster.setFromCamera(pointer, camera);
-      const markerHit = raycaster.intersectObjects(markers, false)[0];
+      const faceHit = raycaster.intersectObjects(faceSprites, false)[0];
       const earthHit = raycaster.intersectObject(earth, false)[0];
-      const hit = markerHit && (!earthHit || markerHit.distance < earthHit.distance)
-        ? markerHit.object as THREE.Mesh
+      const hit = faceHit && (!earthHit || faceHit.distance < earthHit.distance)
+        ? faceHit.object as THREE.Sprite
         : undefined;
       const index = hit?.userData.groupIndex;
       if (Number.isInteger(index)) setSelected(groups[index] || null);
+    };
+    const pointerLeave = () => {
+      const tooltip = tooltipRef.current;
+      if (tooltip) { tooltip.style.opacity = '0'; tooltip.style.visibility = 'hidden'; }
     };
     const pointerMove = (event: PointerEvent) => {
       const rect = renderer.domElement.getBoundingClientRect();
       pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
       pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
       raycaster.setFromCamera(pointer, camera);
-      renderer.domElement.style.cursor = raycaster.intersectObjects(markers, false).length ? 'pointer' : 'grab';
+      const hit = raycaster.intersectObjects(faceSprites, false)[0];
+      const earthHit = raycaster.intersectObject(earth, false)[0];
+      const visibleFaceHit = hit && (!earthHit || hit.distance < earthHit.distance) ? hit : undefined;
+      renderer.domElement.style.cursor = visibleFaceHit ? 'pointer' : 'grab';
+      const tooltip = tooltipRef.current;
+      if (tooltip) {
+        if (visibleFaceHit) {
+          const sprite = visibleFaceHit.object as THREE.Sprite;
+          const group = groups[sprite.userData.groupIndex as number];
+          tooltip.textContent = `${sprite.userData.memberName} · ${group?.label || ''}`;
+          tooltip.style.left = `${event.clientX - rect.left + 14}px`;
+          tooltip.style.top = `${event.clientY - rect.top + 14}px`;
+          tooltip.style.opacity = '1';
+          tooltip.style.visibility = 'visible';
+        } else {
+          tooltip.style.opacity = '0';
+          tooltip.style.visibility = 'hidden';
+        }
+      }
     };
     renderer.domElement.addEventListener('pointerdown', pointerDown);
     renderer.domElement.addEventListener('pointerup', pointerUp);
     renderer.domElement.addEventListener('pointermove', pointerMove);
+    renderer.domElement.addEventListener('pointerleave', pointerLeave);
 
     const resize = () => {
       const width = Math.max(1, host.clientWidth);
@@ -223,11 +323,15 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
       renderer.domElement.removeEventListener('pointerdown', pointerDown);
       renderer.domElement.removeEventListener('pointerup', pointerUp);
       renderer.domElement.removeEventListener('pointermove', pointerMove);
+      renderer.domElement.removeEventListener('pointerleave', pointerLeave);
       earthGeometry.dispose();
       earthMaterial.map?.dispose();
       earthMaterial.dispose();
-      markerGeometry.dispose();
-      markerMaterials.forEach(material => material.dispose());
+      faceSprites.forEach(sprite => earthGroup.remove(sprite));
+      faceMaterials.forEach(material => {
+        material.map?.dispose();
+        material.dispose();
+      });
       starsGeometry.dispose();
       (stars.material as THREE.Material).dispose();
       atmosphere.geometry.dispose();
@@ -237,6 +341,8 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
     };
   }, [groups]);
 
+  const faceCount = Math.min(groups.reduce((total, group) => total + group.members.length, 0), 240);
+
   return (
     <div className="earth-search-wrap">
       <div className="earth-search-heading">
@@ -244,10 +350,12 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
           <span className="earth-live-label"><span className="earth-live-dot" /> LIVE PUBLIC MEMBER MAP</span>
           <p>Drag to spin · scroll or pinch to zoom · select a lit location to meet builders there.</p>
         </div>
-        <span className="earth-member-count">{members.length} real profiles · {groups.length} mapped places</span>
+        <span className="earth-member-count">{faceCount} profile photos · {groups.length} city / country labels</span>
       </div>
       <div className="earth-stage">
-        <div ref={hostRef} className="earth-canvas" role="application" aria-label="Interactive globe with real world map and public LINKUP member locations" />
+        <div ref={hostRef} className="earth-canvas" role="application" aria-label="Interactive globe with member profile photos and city and country locations">
+          <div ref={tooltipRef} className="earth-marker-tooltip" role="status" />
+        </div>
         <div className="earth-vignette" aria-hidden="true" />
         {webglUnsupported && (
           <div className="earth-fallback" role="img" aria-label="World map of LINKUP member locations">
