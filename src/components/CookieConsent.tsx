@@ -61,7 +61,7 @@ export const CookieConsent: React.FC = () => {
               
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-1">
-                  <h3 id="privacy-choice-title" className="text-white font-semibold text-sm">Privacy choices</h3>
+                  <h3 id="privacy-choice-title" className="text-white font-semibold text-sm">Before you meet your match</h3>
                   <button 
                     onClick={handleDecline}
                     className="text-slate-400 hover:text-white transition-colors no-water-btn"
@@ -71,7 +71,7 @@ export const CookieConsent: React.FC = () => {
                   </button>
                 </div>
                 <p id="privacy-choice-description" className="text-slate-300 text-xs leading-relaxed mb-4">
-                  Allow optional web traffic analytics? Essential app storage still works if you decline. Read our <a href="/privacy" className="underline">Privacy Policy</a>.
+                  Can we use optional analytics to see what helps builders find their person? Essential app storage still works if you decline. Read our <a href="/privacy" className="underline">Privacy Policy</a>.
                 </p>
                 
                 <div className="flex items-center gap-2">

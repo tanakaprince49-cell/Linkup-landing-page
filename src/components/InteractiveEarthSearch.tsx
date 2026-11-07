@@ -347,27 +347,27 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
     <div className="earth-search-wrap">
       <div className="earth-search-heading">
         <div>
-          <span className="earth-live-label"><span className="earth-live-dot" /> LIVE PUBLIC MEMBER MAP</span>
-          <p>Drag to spin · scroll or pinch to zoom · select a lit location to meet builders there.</p>
+          <span className="earth-live-label"><span className="earth-live-dot" /> LIVE: POSSIBLE FAVORITE PEOPLE</span>
+          <p>Spin the planet. Zoom in. See who might be your person. Select a lit location before somebody else does.</p>
         </div>
-        <span className="earth-member-count">{faceCount} profile photos · {groups.length} city / country labels</span>
+        <span className="earth-member-count">{faceCount} possible partners · {groups.length} places to find chemistry</span>
       </div>
       <div className="earth-stage">
-        <div ref={hostRef} className="earth-canvas" role="application" aria-label="Interactive globe with member profile photos and city and country locations">
+        <div ref={hostRef} className="earth-canvas" role="application" aria-label="Interactive globe full of possible co-founders and the places they are hiding">
           <div ref={tooltipRef} className="earth-marker-tooltip" role="status" />
         </div>
         <div className="earth-vignette" aria-hidden="true" />
         {webglUnsupported && (
           <div className="earth-fallback" role="img" aria-label="World map of LINKUP member locations">
-            <span>Interactive 3D is not available in this browser. Use the location buttons to explore public builders.</span>
+            <span>Interactive 3D is not available in this browser, but your person is not off the hook. Use the location buttons to meet public builders.</span>
           </div>
         )}
-        <div className="earth-hint"><span>✦</span> Explore founders around the world</div>
+        <div className="earth-hint"><span>✦</span> Your person could be one spin away</div>
         {selected && (
           <aside className="earth-place-panel" aria-label={`${selected.label} public members`}>
             <div className="earth-panel-heading">
               <div><span className="earth-panel-kicker">{selected.precision} · {selected.members.length} {selected.members.length === 1 ? 'builder' : 'builders'}</span><h3>{selected.label}</h3></div>
-              <button type="button" onClick={() => setSelected(null)} aria-label="Close location results">×</button>
+              <button type="button" onClick={() => setSelected(null)} aria-label="Close these possible partners">×</button>
             </div>
             <div className="earth-place-list">
               {selected.members.map(member => (
@@ -390,7 +390,7 @@ export const InteractiveEarthSearch: React.FC<Props> = ({ members }) => {
           ))}
         </div>
       )}
-      {groups.length === 0 && <p className="earth-no-locations">No matching public location is available for these loaded profiles yet. Try a different search or role filter.</p>}
+      {groups.length === 0 && <p className="earth-no-locations">No matching location just yet. Your person is being mysterious—try a different search or role filter.</p>}
     </div>
   );
 };

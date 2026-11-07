@@ -4,28 +4,28 @@ export const FEATURES: FeatureItem[] = [
   {
     id: 'linky',
     iconName: 'Bot',
-    title: 'Linky AI Companion',
-    badge: 'Flagship AI',
+    title: 'Linky, Your AI Matchmaker',
+    badge: 'Your Personal Cupid',
     category: 'ai',
-    description: 'Your AI co-founder scout. Tell Linky who you need in plain words and get an AI-ranked shortlist of compatible builders \u2014 with drafted intros to break the ice.',
+    description: 'Tell Linky who is missing from your startup life. Get an AI-ranked shortlist of builders who fit, plus an intro that saves you from the dreaded “hey, hope you are well.”',
     details: [
-      'Natural-language match requests',
-      'AI-ranked builder shortlists',
-      'Drafted intros & icebreakers'
+      'Ask for your person in plain words',
+      'Meet builders who actually fit',
+      'Intros that do not feel like cold DMs'
     ],
     highlightColor: 'yellow',
   },
   {
     id: 'match',
     iconName: 'Search',
-    title: 'AI Matchmaking',
-    badge: 'Core AI',
+    title: 'Chemistry, Backed by AI',
+    badge: 'No Randoms',
     category: 'ai',
-    description: 'Smart compatibility scoring powered by AI. LINKUP analyzes your skills, goals, industries, work style, commitment and availability to rank the most compatible builders for you.',
+    description: 'LINKUP compares your skills, goals, industry, work style, commitment, and availability to find the person who complements you—not another almost-match you will ghost by Tuesday.',
     details: [
-      'Deep skills & work style alignment',
-      'Goals, industry & commitment scoring',
-      'Automated co-founder rank recommendations'
+      'Your strengths meet their missing piece',
+      'Goals and commitment that actually align',
+      'Ranked matches worth getting excited about'
     ],
     highlightColor: 'cyan',
   },
@@ -33,13 +33,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'league',
     iconName: 'Trophy',
     title: 'Builder League',
-    badge: 'Weekly Crown',
+    badge: 'Make Them Notice You',
     category: 'reputation',
-    description: 'A weekly leaderboard for builders who ship. Earn 10 points per build day plus bonuses for helpful contributions \u2014 number one takes the crown, locally and globally.',
+    description: 'Ship, climb, and let your future co-founder see you doing what you do best. Earn 10 points per build day plus bonuses for helping others \u2014 then take the crown, locally and globally.',
     details: [
-      'Week, month & all-time boards',
-      '10 pts per build day, #1 crowned',
-      'Local leagues + public results page'
+      'Week, month & all-time bragging rights',
+      '10 pts per build day, #1 takes the crown',
+      'Local leagues where your person can spot you'
     ],
     highlightColor: 'yellow',
     href: '/app/builder-league',
@@ -48,13 +48,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'momentum',
     iconName: 'Flame',
     title: 'Momentum & Ship Log',
-    badge: 'Build Streaks',
+    badge: 'Proof You’re a Catch',
     category: 'reputation',
-    description: 'Log what you shipped every day, grow your streak, and prove it with a contribution calendar plus shareable momentum cards.',
+    description: 'Log what you shipped, grow your streak, and show your future partner you do more than say “we should build something.” Receipts included, naturally.',
     details: [
-      'Daily ship log with receipts',
-      'Contribution calendar & streaks',
-      'Shareable momentum cards'
+      'Daily proof you are partnership material',
+      'A streak your future co-founder can admire',
+      'Shareable cards for humble bragging'
     ],
     highlightColor: 'violet',
     href: '/app/momentum',
@@ -62,14 +62,14 @@ export const FEATURES: FeatureItem[] = [
   {
     id: 'swipe',
     iconName: 'Zap',
-    title: 'Swipe Discovery',
-    badge: 'Matching Engine',
+    title: 'Swipe. Match. Become a Duo.',
+    badge: 'Your Next Favorite Person',
     category: 'discovery',
-    description: 'A card stack for professional matching. Swipe through builder profiles, like or skip, and get notified when it\'s a mutual match.',
+    description: 'Swipe through builders who might make your startup brain do a little victory dance. Like, skip, and get the good news when the interest is mutual.',
     details: [
-      'Interactive builder card stack',
-      'Instant mutual match alerts',
-      'High-signal proof-of-work profiles'
+      'A card stack full of possible partners',
+      'Instant “they like you too” alerts',
+      'Proof-of-work profiles, not empty charm'
     ],
     highlightColor: 'cyan',
   },
@@ -77,13 +77,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'games',
     iconName: 'Gamepad2',
     title: 'Pitch Battles & Founder Games',
-    badge: 'Play to Learn',
+    badge: 'Play. Pitch. Click.',
     category: 'discovery',
-    description: 'Sharpen founder skills by playing: head-to-head Pitch Perfect battles, Founder Flip, match-the-pairs, achievements and a saved-ideas box.',
+    description: 'Show off your founder brain in Pitch Perfect battles, Founder Flip, match-the-pairs, achievements, and saved ideas. Impress your future partner before you even meet.',
     details: [
-      '1v1 Pitch Perfect challenges',
+      '1v1 pitches with main-character energy',
       'Founder Flip & pair matching',
-      'Achievements & saved ideas'
+      'Achievements worth showing your future duo'
     ],
     highlightColor: 'yellow',
   },
@@ -91,13 +91,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'groups',
     iconName: 'Users',
     title: 'Builder Groups',
-    badge: 'Squad Up',
+    badge: 'Your People Are Here',
     category: 'communication',
-    description: 'Join topic squads of builders. Group chat with shared badges, member profiles and photos \u2014 your crew before you even incorporate.',
+    description: 'Join topic squads where the group chat gets your weird ideas. Share badges, browse profiles, and find the crew that makes solo building feel terribly overrated.',
     details: [
-      'Topic-based squads',
-      'Group chat + member profiles',
-      'Shared badges & photos'
+      'Squads built around your obsessions',
+      'Group chats with future collaborators',
+      'Shared badges, profiles & photos'
     ],
     highlightColor: 'violet',
   },
@@ -105,13 +105,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'daily',
     iconName: 'CalendarCheck',
     title: 'Daily Five',
-    badge: 'Fresh Every Morning',
+    badge: 'Five Fresh Chances',
     category: 'discovery',
-    description: 'Five fresh picks every morning \u2014 builders, opportunities and ideas matched to your goals, needs and availability. Retry today\u2019s picks anytime.',
+    description: 'Five fresh builders, opportunities, and ideas every morning, matched to your goals and availability. One might make you delete your “happily solo” status. Retry anytime.',
     details: [
-      '5 picks matched to your goals',
-      'Builders, opportunities & ideas',
-      'Refine needs, retry anytime'
+      '5 picks chosen around your goals',
+      'People and ideas worth getting attached to',
+      'Refine, retry, find your spark'
     ],
     highlightColor: 'cyan',
   },
@@ -119,13 +119,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'campaigns',
     iconName: 'Target',
     title: 'Campaigns & Rewards',
-    badge: 'Earn Real Rewards',
+    badge: 'Rewards Look Good on You',
     category: 'discovery',
-    description: 'Complete builder quests and campaigns to earn real rewards. Missions turn networking into a game you actually want to play.',
+    description: 'Complete builder quests and campaigns for real rewards. Meet people, make progress, and give your future co-founder something to be impressed about.',
     details: [
-      'Quests with real rewards',
-      'Missions for every level',
-      'Track progress & rewards'
+      'Quests with actual rewards',
+      'Missions for your main-character arc',
+      'Progress worth bragging to your partner about'
     ],
     highlightColor: 'yellow',
     href: '/campaigns',
@@ -134,27 +134,27 @@ export const FEATURES: FeatureItem[] = [
     id: 'idea',
     iconName: 'TrendingUp',
     title: 'Idea Deck AI Analyzer',
-    badge: 'AI Utility',
+    badge: 'Make Your Idea Irresistible',
     category: 'ai',
-    description: 'Enter a startup concept and get an AI-generated score (1-100), verdict, target customer, market potential, competitor mapping, monetization strategy, key risks, and next validation steps.',
+    description: 'Bring your brilliant, slightly unhinged startup concept. Get a 1-100 AI score, verdict, target customer, market potential, competitor map, monetization strategy, risks, and next steps to make it partner-worthy.',
     details: [
-      '1-100 concept score & AI verdict',
-      'Market potential & competitor mapping',
-      'Monetization strategy & key risk analysis'
+      'A 1-100 score and honest AI verdict',
+      'Market potential worth scheming over',
+      'Monetization, risks & your next power move'
     ],
     highlightColor: 'cyan',
   },
   {
     id: 'views',
     iconName: 'Eye',
-    title: 'Profile Views & Clicks',
-    badge: 'Know Your Fans',
+    title: 'See Who’s Checking You Out',
+    badge: 'Yes, They Noticed',
     category: 'reputation',
-    description: 'See exactly who viewed your profile and who clicked through. Know who is checking you out before you reach out.',
+    description: 'See who viewed your profile and clicked through. If your future co-founder keeps lurking, consider this your permission to make the first move.',
     details: [
-      'Everyone who viewed you',
-      'Profile click tracking',
-      'Reach out at the right time'
+      'Every builder who checked you out',
+      'Clicks that scream “I am interested”',
+      'Perfect timing for your opening move'
     ],
     highlightColor: 'violet',
   },
@@ -192,13 +192,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'venture-engine',
     iconName: 'Cpu',
     title: 'Automated Venture Factory & $50K Bridge',
-    badge: 'Venture Engine',
+    badge: 'From Duo to Startup',
     category: 'ai',
-    description: 'From codebase-aware co-founder diagnostics and passive GitHub push league scoring to Day-1 Venture Rooms and one-click SHA-256 timestamped $50,000 SAFE term-sheet dispatch with partner VCs.',
+    description: 'You found your person. Now become that duo. Get codebase-aware diagnostics, GitHub push league scoring, Day-1 Venture Rooms, and one-click SHA-256 timestamped $50,000 SAFE term-sheet dispatch with partner VCs.',
     details: [
-      'Codebase-aware Linky stack diagnostics',
-      'Passive GitHub & Cursor push League scoring',
-      'Day-1 Venture Rooms & $50K VC Deal Bridge'
+      'Linky diagnostics for your combined stack',
+      'GitHub & Cursor push League scoring',
+      'Venture Rooms & a $50K VC Deal Bridge'
     ],
     highlightColor: 'violet',
     href: '/app/lvlup',
@@ -207,13 +207,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'workspace',
     iconName: 'LayoutGrid',
     title: 'Dedicated Builder Workspace',
-    badge: 'New in v17',
+    badge: 'Your Duo Headquarters',
     category: 'reputation',
-    description: 'One-tap bottom-bar command center for your daily Ship Log, weekly build targets, protected rest days, private builder rooms, and Linky appearance settings.',
+    description: 'Your one-tap command center for Ship Logs, weekly targets, protected rest days, private builder rooms, and Linky settings. Everything you need to keep becoming a duo worth envying.',
     details: [
-      'One-tap Workspace tab on bottom bar',
-      'Weekly shipping rhythm & Ship Log',
-      'Private rooms & appearance controls'
+      'Your bottom-bar builder headquarters',
+      'A shipping rhythm you can share',
+      'Private rooms for your future favorite people'
     ],
     highlightColor: 'cyan',
     href: '/app/builder',
@@ -222,13 +222,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'homesearch',
     iconName: 'Search',
     title: 'Instant Homescreen Search',
-    badge: 'New in v17',
+    badge: 'Your Person, One Search Away',
     category: 'discovery',
-    description: 'Find any verified builder, founder, engineer, designer, skill, role, or city directly from the top of your Homescreen without digging through menus.',
+    description: 'Search verified builders, founders, engineers, designers, skills, roles, and cities right from your Homescreen. Your missing piece has nowhere left to hide.',
     details: [
-      'Pinned search bar right on Home',
-      'Filter by name, @username, skill, or city',
-      'Instant public & member profile lookup'
+      'Search pinned where your curiosity starts',
+      'Find a name, @username, skill, or city',
+      'Instant lookups, zero awkward wandering'
     ],
     highlightColor: 'yellow',
     href: '/app/feed',
@@ -237,13 +237,13 @@ export const FEATURES: FeatureItem[] = [
     id: 'moods',
     iconName: 'BellRing',
     title: 'Expressive Linky Icons & Check-Ins',
-    badge: '11 Live Moods',
+    badge: 'Linky Misses You Already',
     category: 'ai',
-    description: '11 reactive launcher and browser-tab icons that reflect your live momentum \u2014 from fiery red after 1 missed day to crowned on League podiums \u2014 paired with randomly timed daily push and full-screen email check-ins.',
+    description: 'Linky has 11 moods and is not afraid to use them—from fiery red after one missed day to crowned on the League podium—plus randomly timed push and email check-ins when your streak needs a little love.',
     details: [
-      '11 dynamic Android, iOS & web icons',
-      'Randomly timed push check-ins',
-      'Max 1 expressive Linky email per day'
+      '11 expressive Android, iOS & web moods',
+      'Check-ins when your momentum goes quiet',
+      'Max 1 dramatic Linky email per day'
     ],
     highlightColor: 'violet',
     href: '/app/builder?section=Settings',

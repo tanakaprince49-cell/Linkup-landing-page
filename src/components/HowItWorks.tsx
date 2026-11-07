@@ -4,18 +4,18 @@ import { UserCircle, BrainCircuit, Rocket } from 'lucide-react';
 const steps = [
   {
     icon: UserCircle,
-    title: "1. The Profile",
-    description: "Build your builder identity. Connect your professional history and specify exactly what you're looking for in a partner."
+    title: "1. Show Off Your Brilliant Self",
+    description: "Build your profile, connect your history, and confess exactly who you need. Technical genius? Growth brain? Someone who actually likes investor updates? Be honest."
   },
   {
     icon: BrainCircuit,
-    title: "2. The Algorithm",
-    description: "Our matching engine scans the network, analyzing skills, goals, and working styles to surface high-compatibility partners."
+    title: "2. Let Linky Get Nosy",
+    description: "Our matching engine compares skills, goals, and working styles to find builders who complement you. Not just impressive people—impressive people who fit you."
   },
   {
     icon: Rocket,
-    title: "3. The Linkup",
-    description: "Skip the small talk. Connect directly with verified founders, align your visions, and start building your next venture."
+    title: "3. Become That Duo",
+    description: "Skip the painful small talk, meet verified founders, and see if your visions click. Then start building the partnership everyone else wishes they had found first."
   }
 ];
 
@@ -26,10 +26,10 @@ export const HowItWorks: React.FC = () => {
         
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
-            How The <span className="text-[#FBE618]">Network</span> Works
+            Three Steps To <span className="text-[#FBE618]">Your Person</span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg">
-            Three simple steps to finding your perfect co-founder and launching your startup.
+            Three steps between “I could use a co-founder” and “Wait. I actually really like building with this person.”
           </p>
         </div>
 

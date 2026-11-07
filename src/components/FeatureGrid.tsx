@@ -53,16 +53,16 @@ export const FeatureGrid: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-[#FBE618]/30 text-xs font-mono font-semibold text-[#FBE618] uppercase">
-            <Zap className="w-3.5 h-3.5" /> Full Platform Architecture
+            <Zap className="w-3.5 h-3.5" /> Everything But The Awkward Cold DM
           </div>
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
-            Everything You Need To Find The{' '}
+            Everything You Need To Meet The{' '}
             <span className="bg-gradient-to-r from-[#FBE618] via-[#00C2FF] to-white bg-clip-text text-transparent">
-              Perfect Startup Partner.
+              Person Who Completes Your Idea.
             </span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg">
-            A complete suite of tools to discover, verify, connect, and launch with top-tier co-founders.
+            Search, match, message, and build with someone who gets your idea—before they team up with someone who is not you.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export const FeatureGrid: React.FC = () => {
                       href={feature.href}
                       className="inline-flex items-center gap-1 mt-4 text-xs font-bold text-[#FBE618] hover:gap-2 transition-all"
                     >
-                      Open live <ArrowUpRight className="w-4 h-4" />
+                      I want in <ArrowUpRight className="w-4 h-4" />
                     </a>
                   )}
                 </div>

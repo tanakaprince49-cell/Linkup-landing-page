@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
         {/* Brand Logo Link */}
         <Link to="/"
           className="flex items-center gap-2.5 group cursor-pointer focus:outline-none"
-          title="LINKUP - Co-Founder Network"
+          title="LINKUP - Find Your Person"
         >
           <img 
             src="/images/logo.webp" 
@@ -47,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
               <span className="text-[#FBE618] italic drop-shadow-[0_0_12px_rgba(251,230,24,0.6)] group-hover:text-[#fff056] transition-colors">UP</span>
             </div>
             <span className="text-[9px] font-semibold tracking-widest text-slate-400 uppercase font-mono group-hover:text-slate-300 transition-colors">
-              Co-Founder Network
+              Co-Founder Chemistry
             </span>
           </div>
         </Link>
@@ -117,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
             className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white water-btn transition-all"
           >
             <MessageCircle className="w-4 h-4 text-white" />
-            Talk to Founder
+            Talk to Tanaka
             <ChevronDown className={`w-4 h-4 text-white transition-transform duration-300 ${isFounderMenuOpen ? 'rotate-180' : ''}`} />
           </button>
 
@@ -159,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
                     </svg>
                     <div className="flex flex-col">
                       <span>WhatsApp (0780011810)</span>
-                      <span className="text-[10px] text-[#25D366] font-semibold tracking-wide">FASTEST RESPONSE</span>
+                      <span className="text-[10px] text-[#25D366] font-semibold tracking-wide">FASTEST WAY TO SAY HI</span>
                     </div>
                   </a>
 
@@ -213,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleTheme }) => 
                       <path d="M13.793 12L3.61 1.814c.23-.228.537-.373.882-.373.377 0 .734.17 1.09.373l11.604 6.794L13.793 12z" fill="#00E266" />
                       <path d="M13.793 12l3.393 3.392-11.604 6.794c-.356.203-.713.373-1.09.373-.345 0-.652-.145-.882-.373L13.793 12z" fill="#FF3333" />
                     </svg>
-                    Download LINKUP App
+                    Get LINKUP. Meet Your Person.
                   </a>
                 </motion.div>
               </>

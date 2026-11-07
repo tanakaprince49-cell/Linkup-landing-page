@@ -25,12 +25,12 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             className="gooey-btn gooey-btn-primary shadow-xl"
-            title="Launch Web Application"
+            title="Find your co-founder on the web"
           >
             <span className="water-drop-right" />
             <span className="gooey-btn-label font-bold text-white text-base">
               <Globe className="w-5 h-5 text-white" />
-              <span>View Web Version</span>
+              <span>Find My Person</span>
             </span>
           </a>
 
@@ -45,7 +45,7 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
             <span className="water-drop-left" />
             <span className="gooey-btn-label font-bold text-white text-base">
               <Smartphone className="w-5 h-5 text-white" />
-              <span>Get Android App</span>
+              <span>Meet Builders on Android</span>
             </span>
           </a>
         </div>
@@ -68,7 +68,7 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
           >
             <span className="gooey-btn-label">
               <Zap className="w-4 h-4 text-white" />
-              <span>Instant AI Match</span>
+              <span>Find My Person</span>
             </span>
           </button>
 
@@ -83,13 +83,13 @@ export const GooeyButtonGroup: React.FC<GooeyButtonGroupProps> = ({
           >
             <span className="gooey-btn-label">
               <Users className="w-4 h-4 text-white" />
-              <span>Browse{count === null ? '' : ' ' + formatBuilderCount(count) + (complete ? '' : '+')} Builders</span>
+              <span>Browse{count === null ? '' : ' ' + formatBuilderCount(count) + (complete ? '' : '+')} Possible Partners</span>
             </span>
           </button>
         </div>
       </div>
       <p className="text-xs text-slate-400 flex items-center gap-1.5 animate-pulse">
-        <span>Hover or tap either button to see the CSS liquid gooey merge effect</span>
+        <span>Pick a door. Your future favorite builder might be behind it</span>
         <ArrowRight className="w-3.5 h-3.5 text-[#FBE618]" />
       </p>
     </div>

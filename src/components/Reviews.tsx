@@ -6,19 +6,19 @@ const reviews = [
   {
     name: "Alex M.",
     role: "Startup CEO",
-    text: "Found my technical co-founder in exactly 4 days. The signal-to-noise ratio here is absolutely unmatched compared to LinkedIn or other startup platforms.",
+    text: "Found my technical co-founder in exactly 4 days. Now we are the duo finishing each other’s roadmap while my old solo to-do list watches from the trash. Nothing else I tried felt this focused.",
     date: "August 10, 2026"
   },
   {
     name: "David K.",
     role: "Product Lead",
-    text: "Exactly what the startup ecosystem needed. No recruiters, no spam, just serious builders ready to execute. The UI is also incredibly polished.",
+    text: "No recruiters, no spam, just serious builders who actually want to make things. I came looking for a partner and found myself thinking, “Oh. This is what good startup chemistry feels like.”",
     date: "July 22, 2026"
   },
   {
     name: "Elena R.",
     role: "Full-Stack Engineer",
-    text: "The AI matching is scary accurate. It paired me with a business co-founder who perfectly complemented my technical stack and vision.",
+    text: "The AI matching is scary accurate. It paired me with a business co-founder who completes my technical stack and vision. Slightly annoying how quickly they became my favorite person to build with.",
     date: "August 02, 2026"
   }
 ];
@@ -35,7 +35,7 @@ export const Reviews: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight mb-8"
           >
-            Loved by <span className="text-[#FBE618]">Builders</span>
+            Builders Found Their People. <span className="text-[#FBE618]">Your Turn.</span>
           </motion.h2>
 
           <motion.div 
@@ -59,7 +59,7 @@ export const Reviews: React.FC = () => {
                   <path fill="#F44336" d="M340 200.7L487.5 53.2c10.3-10.3 10.3-27 0-37.3L475.8 4.2c-10.3-10.3-27-10.3-37.3 0L340 200.7z"/>
                   <path fill="#2196F3" d="M332.9 187.1L19.1 501c-6.8 6.8-19.1 2-19.1-7.6V18.6C0 9 12.3 4.2 19.1 11l313.8 313.9c-4.2-3.1-7.1-8-7.1-13.6v-110.6c0-5.6 2.9-10.5 7.1-13.6z"/>
                 </svg>
-                Average rating on Google Play
+                Google Play rating from builders like you
               </div>
             </div>
           </motion.div>

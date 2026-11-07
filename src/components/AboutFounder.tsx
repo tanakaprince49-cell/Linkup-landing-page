@@ -26,9 +26,9 @@ export const AboutFounder: React.FC = () => {
     {
       name: 'LinkedIn',
       handle: 'Tanaka Gaadzikwa',
-      description: 'Founder & CEO profile updates & network',
+      description: 'Founder updates, big ideas & startup matchmaking',
       url: 'https://www.linkedin.com/in/tanaka-gaadzikwa-linkup/',
-      ctaText: 'Connect on LinkedIn',
+      ctaText: 'Say hello on LinkedIn',
       badgeColor: 'border-[#0A66C2]/30 bg-[#0A66C2]/10 text-[#0A66C2]',
       icon: (
         <svg className="w-7 h-7 shrink-0 fill-[#0A66C2]" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@ export const AboutFounder: React.FC = () => {
     {
       name: 'WhatsApp',
       handle: '0780011810',
-      description: 'Direct line • Fastest founder response',
+      description: 'Direct line • The fastest way to say hi',
       url: 'https://wa.me/263780011810',
       ctaText: 'Chat on WhatsApp',
       badgeColor: 'border-[#25D366]/30 bg-[#25D366]/10 text-[#25D366]',
@@ -52,7 +52,7 @@ export const AboutFounder: React.FC = () => {
     {
       name: 'Telegram',
       handle: '@tanaka_93',
-      description: 'Official direct Telegram handle',
+      description: 'Your direct line to the Startup Cupid',
       url: 'https://t.me/tanaka_93',
       ctaText: 'Open Telegram',
       badgeColor: 'border-[#229ED9]/30 bg-[#229ED9]/10 text-[#229ED9]',
@@ -65,9 +65,9 @@ export const AboutFounder: React.FC = () => {
     {
       name: 'Email',
       handle: 'tanakaprince49@gmail.com',
-      description: 'Investor, press & partnership inquiries',
+      description: 'Big ideas, press & partnerships start here',
       url: 'mailto:tanakaprince49@gmail.com',
-      ctaText: 'Send Email',
+      ctaText: 'Start a conversation',
       badgeColor: 'border-red-500/30 bg-red-500/10 text-red-400',
       icon: (
         <img
@@ -85,7 +85,7 @@ export const AboutFounder: React.FC = () => {
     {
       name: 'Tanaka Gaadzikwa Web',
       handle: 'tanakagaadzikwa.com',
-      description: 'Personal Founder & Portfolio Website',
+      description: 'Meet the human behind your future match',
       url: 'https://www.tanakagaadzikwa.com',
       ctaText: 'Visit tanakagaadzikwa.com',
       badgeColor: 'border-[#FBE618]/30 bg-[#FBE618]/10 text-[#FBE618]',
@@ -105,9 +105,9 @@ export const AboutFounder: React.FC = () => {
     {
       name: 'LINKUP Website',
       handle: 'www.linkupbuild.com',
-      description: 'Official Web Landing Page & Network',
+      description: 'Where you stop solo and meet your person',
       url: 'https://www.linkupbuild.com/',
-      ctaText: 'Visit linkupbuild.com',
+      ctaText: 'Go meet possible partners',
       badgeColor: 'border-[#FBE618]/30 bg-[#FBE618]/10 text-[#FBE618]',
       icon: (
         <img
@@ -139,18 +139,18 @@ export const AboutFounder: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#FBE618]/10 border border-[#FBE618]/30 text-[#FBE618] text-xs font-mono font-bold tracking-wider uppercase">
-            <span>Meet The Founder & CEO</span>
+            <span>The Human Behind The Matchmaking</span>
           </div>
 
           <h2
             id="founder-section-heading"
             className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-tight"
           >
-            About <span className="text-[#FBE618]">Tanaka Gaadzikwa</span> & LINKUP
+            Meet <span className="text-[#FBE618]">Tanaka Gaadzikwa</span>. He Built This For You.
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            The visionary behind LINKUP — revolutionizing co-founder matching and startup building with natural language artificial intelligence.
+            He got tired of watching brilliant builders wrestle entire startups alone. So he built LINKUP to help you find the person who makes you say, “Finally. Someone who gets it.”
           </p>
         </div>
 
@@ -222,7 +222,7 @@ export const AboutFounder: React.FC = () => {
             <div className="lg:col-span-8 space-y-5 text-slate-200">
               <div className="space-y-3">
                 <h4 className="text-lg font-bold text-white font-display flex items-center gap-2">
-                  <span>Who is Tanaka Gaadzikwa?</span>
+                  <span>Who Made It Their Mission To Find Your Person?</span>
                 </h4>
                 <p className="text-sm sm:text-base leading-relaxed text-slate-300" itemProp="description">
                   <strong className="text-white font-semibold">Tanaka Gaadzikwa</strong> (full name <strong className="text-white font-semibold">Tanaka Prince Gaadzikwa</strong>, born November 20, 2010) is a Young entrepreneur, tech founder, and CEO of <strong className="text-[#FBE618] font-semibold">LINKUP</strong> living and building technology in <strong className="text-white font-semibold">Harare, Zimbabwe</strong>. Known globally as the <em className="text-[#FBE618] not-italic font-semibold">"Startup Cupid"</em> and <em className="text-[#00C2FF] not-italic font-semibold">"The Minister of AI"</em>.
@@ -244,14 +244,14 @@ export const AboutFounder: React.FC = () => {
                     • What LINKUP Does
                   </div>
                   <p className="text-xs sm:text-sm text-slate-300 leading-normal">
-                    An <strong className="text-white">AI-driven platform</strong> featuring an assistant and chatbot named <strong className="text-white">Linky</strong> designed to help developers, designers, founders, and students find co-founders, collaborators, and early project partners.
+                    An <strong className="text-white">AI-driven platform</strong> starring <strong className="text-white">Linky</strong>, built to help developers, designers, founders, and students meet the co-founder or collaborator who makes solo building feel like a bad ex.
                   </p>
                 </div>
               </div>
 
               <div className="p-4 rounded-2xl bg-gradient-to-r from-[#FBE618]/10 via-[#00C2FF]/10 to-transparent border border-[#FBE618]/20 flex items-center justify-between flex-wrap gap-3">
                 <div className="text-xs text-slate-300">
-                  Looking to build a startup or partner with Tanaka? Reach out directly via any official channel below.
+                  Want to build something or scheme with Tanaka? Say hi through any official channel below. Your next great partnership could start with one slightly nervous message.
                 </div>
                 <a
                   href="https://wa.me/263780011810"
@@ -259,7 +259,7 @@ export const AboutFounder: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-black bg-[#FBE618] hover:bg-[#fff056] px-3.5 py-1.5 rounded-xl transition-all shadow-md"
                 >
-                  <span>Quick Message</span>
+                  <span>Say Hi To Tanaka</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -272,10 +272,10 @@ export const AboutFounder: React.FC = () => {
         <div className="space-y-4">
           <div className="text-center sm:text-left flex items-center justify-between flex-wrap gap-2">
             <h4 className="text-sm font-mono font-bold uppercase tracking-wider text-slate-400">
-              Official Profiles & Verified Channels
+              Where To Say Hi & Verify The Human
             </h4>
             <span className="text-xs text-slate-500 font-mono">
-              Direct verification links for Google & builders
+              Real links. No mysterious founder energy.
             </span>
           </div>
 

@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className="inline-flex items-center gap-2.5 group cursor-pointer"
-              title="LINKUP - Co-Founder Network"
+              title="LINKUP - Find Your Person"
             >
               <img 
                 src="/images/logo.webp" 
@@ -30,12 +30,12 @@ export const Footer: React.FC = () => {
             </a>
 
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
-              The elite AI-powered co-founder matchmaking network created by <strong className="text-white font-medium">Tanaka Gaadzikwa</strong>. Featuring Linky, our AI assistant connecting developers, designers, founders, and students with co-founders and project partners worldwide.
+              The AI-powered co-founder matchmaking network created by <strong className="text-white font-medium">Tanaka Gaadzikwa</strong> for people who are tired of doing everything themselves. Linky connects developers, designers, founders, and students with the person who makes their idea better.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <a href="/app/builders" className="inline-flex items-center gap-1 text-[#FBE618] hover:text-white transition-colors">
-                Meet LINKUP builders <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+                Meet your possible person <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
               </a>
               <a href="/app/blogs" className="inline-flex items-center gap-1 text-[#FBE618] hover:text-white transition-colors">
                 Founder &amp; Startup Blogs <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
             </div>
             
             <p className="text-slate-300 text-xs leading-relaxed">
-              <strong className="text-white font-bold">Tanaka Gaadzikwa</strong> is a 15-year-old entrepreneur and tech founder based in <strong className="text-slate-200">Harare, Zimbabwe</strong>, known as the <em>"startup Cupid"</em> and <em>"the minister of AI"</em>. He built LINKUP to empower builders globally.
+              <strong className="text-white font-bold">Tanaka Gaadzikwa</strong> is a 15-year-old entrepreneur and tech founder based in <strong className="text-slate-200">Harare, Zimbabwe</strong>, known as the <em>"startup Cupid"</em> and <em>"the minister of AI"</em>. He built LINKUP so your next “we built this together” story can finally start.
             </p>
 
             {/* Founder Links with Real Logos */}
@@ -179,7 +179,7 @@ export const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs text-[#FBE618] hover:text-[#fff056] font-semibold"
               >
-                <span>Get LINKUP on Google Play Store</span>
+                <span>Get LINKUP. Then go meet your person.</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -215,7 +215,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className="flex items-center gap-2 text-slate-400">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Linkup Network Live • linkupbuild.com</span>
+            <span>Matchmaking Live • linkupbuild.com</span>
           </div>
         </div>
 

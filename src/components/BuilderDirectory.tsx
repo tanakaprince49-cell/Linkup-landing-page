@@ -28,7 +28,7 @@ export const BuilderDirectory: React.FC = () => {
       setBuilders(mergeBuilders([], page.profiles));
     } catch {
       if (!controller.signal.aborted && activeRequest.current === controller) {
-        setError('We couldn’t load public profiles right now. Please try again, or browse the public directory.');
+        setError('Your future co-founder is playing hard to get. We could not load public profiles, so try again or browse the public directory.');
       }
     } finally {
       if (!controller.signal.aborted && activeRequest.current === controller) setLoading(false);
@@ -73,23 +73,23 @@ export const BuilderDirectory: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-mono font-bold tracking-wider uppercase">
-            <Users className="w-3.5 h-3.5" /><span>People building on LINKUP</span>
+            <Users className="w-3.5 h-3.5" /><span>People Worth Getting Attached To</span>
           </div>
           <h2 id="builders-heading" className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-tight">
-            Meet the Builders on <span className="text-[#FBE618]">LINKUP</span>
+            Your Future Favorite Builder Is on <span className="text-[#FBE618]">LINKUP</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            Search the LINKUP community on an interactive, real-world globe. Spin the Earth, zoom in, and open public builders by location.
+            Spin the Earth and find the person whose skills make your idea better. They are out there, possibly meeting other builders. We are not jealous. You should be.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto mb-10 space-y-4">
           <div className="relative">
             <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input type="search" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} aria-label="Search loaded builders"
-              placeholder="Search loaded builders by name, skill, role, company, or location..."
+            <input type="search" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} aria-label="Search for your future co-founder"
+              placeholder="Search by name, skill, role, company, or wherever your person is hiding..."
               className="w-full bg-[#0d121f]/90 border border-white/10 rounded-2xl pl-12 pr-16 py-3.5 text-white placeholder-slate-400 focus:outline-none focus:border-[#FBE618]/60 focus:ring-1 focus:ring-[#FBE618]/40 transition-all text-sm font-medium shadow-xl" />
-            {searchQuery && <button onClick={() => setSearchQuery('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400 hover:text-white no-water-btn">Clear</button>}
+            {searchQuery && <button onClick={() => setSearchQuery('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400 hover:text-white no-water-btn">Start over</button>}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1" aria-label="Filter by role">
             {roleCategories.map(role => <button key={role} onClick={() => setSelectedRole(role)} aria-pressed={selectedRole === role}
@@ -98,19 +98,19 @@ export const BuilderDirectory: React.FC = () => {
             </button>)}
           </div>
           <p className="text-xs text-slate-400 text-center" role="status" aria-live="polite">
-            {loading ? 'Loading public LINKUP profiles…' : error ? 'Public profiles are currently unavailable.' : `Showing ${filteredBuilders.length} of ${builders.length} matching loaded profiles.`}
+            {loading ? 'Looking for builders worth your time…' : error ? 'Your possible partners are temporarily out of reach.' : `${filteredBuilders.length} of ${builders.length} builders could be your kind of person.`}
           </p>
         </div>
 
         {error && <div role="alert" className="max-w-3xl mx-auto mb-8 p-5 rounded-2xl border border-amber-300/20 bg-amber-300/5 text-sm text-slate-200 text-center">
           <p>{error}</p>
-          <button onClick={() => void loadBuilders()} className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-xl text-white water-btn font-semibold"><RefreshCw className="w-4 h-4" />Try again</button>
-          <a href="/app/builders" className="inline-block ml-4 underline">Browse public directory</a>
+          <button onClick={() => void loadBuilders()} className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-xl text-white water-btn font-semibold"><RefreshCw className="w-4 h-4" />Try finding them again</button>
+          <a href="/app/builders" className="inline-block ml-4 underline">Browse possible partners</a>
         </div>}
 
         <div ref={earthAnchorRef}>
           {earthInView ? (
-            <React.Suspense fallback={<div role="status" className="mx-auto grid min-h-[420px] place-items-center rounded-[30px] border border-white/10 bg-[#07111d] text-sm text-slate-300">Loading the real LINKUP member globe…</div>}>
+            <React.Suspense fallback={<div role="status" className="mx-auto grid min-h-[420px] place-items-center rounded-[30px] border border-white/10 bg-[#07111d] text-sm text-slate-300">Spinning up your future partnerships…</div>}>
               <LazyInteractiveEarthSearch members={filteredBuilders} />
             </React.Suspense>
           ) : (

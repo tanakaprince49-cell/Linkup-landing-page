@@ -12,13 +12,13 @@ export const BottomCTA: React.FC = () => {
 
           <div className="relative z-10 space-y-8">
             <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
-              Don&apos;t Let Building Alone Kill Your Startup.
+              Your Co-Founder Could Be One Hello Away.
               <br />
-              <span className="text-[#FBE618]">Find Your Co-Founder Before Burnout Wins.</span>
+              <span className="text-[#FBE618]">Don’t Let Them Become Someone Else’s.</span>
             </h2>
             
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-              Every week you spend building without a co-founder is another week a two-founder squad ships twice as fast and takes your market. Stop carrying an entire company alone—match with vetted co-founders on LINKUP today.
+              Right now, someone could be wishing for exactly your skills, your energy, and your ridiculous big idea. Let them find you before they click with another builder. Get on LINKUP and give your future favorite person the chance to say, “Wait. You too?”
             </p>
 
             <div className="flex flex-col items-center gap-5 pt-6">
@@ -45,19 +45,19 @@ export const BottomCTA: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gooey-btn gooey-btn-primary px-8 sm:px-10 py-4 shadow-xl"
-                    title="Launch Web Application"
+                    title="Find your co-founder on the web"
                   >
                     <span className="water-drop-left" />
                     <span className="gooey-btn-label text-black font-bold text-base">
                       <Globe className="w-5 h-5 text-black" />
-                      <span>View Web Version</span>
+                      <span>Meet My Co-Founder</span>
                     </span>
                   </a>
                 </div>
               </div>
               <span className="text-[11px] text-[#00C2FF] font-medium flex items-center gap-1 justify-center">
                 <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-                Super stable — Recommended for iOS users
+                Smooth on web — go make someone glad they met you
               </span>
             </div>
           </div>

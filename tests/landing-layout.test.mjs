@@ -20,7 +20,7 @@ for (const path of ['/', '/features']) {
 
     if (path === '/') {
       assert.match(html, /id="builders"/);
-      assert.match(html, /Meet the Builders on/);
+      assert.match(html, /Your Future Favorite Builder Is on/);
       assert.match(html, /id="launch-film"/);
     }
   });

@@ -83,7 +83,7 @@ export const LaunchFilm: React.FC = () => {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-[#FBE618]/40 bg-[#FBE618]/10 text-[#FBE618] text-xs sm:text-sm font-bold tracking-wide uppercase"
           >
             <span className="w-2 h-2 rounded-full bg-[#FBE618] animate-pulse" />
-            Official Launch Film
+            Your Future Duo, In Motion
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ export const LaunchFilm: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.05 }}
             className="mt-5 text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight"
           >
-            See LINKUP in <span className="text-[#FBE618]">60 seconds</span>
+            Watch Chemistry Happen in <span className="text-[#FBE618]">60 seconds</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ export const LaunchFilm: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-4 text-slate-300 text-base sm:text-lg max-w-2xl mx-auto"
           >
-            Tell Linky who you need, match with compatible builders, connect only when it is mutual, and keep shipping together.
+            Tell Linky who keeps crossing your mind when you think, “I cannot do this alone.” Meet compatible builders, make it mutual, and become the duo everyone else has to keep up with.
           </motion.p>
         </div>
 
@@ -214,13 +214,13 @@ export const LaunchFilm: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-7 py-3.5 rounded-2xl bg-[#FBE618] text-black font-bold text-base hover:bg-[#fff056] transition-colors shadow-[0_0_40px_rgba(251,230,24,0.25)]"
           >
-            Find your co-founder now
+            Go find my person
           </a>
           <a
             href="#linkup-agent"
             className="inline-flex items-center justify-center px-7 py-3.5 rounded-2xl border border-white/15 bg-white/5 text-white font-semibold text-base hover:bg-white/10 transition-colors"
           >
-            Explore Linky AI matching
+            Let Linky play matchmaker
           </a>
         </motion.div>
       </div>

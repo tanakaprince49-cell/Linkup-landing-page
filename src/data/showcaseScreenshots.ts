@@ -1,10 +1,10 @@
 // Owner-supplied images, kept in the supplied order. Serve the original WebP
 // bytes locally so the showcase does not depend on the external image host.
 export const SHOWCASE_SCREENSHOTS = [
-  { src: '/images/showcase/linky-ai-chat.webp', alt: 'LINKUP Linky AI chat — find and connect with builders through conversation', caption: 'Linky AI chat inside LINKUP — describe your ideal co-founder in plain English and get cited matches.' },
-  { src: '/images/showcase/real-time-messaging.webp', alt: 'LINKUP real-time messaging — founder conversations and team threads', caption: 'Real-time messaging in LINKUP — founder conversations and team threads with every match.' },
-  { src: '/images/showcase/startup-partners.webp', alt: 'LINKUP active opportunities — connect with startup partners', caption: 'Active opportunities in LINKUP — startups and builders looking for partners right now.' },
-  { src: '/images/showcase/missions-and-rewards.webp', alt: 'LINKUP Play — complete missions and earn rewards', caption: 'LINKUP Play — complete builder missions and earn real rewards.' },
-  { src: '/images/showcase/recommended-matches.webp', alt: 'LINKUP recommended matches — find your next professional collaborator', caption: 'Recommended matches in LINKUP — AI-ranked builders matched to your goals.' },
-  { src: '/images/showcase/trending-stories.webp', alt: 'LINKUP news — discover trending startup and technology stories', caption: 'LINKUP news radar — trending startup and technology stories, updated daily.' },
+  { src: '/images/showcase/linky-ai-chat.webp', alt: 'LINKUP Linky AI chat — tell Linky who would complete your founding duo', caption: 'Linky AI chat inside LINKUP — describe your missing piece and meet matches worth getting a little jealous over.' },
+  { src: '/images/showcase/real-time-messaging.webp', alt: 'LINKUP real-time messaging — where your next founder hello becomes a duo', caption: 'Real-time messaging in LINKUP — turn one promising hello into your favorite builder relationship.' },
+  { src: '/images/showcase/startup-partners.webp', alt: 'LINKUP active opportunities — builders looking for someone like you', caption: 'Active opportunities in LINKUP — builders looking for someone exactly like you. Yes, you.' },
+  { src: '/images/showcase/missions-and-rewards.webp', alt: 'LINKUP Play — build, earn, and give your future partner something to brag about', caption: 'LINKUP Play — complete missions and earn rewards while your future co-founder wonders where you are.' },
+  { src: '/images/showcase/recommended-matches.webp', alt: 'LINKUP recommended matches — builders whose skills complete yours', caption: 'Recommended matches in LINKUP — people whose skills make your idea look suspiciously good.' },
+  { src: '/images/showcase/trending-stories.webp', alt: 'LINKUP news — startup stories to scheme over with your future co-founder', caption: 'LINKUP news radar — trending startup and tech stories worth scheming over with your future person.' },
 ] as const;

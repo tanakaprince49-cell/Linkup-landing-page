@@ -1,6 +1,6 @@
 {
   "name": "LINKUP - Co-Founder Network",
-  "description": "LINKUP is the AI co-founder matchmaking platform founded by 15-year-old tech entrepreneur Tanaka Gaadzikwa. Meet Linkup Agent (Linky) to find startup co-founders.",
+  "description": "Your future co-founder is out there. Tell Linky who you need and become the startup duo everyone else envies on LINKUP, founded by Tanaka Gaadzikwa.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

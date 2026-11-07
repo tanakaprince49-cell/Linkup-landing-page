@@ -18,7 +18,7 @@ export const AppShowcase: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight mb-4"
           >
-            Inside The <span className="text-[#FBE618]">Network</span>
+            Your Future Person Is <span className="text-[#FBE618]">In Here</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export const AppShowcase: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-slate-300 text-lg max-w-2xl mx-auto"
           >
-            Take a look at the elite experience waiting for you. Designed for speed, precision, and high-value connections.
+            Peek at the conversations, matches, and “where have you been all my startup life?” moments waiting for you. Try not to get jealous of your own future.
           </motion.p>
         </div>
 

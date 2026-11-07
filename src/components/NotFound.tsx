@@ -21,12 +21,12 @@ export const NotFound: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="glass-panel rounded-3xl border border-white/15 p-8 sm:p-12 space-y-6"
         >
-          <p className="font-mono text-sm font-bold tracking-widest text-[#FBE618] uppercase">404 — Off the map</p>
+          <p className="font-mono text-sm font-bold tracking-widest text-[#FBE618] uppercase">404 — Wrong match</p>
           <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
-            This page doesn&apos;t exist
+            This page ghosted you
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-            The link you followed is broken or the page moved. Your future co-founder is still out there — start here instead.
+            Awkward. This link is just not that into you. Your future co-founder is still here though, and this time there is real chemistry potential.
           </p>
           <nav aria-label="Popular pages" className="grid grid-cols-2 gap-3 pt-2">
             {LINKS.map(({ to, icon: Icon, label }) => (

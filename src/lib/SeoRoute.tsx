@@ -6,8 +6,8 @@ import { LANDING_BLOGS, LANDING_BLOG_INDEX_META } from '../data/landingBlogs';
 // title, description and canonical, duplicates point at their canonical twin,
 // and unknown URLs are genuine noindex 404s instead of duplicate homepages.
 const SITE = 'https://www.linkupbuild.com';
-const HOME_TITLE = 'LINKUP | Co-Founder Matchmaking App — Founded by Tanaka Gaadzikwa';
-const HOME_DESC = 'LINKUP is the AI-driven co-founder matchmaking platform: Linky AI companion, Builder League leaderboard, Momentum build streaks, Pitch Perfect battles, Daily Five picks, campaigns with real rewards, builder groups and startup radar.';
+const HOME_TITLE = 'LINKUP | Your Co-Founder Is Out There — Meet Them First';
+const HOME_DESC = 'Your future co-founder is out there meeting builders. Rude. Tell Linky who you need, find your perfect partner, and become the startup duo everyone else envies.';
 const INDEX_ROBOTS = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
 type RouteMeta = { title: string; description: string; canonical: string; ogImage?: string; ogType?: string };
@@ -35,33 +35,33 @@ const ROUTES: Record<string, RouteMeta> = {
   },
   ...BLOG_ROUTES,
   '/features': {
-    title: 'LINKUP Features — Linky AI, Builder League, Momentum Streaks & More',
-    description: 'Every LINKUP capability: Linky AI companion, Builder League leaderboard, Momentum build streaks, Pitch Perfect battles, Daily Five picks, campaigns with real rewards and startup radar.',
+    title: 'LINKUP Features — Everything You Need To Meet Your Person',
+    description: 'AI matchmaking, builder chemistry, daily picks, proof-of-work, private groups, and everything else you need to find a co-founder before someone else finds them first.',
     canonical: SITE + '/features',
   },
   '/builders': {
-    title: 'Browse Builders — Verified Founders & Co-Founders on LINKUP',
-    description: 'Meet real builders on LINKUP: founders, engineers, designers and operators open to co-founding. Live public profiles, skills and collaboration interests.',
+    title: 'Meet Your Future Favorite Builder on LINKUP',
+    description: 'Spin the globe and meet founders, engineers, designers, and operators who might complete your startup life. Your person could be one search away.',
     canonical: SITE + '/builders',
   },
   '/directory': {
-    title: 'Browse Builders — Verified Founders & Co-Founders on LINKUP',
-    description: 'Meet real builders on LINKUP: founders, engineers, designers and operators open to co-founding. Live public profiles, skills and collaboration interests.',
+    title: 'Meet Your Future Favorite Builder on LINKUP',
+    description: 'Spin the globe and meet founders, engineers, designers, and operators who might complete your startup life. Your person could be one search away.',
     canonical: SITE + '/builders',
   },
   '/founder': {
     title: 'About Tanaka Gaadzikwa — Founder & CEO of LINKUP',
-    description: 'Tanaka Gaadzikwa (Tanaka Prince Gaadzikwa, born November 20, 2010) is the Young founder and CEO of LINKUP in Harare, Zimbabwe — the Startup Cupid and Minister of AI.',
+    description: 'Meet Tanaka Gaadzikwa, the young Harare founder known as the Startup Cupid and Minister of AI. He built LINKUP so you can finally meet your co-founder.',
     canonical: SITE + '/founder',
   },
   '/about': {
     title: 'About Tanaka Gaadzikwa — Founder & CEO of LINKUP',
-    description: 'Tanaka Gaadzikwa (Tanaka Prince Gaadzikwa, born November 20, 2010) is the Young founder and CEO of LINKUP in Harare, Zimbabwe — the Startup Cupid and Minister of AI.',
+    description: 'Meet Tanaka Gaadzikwa, the young Harare founder known as the Startup Cupid and Minister of AI. He built LINKUP so you can finally meet your co-founder.',
     canonical: SITE + '/founder',
   },
   '/faq': {
-    title: 'LINKUP FAQ — Co-Founder Matching Questions Answered',
-    description: 'How does LINKUP match co-founders? How does verification work? Answers about AI matchmaking, REP scores, messaging and building part-time.',
+    title: 'Before You Meet Your Person — LINKUP FAQ',
+    description: 'How will you meet your co-founder? What happens when you match? Get answers about Linky, verification, messaging, pricing, privacy, and finding your person.',
     canonical: SITE + '/faq',
   },
 };
@@ -84,7 +84,7 @@ export function SeoRoute() {
     const title = meta ? meta.title : 'Page not found | LINKUP';
     const description = meta
       ? meta.description
-      : 'This LINKUP page does not exist. Find a co-founder, browse builders or explore LINKUP features instead.';
+      : 'This page ghosted you, but your future co-founder did not. Browse builders, explore LINKUP, or go meet your person instead.';
     const canonical = meta ? meta.canonical : SITE + '/';
 
     document.title = title;

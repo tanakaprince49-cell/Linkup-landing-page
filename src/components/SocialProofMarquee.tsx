@@ -8,7 +8,7 @@ export const SocialProofMarquee: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
         <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-widest text-slate-400 uppercase">
           <ShieldCheck className="w-4 h-4 text-[#FBE618]" />
-          <span>Builders from world-class ecosystems</span>
+          <span>Brilliant builders. Dangerously good chemistry. Your person could be here.</span>
         </div>
       </div>
 
