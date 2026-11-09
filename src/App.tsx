@@ -83,7 +83,7 @@ const DirectoryPage = () => (
 const FounderPage = () => (
   <>
     <FadeInSection delay={0.1}>
-      <AboutFounder />
+      <AboutFounder asPage />
     </FadeInSection>
     <FadeInSection delay={0.1}>
       <FAQ />

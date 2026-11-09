@@ -73,3 +73,27 @@ test('sitemaps, robots.txt, and vercel.json index all 18 images cleanly', () => 
   const xRobots = tanakaHeader.headers.find((h) => h.key === 'X-Robots-Tag');
   assert.ok(xRobots && xRobots.value.includes('index') && xRobots.value.includes('max-image-preview:large'));
 });
+
+test('Knowledge Graph Person, Organization, and ProfilePage entities are cleanly disambiguated and corroborated', () => {
+  const html = read('index.html');
+  const match = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  const ld = JSON.parse(match[1]);
+
+  const person = ld['@graph'].find((n) => n['@id'] === 'https://www.linkupbuild.com/#tanaka-gaadzikwa');
+  const org = ld['@graph'].find((n) => n['@id'] === 'https://www.linkupbuild.com/#organization');
+  const profile = ld['@graph'].find((n) => n['@id'] === 'https://www.linkupbuild.com/founder#profile');
+
+  assert.equal(person.founder, undefined, 'Person must not contain invalid founder property');
+  assert.equal(person.url, 'https://www.linkupbuild.com/founder');
+  assert.ok(person.sameAs.includes('https://www.tanakagaadzikwa.com/'));
+  assert.ok(person.sameAs.includes('https://github.com/tanakaprince49-cell'));
+  assert.ok(person.sameAs.includes('https://x.com/TGaadzikwa'));
+  assert.ok(!org.sameAs.some((u) => u.includes('tanakagaadzikwa.com')), 'Organization.sameAs must not conflate personal site');
+  assert.equal(profile.dateCreated, '2026-08-12T00:00:00Z');
+  assert.ok(profile.dateModified);
+
+  const about = read('src/components/AboutFounder.tsx');
+  for (const url of ['https://x.com/TGaadzikwa', 'https://github.com/tanakaprince49-cell', 'https://youtube.com/@neverletbrocook0', 'https://instagram.com/talala2694']) {
+    assert.ok(about.includes(url), `AboutFounder.tsx visibly links ${url}`);
+  }
+});

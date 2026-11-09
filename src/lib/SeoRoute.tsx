@@ -54,11 +54,15 @@ const ROUTES: Record<string, RouteMeta> = {
     title: 'About Tanaka Gaadzikwa — Founder & CEO of LINKUP',
     description: 'Meet Tanaka Gaadzikwa, the young Harare founder known as the Startup Cupid and Minister of AI. He built LINKUP so you can finally meet your co-founder.',
     canonical: SITE + '/founder',
+    ogImage: 'https://i.ibb.co/pvvN63sV/20260526-181511.webp',
+    ogType: 'profile',
   },
   '/about': {
     title: 'About Tanaka Gaadzikwa — Founder & CEO of LINKUP',
     description: 'Meet Tanaka Gaadzikwa, the young Harare founder known as the Startup Cupid and Minister of AI. He built LINKUP so you can finally meet your co-founder.',
     canonical: SITE + '/founder',
+    ogImage: 'https://i.ibb.co/pvvN63sV/20260526-181511.webp',
+    ogType: 'profile',
   },
   '/faq': {
     title: 'Before You Meet Your Person — LINKUP FAQ',
@@ -212,6 +216,19 @@ export function SeoRoute() {
         '@context': 'https://schema.org',
         '@graph': [
           {
+            '@type': 'ProfilePage',
+            '@id': `${SITE}/founder#profile-entity`,
+            url: `${SITE}/founder`,
+            name: 'Tanaka Gaadzikwa — Founder & CEO of LINKUP',
+            dateCreated: '2026-08-12T00:00:00Z',
+            dateModified: '2026-11-09T20:30:00Z',
+            mainEntity: { '@id': `${SITE}/#tanaka-gaadzikwa` },
+            about: { '@id': `${SITE}/#tanaka-gaadzikwa` },
+            primaryImageOfPage: { '@id': `${SITE}/#image-tanaka-1` },
+            hasPart: { '@id': `${SITE}/founder#gallery` },
+            inLanguage: 'en',
+          },
+          {
             '@type': 'ImageGallery',
             '@id': `${SITE}/founder#gallery`,
             name: 'Tanaka Gaadzikwa Official Press & Founder Image Gallery',
@@ -221,6 +238,44 @@ export function SeoRoute() {
             author: { '@id': `${SITE}/#tanaka-gaadzikwa` },
             image: imageObjects,
             associatedMedia: imageObjects.map((img) => ({ '@id': img['@id'] })),
+          },
+          {
+            '@type': 'FAQPage',
+            '@id': `${SITE}/founder#faq`,
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Who is Tanaka Gaadzikwa?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Tanaka Gaadzikwa (full name Tanaka Prince Gaadzikwa, born November 20, 2010) is a young Zimbabwean entrepreneur, software builder, and Founder & CEO of LINKUP based in Harare, Zimbabwe, widely known as the Startup Cupid and The Minister of AI.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What is LINKUP?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'LINKUP is an AI-driven co-founder and collaborator matchmaking platform founded by Tanaka Gaadzikwa in Harare, Zimbabwe, featuring Linky AI, available on Google Play and at https://www.linkupbuild.com/.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Where is Tanaka Gaadzikwa based?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Tanaka Gaadzikwa is based in Harare, Zimbabwe.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'How can I verify or contact Tanaka Gaadzikwa?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Official profiles for Tanaka Gaadzikwa include https://www.linkupbuild.com/founder, https://www.tanakagaadzikwa.com/, LinkedIn (tanaka-gaadzikwa-linkup), X (@TGaadzikwa), GitHub (tanakaprince49-cell), YouTube (@neverletbrocook0), Instagram (@talala2694), Telegram (@tanaka_93), and email tanakaprince49@gmail.com.',
+                },
+              },
+            ],
           },
           {
             '@type': 'BreadcrumbList',
