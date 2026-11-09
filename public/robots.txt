@@ -11,6 +11,7 @@ User-agent: Googlebot-Image
 Allow: /
 
 Sitemap: https://www.linkupbuild.com/sitemap.xml
+Sitemap: https://www.linkupbuild.com/tanaka-images-sitemap.xml
 Sitemap: https://www.linkupbuild.com/blog/sitemap.xml
 Sitemap: https://www.linkupbuild.com/app/sitemap.xml
 Sitemap: https://www.linkupbuild.com/app/sitemap-google-news.xml

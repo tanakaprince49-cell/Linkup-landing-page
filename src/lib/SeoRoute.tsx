@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { LANDING_BLOGS, LANDING_BLOG_INDEX_META } from '../data/landingBlogs';
+import { TANAKA_GALLERY_IMAGES } from '../data/tanakaGallery';
 
 // Per-route search metadata for the SPA: every crawlable page gets its own
 // title, description and canonical, duplicates point at their canonical twin,
@@ -183,6 +184,60 @@ export function SeoRoute() {
       if (!existingLd) document.head.appendChild(script);
     } else if (existingLd) {
       existingLd.remove();
+    }
+
+    const existingFounderLd = document.getElementById('linkup-dynamic-founder-ld');
+    if (path === '/founder' || path === '/about') {
+      const imageObjects = TANAKA_GALLERY_IMAGES.map((img) => ({
+        '@type': 'ImageObject',
+        '@id': `${SITE}/#${img.id}`,
+        url: img.url,
+        contentUrl: img.url,
+        encodingFormat: 'image/jpeg',
+        width: img.width,
+        height: img.height,
+        name: img.title,
+        caption: img.caption,
+        description: img.description,
+        keywords: img.keywords.join(', '),
+        creditText: 'Tanaka Gaadzikwa / LINKUP',
+        creator: { '@id': `${SITE}/#tanaka-gaadzikwa` },
+        copyrightHolder: { '@id': `${SITE}/#tanaka-gaadzikwa` },
+        acquireLicensePage: `${SITE}/founder`,
+        contentLocation: { '@type': 'Place', name: 'Harare, Zimbabwe' },
+        about: { '@id': `${SITE}/#tanaka-gaadzikwa` },
+        datePublished: '2026-11-09',
+      }));
+      const founderPayload = {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'ImageGallery',
+            '@id': `${SITE}/founder#gallery`,
+            name: 'Tanaka Gaadzikwa Official Press & Founder Image Gallery',
+            description: 'Official photos, portraits, and startup press graphics of Tanaka Gaadzikwa (Tanaka Prince Gaadzikwa), Founder & CEO of LINKUP in Harare, Zimbabwe.',
+            url: `${SITE}/founder`,
+            about: { '@id': `${SITE}/#tanaka-gaadzikwa` },
+            author: { '@id': `${SITE}/#tanaka-gaadzikwa` },
+            image: imageObjects,
+            associatedMedia: imageObjects.map((img) => ({ '@id': img['@id'] })),
+          },
+          {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+              { '@type': 'ListItem', position: 2, name: 'Tanaka Gaadzikwa', item: `${SITE}/founder` },
+            ],
+          },
+        ],
+      };
+      const script = existingFounderLd || document.createElement('script');
+      script.id = 'linkup-dynamic-founder-ld';
+      script.setAttribute('type', 'application/ld+json');
+      script.textContent = JSON.stringify(founderPayload);
+      if (!existingFounderLd) document.head.appendChild(script);
+    } else if (existingFounderLd) {
+      existingFounderLd.remove();
     }
   }, [pathname]);
   return null;
